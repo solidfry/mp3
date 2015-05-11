@@ -1,3 +1,6 @@
+
+.view 		{ margin:1em 0; }
+
 .step-title {
     padding-top:1em;
     text-align:center;
@@ -21,3 +24,4 @@
         font-size:6em;
         color:#00a3ad;
     }
+

@@ -18,6 +18,12 @@
         border-radius:6px;
     }
 
+    .product_select-link .ico:hover {
+        -webkit-animation-name: pulse;
+        animation-name: pulse;
+
+    }
+
 
     .product_select-link .ico {
         font-size:6em;

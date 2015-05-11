@@ -41,13 +41,13 @@
 
         <div class="row">
             <div class="columns large-6 product_select">
-                <a href="#" class="product_select-link animated pulse">
+                <a href="#" class="product_select-link">
                     <span class="ico ico-mobile"></span>
                     <h3 class="product_select-title">Mobile Phone</h3>
                 </a>
              </div>
              <div class="columns large-6 product_select">
-                <a href="#" class="product_select-link animated pulse">
+                <a href="#" class="product_select-link">
                     <span class="ico ico-mobile-broadband"></span>
                     <h3 class="product_select-title">Mobile Broadband</h3>
                 </a>
@@ -57,6 +57,7 @@
         </div>
 
       </div>
+      <!-- end step1 -->
 
       <div class="view step-2">
 
@@ -75,7 +76,7 @@
              </div>
              <div class="columns large-6 product_select">
                 <a href="#" class="product_select-link">
-                    <span class="ico ico-mobile-broadband"></span>
+                    <span class="ico ico-nano-sim"></span>
                     <h3 class="product_select-title">Plan only</h3>
                 </a>
             </div>
@@ -84,6 +85,7 @@
         </div>
 
       </div>
+      <!-- end step2 -->
 
 
 	<div class="appTotal">
@@ -99,9 +101,9 @@
       $( document ).ready(function() {
        $( ".product_select-link" ).hover(
           function() {
-            $( this ).addClass( "pulse" );
+            $( this ).addClass( "animated pulse" );
           }, function() {
-            $( this ).removeClass( "pulse" );
+            $( this ).removeClass( "animated pulse" );
           }
         );
     });

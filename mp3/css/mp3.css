@@ -9,6 +9,15 @@
     margin:0;
 }
 
+    .product_select-link {
+        display:block;
+        text-decoration: none;
+    }
+
+    .product_select-title {
+        font-weight:normal;
+    }
+
     .product_select-box {
         width:50%;
         clear:both;
@@ -17,6 +26,7 @@
         border:1px solid #ccc;
         line-height:7em;
         box-shadow:0 2px 1px rgba(0,0,0,0.1);
+        border-radius:6px;
     }
 
     .product_select-box .ico {

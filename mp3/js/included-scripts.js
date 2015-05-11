@@ -3,10 +3,69 @@
 
 // BELOW ARE THE INCLUDED SCRIPTS ON THE STYLE GUIDE PAGES
 
+			function hexc(colorval) {
+			    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+			    delete(parts[0]);
+			    for (var i = 1; i <= 3; ++i) {
+			        parts[i] = parseInt(parts[i]).toString(16);
+			        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+			    }
+			    color = '#' + parts.join('').toUpperCase();
+
+			    return color;
+			}
+			$(document).ready(function() {
+				$('.colour-block').each(function(){
+					var bgColour = $(this).css('background-color'),
+						$colourCode = $(this).next().find('.colour-code');
+
+					$colourCode.text(hexc(bgColour));
+				});
+				$('.colour-block-top').each(function(){
+					var bgColour = $(this).css('background-color'),
+						$colourCode = $(this).prev().find('.colour-code');
+
+					$colourCode.text(hexc(bgColour));
+				});
+				// Handle prevent the default behaviour of the accordion
+				$("#exampleForm .section-container .title a").click(function(evt){
+					evt.preventDefault();
+					return false;
+				});
+				$("#exampleForm .section-container.accordion .active .title a").css("cursor","default");
+				$("#exampleForm").submit();
+			});
+
+		
+		//	Allow the style guide to post-compile handlebar templates
+		//	Usage: <div data-hbs-template="" data-hbs-model=""></div>
+		
+			$(document).ready(function(){
+				$('div[data-hbs-template]').each(function(){
+					var templateUrl = $(this).data("hbsTemplate"),
+						modelUrl = $(this).data('hbsModel'),
+						container = $(this);
+
+					if (!templateUrl || !modelUrl) {
+						return false;
+					}
+
+					$.get(templateUrl, function(source) {
+						$.get(modelUrl, function(model) {
+							var template = Handlebars.compile(source);
+							container.html(template(model));			
+						});
+					});
+
+				});
+			});
+		
+		
 
 
 
-var optus = optus || {};
+
+			var optus = optus || {};
 			optus.tools = optus.tools || {};
 
 		    (function(module, $, undefined) {

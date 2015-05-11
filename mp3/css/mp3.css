@@ -1,0 +1,23 @@
+.step-title {
+    padding-top:1em;
+    text-align:center;
+    margin-bottom:4em;
+}
+
+.product_select {
+    list-style:none;
+    margin:0;
+}
+
+    .product_select-box {
+        width:100%;
+        clear:both;
+        float: left;
+        text-align:center;
+        margin-bottom:5em;
+    }
+
+    .product_select-box .ico {
+        font-size:6em;
+        color:#00a3ad;
+    }

@@ -19,6 +19,8 @@
 	<link href="css/optus-style-blessed1.css" rel="stylesheet">
 	<link href="css/dt-styleguide.css" rel="stylesheet">
 	<link href="css/activation.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+
 	
 	<!-- This isn't working for some reason :/ -->
 	<!-- <link rel="stylesheet" href="css/dt-styleguide-blessed1.css" /> -->
@@ -29,34 +31,83 @@
   </head>
   <body>
 	
+<<<<<<< HEAD
     <div class="view step-1">
+=======
+      <div class="view step-1">
+
+>>>>>>> 16b5cdac1766ba4b5679baa720f440332480873b
         <div class="row">
-          <div class="large-12 columns">
+          <div class="large-12">
               <h2 class="step-title">What do you want to connect?</h2>
           </div>
         </div>
 
         <div class="row">
-            <div class="large-12">
-                <ul class="product_select">
-                    <li class="product_select-box phone">
-                        <span class="ico ico-mobile"></span>
-                        <h3 class="product_select-title">Mobile Phone</h3>
-                    </li>
-                    <li class="product_select-box broadband">
-                        <span class="ico ico-mobile-broadband"></span>
-                        <h3 class="product_select-title">Mobile Broadband</h3>
-                    </li>
-                </ul>
+            <div class="columns large-6 product_select">
+                <a href="#" class="product_select-link animated pulse">
+                    <span class="ico ico-mobile"></span>
+                    <h3 class="product_select-title">Mobile Phone</h3>
+                </a>
+             </div>
+             <div class="columns large-6 product_select">
+                <a href="#" class="product_select-link animated pulse">
+                    <span class="ico ico-mobile-broadband"></span>
+                    <h3 class="product_select-title">Mobile Broadband</h3>
+                </a>
             </div>
+
+
         </div>
+<<<<<<< HEAD
     </div>
+=======
+
+      </div>
+
+      <div class="view step-2">
+
+        <div class="row">
+          <div class="large-12">
+              <h2 class="step-title">I need a</h2>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="columns large-6 product_select">
+                <a href="#" class="product_select-link animated pulse">
+                    <span class="ico ico-mobile-devices"></span>
+                    <h3 class="product_select-title">A phone and a plan</h3>
+                </a>
+             </div>
+             <div class="columns large-6 product_select">
+                <a href="#" class="product_select-link animated pulse">
+                    <span class="ico ico-mobile-broadband"></span>
+                    <h3 class="product_select-title">Plan only</h3>
+                </a>
+            </div>
+
+
+        </div>
+
+      </div>
+
+>>>>>>> 16b5cdac1766ba4b5679baa720f440332480873b
 	
 		
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
+      $( document ).ready(function() {
+       $( ".product_select-link" ).hover(
+          function() {
+            $( this ).addClass( "pulse" );
+          }, function() {
+            $( this ).removeClass( "pulse" );
+          }
+        );
+    });
     </script>
 	
 	<script src="js/require.js" type="text/javascript"></script>

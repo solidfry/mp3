@@ -1,25 +1,15 @@
-.step-title {
-    padding-top:1em;
-    text-align:center;
-    margin-bottom:1em;
-}
+.view {
 
-.product_select {
-    margin:0;
+}
+.step-title {
+      text-align: center;
+      line-height: 3em;
+      margin: 0 0 1em;
 }
 
     .product_select-link {
         display:block;
         text-decoration: none;
-    }
-
-    .product_select-title {
-        font-weight:normal;
-    }
-
-    .product_select-box {
-        width:50%;
-        clear:both;
         text-align:center;
         margin:0 auto 2em;
         border:1px solid #ccc;
@@ -28,9 +18,21 @@
         border-radius:6px;
     }
 
-    .product_select-box .ico {
+
+    .product_select-link .ico {
         font-size:6em;
         color:#00a3ad;
         position: relative;
         top: .25em;
     }
+
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to   {
+        opacity: 1;
+    }
+}

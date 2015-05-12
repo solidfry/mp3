@@ -74,6 +74,7 @@ body {
     border-radius: .3em;
     padding: .5em .5em .2em;
     display: inline-block;
+    text-align: center;
 }
 
 .summary__data {
@@ -105,6 +106,8 @@ body {
         padding: 1.5em 4em !important;
     }
 }
+
+
 /* Safari, Chrome and Opera > 12.1 */
 
 @-webkit-keyframes fadein {

@@ -122,14 +122,14 @@
             What you will get...
         </h2>
         <a href="#" class="summary__expand">
-            <span class="ico ico-monitoring"></span>
+            <span class="ico ico-arrow-up"></span>
             View Full Summary
         </a>
 
         <div class="summary__info">
             <h3 class="summary__element"><span class="summary__data" data-device-total>1</span><span class="summary__label">Device</span></h3>
-            <h3 class="summary__element"><span class="summary__data" data-gb-total>1GB</span><span class="summary__label">Data to share</span></h3>
-            <h3 class="summary__element"><span class="summary__data" data-cpm-total>&#36;66</span><span class="summary__label">Per month</span></h3>
+            <h3 class="summary__element"><span class="summary__data" data-gb-total>1</span>GB<span class="summary__label">Data to share</span></h3>
+            <h3 class="summary__element">&#36;<span class="summary__data" data-cpm-total>66</span><span class="summary__label">Per month</span></h3>
         </div>
         <a href="#" class="button radius large yellow summary__checkout">Checkout</a>
     </div>
@@ -138,6 +138,8 @@
     <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
+
+    /* This is animation stuff used as an example of how things will animate.*/
       $( document ).ready(function() {
        $( ".product-select__link" ).hover(
           function() {

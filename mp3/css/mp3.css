@@ -25,7 +25,7 @@ body {
     line-height: 7em;
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
-    background-color:#fff;
+    background-color: #fff;
 }
 
 .product-select__link .ico {
@@ -53,7 +53,7 @@ body {
     font-size: 2em;
     background: #033241;
     color: white;
-    padding: .5em .25em .25em;
+    padding: .5em .5em .25em;
     margin: 0;
 }
 
@@ -83,9 +83,17 @@ body {
     position: absolute !important;
     top: 3.1em;
     right: 1em;
-    padding:1.2em 2em !important;
+    padding: 1.2em 2em !important;
 }
 
+@media only screen and (min-width: 860px) {
+    .summary__expand {
+        position: absolute !important;
+        left: 15em;
+        right: initial;
+        padding: 1.5em 4em !important;
+    }
+}
 /* Safari, Chrome and Opera > 12.1 */
 
 @-webkit-keyframes fadein {

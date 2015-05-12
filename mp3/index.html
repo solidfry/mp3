@@ -35,21 +35,21 @@
 
         <div class="row">
           <div class="large-12">
-              <h2 class="step-title">What do you want to connect?</h2>
+              <h2 class="step__title">What do you want to connect?</h2>
           </div>
         </div>
 
         <div class="row">
-            <div class="columns large-6 product_select">
-                <a href="#" class="product_select-link animated pulse">
+            <div class="columns large-6 product-select">
+                <a href="#" class="product-select__link">
                     <span class="ico ico-mobile"></span>
-                    <h3 class="product_select-title">Mobile Phone</h3>
+                    <h3 class="product-select__title">Mobile Phone</h3>
                 </a>
              </div>
-             <div class="columns large-6 product_select">
-                <a href="#" class="product_select-link animated pulse">
+             <div class="columns large-6 product-select">
+                <a href="#" class="product-select__link">
                     <span class="ico ico-mobile-broadband"></span>
-                    <h3 class="product_select-title">Mobile Broadband</h3>
+                    <h3 class="product-select__title">Mobile Broadband</h3>
                 </a>
             </div>
 
@@ -57,26 +57,27 @@
         </div>
 
       </div>
+      <!-- end step1 -->
 
       <div class="view step-2">
 
         <div class="row">
           <div class="large-12">
-              <h2 class="step-title">I need a</h2>
+              <h2 class="step__title">I need a</h2>
           </div>
         </div>
 
         <div class="row">
-            <div class="columns large-6 product_select">
-                <a href="#" class="product_select-link value" data-val="400">
+            <div class="columns large-6 product-select">
+                <a href="#" class="product-select__link value" data-val="400">
                     <span class="ico ico-mobile-devices"></span>
-                    <h3 class="product_select-title">A phone and a plan</h3>
+                    <h3 class="product-select__title">A phone and a plan</h3>
                 </a>
              </div>
-             <div class="columns large-6 product_select">
-                <a href="#" class="product_select-link">
-                    <span class="ico ico-mobile-broadband"></span>
-                    <h3 class="product_select-title">Plan only</h3>
+             <div class="columns large-6 product-select">
+                <a href="#" class="product-select__link">
+                    <span class="ico ico-nano-sim"></span>
+                    <h3 class="product-select__title">Plan only</h3>
                 </a>
             </div>
 
@@ -84,6 +85,7 @@
         </div>
 
       </div>
+      <!-- end step2 -->
 
 
 	<div class="appTotal">
@@ -91,6 +93,16 @@
     </div>
 
 
+    <div class="summary">
+        <h2 class="summary__title">
+            Total
+        </h2>
+        <div class="summary__info">
+            <h3>1<span>Device</span></h3>
+            <h3>1GB<span>Data to share</span></h3>
+            <h3>&#36;66<span>Per month</span></h3>
+        </div>
+    </div>
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
@@ -99,9 +111,9 @@
       $( document ).ready(function() {
        $( ".product_select-link" ).hover(
           function() {
-            $( this ).addClass( "pulse" );
+            $( this ).addClass( "animated pulse" );
           }, function() {
-            $( this ).removeClass( "pulse" );
+            $( this ).removeClass( "animated pulse" );
           }
         );
     });

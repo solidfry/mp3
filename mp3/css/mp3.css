@@ -64,6 +64,7 @@ body {
     right: .65em;
     color: white;
     text-decoration: none;
+    display:block;
 }
 
 .summary__element {

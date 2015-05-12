@@ -2,32 +2,50 @@
 $(document).ready(function(){
 
 	
-	function updateAppTotal(appTotal){
+	function updateAppTotal(value){
 	
-		$('.appTotal h3').text(appTotal);
+		console.log('The current total is ' + $('.summary__data--' + value[0] + '-total').text());
+	
+		appTotal = $('.summary__data--' + value[0] + '-total').text();
+		appTotal = appTotal.split('$');
+		appTotal = parseInt(appTotal[1]);
+	
+		if (value[2] == "selected"){
+	
+			appTotal -= parseInt(value[1]);
+		
+		}
+		
+		else {
+		
+			appTotal += parseInt(value[1]);
+		
+		}
+		
+		 $('.summary__data--' + value[0] + '-total').html('&#36;' + appTotal);
 	
 	}
-
 
 	// Calculate App Totals
 		
 	var appTotal = 0;
 	
-	$('.value').on('click', function(){
+	$('.value').on('click', function(e){
 	
 		// Check if any other element within the view is selected
 		
 		var currentlySelected = $('.selected');
 		
-		console.log(currentlySelected.length);
-		
 		if (currentlySelected.length !== 0){
 		
-			selectedValue = parseInt(currentlySelected.attr('data-val'));
+			selectedValue = currentlySelected.attr('data-val');
+			selectedValue = selectedValue.split('-');
 			
-			appTotal -= selectedValue;
+			selectedValue[selectedValue.length] = "selected";
 			
-			updateAppTotal(appTotal);
+			console.dir(selectedValue);
+			
+			updateAppTotal(selectedValue);
 			
 			currentlySelected.removeClass('selected');
 			
@@ -35,14 +53,18 @@ $(document).ready(function(){
 	
 		var clickedOption = $(this);
 		
-		var clickedOptionValue = parseInt(clickedOption.attr('data-val'));
+		var clickedOptionValue = clickedOption.attr('data-val');
 		
-		appTotal += clickedOptionValue;
+		clickedOptionValue = clickedOptionValue.split('-');
 		
 		clickedOption.addClass('selected');
 		
-		updateAppTotal(appTotal);
-
+		console.log('The amount we clicked was ' + clickedOptionValue[1])
+		
+		updateAppTotal(clickedOptionValue);
+		
+		e.preventDefault();
+		
 	
 	});
 		

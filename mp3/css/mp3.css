@@ -1,3 +1,11 @@
+body {
+    padding-bottom: 8em !important;
+}
+
+.row {
+    margin-left:inherit !important;
+    margin-right:inherit !important;
+}
 
 .view {
 
@@ -42,8 +50,36 @@
         width:100%;
     }
 
-    .summary__title {
+    .summary__info {
+        padding:1em;
+    }
 
+    .summary__title {
+        font-size:2em;
+        background:#033241;
+        color:white;
+        padding:.5em .25em .25em;
+        margin-top:0;
+    }
+
+    .summary__element {
+        float:left;
+        margin-right:1em;
+        color:#fff;
+    }
+
+    .summary__data {
+        font-size: 2em;
+        margin: 0 auto;
+        background:#666666;
+        border-radius:6px;
+        padding:.5em;
+    }
+
+    .summary__label {
+        font-size: .75em;
+        display:block;
+        text-align: center;
     }
 
 /* Safari, Chrome and Opera > 12.1 */

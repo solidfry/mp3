@@ -22,7 +22,7 @@ $(document).ready(function(){
 		
 		}
 		
-		 $('.summary__data--' + value[0] + '-total').html('&#36;' + appTotal);
+		 $('#' + value[0] + '-total').html('&#36;' + appTotal);
 	
 	}
 

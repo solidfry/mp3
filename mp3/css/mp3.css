@@ -59,21 +59,22 @@ body {
         background:#033241;
         color:white;
         padding:.5em .25em .25em;
-        margin-top:0;
+        margin:0;
     }
 
     .summary__element {
-        float:left;
-        margin-right:1em;
+        margin:0;
         color:#fff;
+        background:#006685;
+        border-radius:6px;
+        padding:.5em;
+        display:inline-block;
     }
 
     .summary__data {
         font-size: 2em;
         margin: 0 auto;
-        background:#666666;
-        border-radius:6px;
-        padding:.5em;
+        line-height:1em;
     }
 
     .summary__label {

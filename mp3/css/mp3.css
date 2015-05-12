@@ -42,6 +42,7 @@ body {
     left: 0;
     width: 100%;
     font-size: .80em;
+    z-index:9999;
 }
 
 .summary__info {

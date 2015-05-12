@@ -50,13 +50,14 @@ $(document).ready(function(){
 			
 			selectedValue[selectedValue.length] = "selected";
 			
-			console.dir(selectedValue);
+			console.dir(selectedValue[1]);
 			
 			updateAppTotal(selectedValue);
 			
 			currentlySelected.removeClass('selected');
 			
-		}
+			
+		} else {
 	
 		var clickedOption = $(this);
 		
@@ -70,8 +71,8 @@ $(document).ready(function(){
 		
 		updateAppTotal(clickedOptionValue);
 		
+		}
 		e.preventDefault();
-		
 	
 	});
 		

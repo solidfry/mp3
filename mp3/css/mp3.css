@@ -18,21 +18,15 @@ body {
 
 .product-select__link {
     display: block;
-    text-decoration: none;
-    text-align: center;
-    margin: 0 auto 2em;
-    border: 1px solid #ccc;
-    line-height: 7em;
-    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    background-color: #fff;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto 2em;
 }
 
 .product-select__link .ico {
-    font-size: 6em;
-    color: #00a3ad;
-    position: relative;
-    top: .25em;
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: .1em;
 }
 /* Summary bar */
 

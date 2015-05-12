@@ -4,9 +4,9 @@ $(document).ready(function(){
 	
 	function updateAppTotal(value){
 	
-		console.log('The current total is ' + $('.summary__data--' + value[0] + '-total').text());
+		console.log('The current total is ' + $('#' + value[0] + '-total').text());
 	
-		appTotal = $('.summary__data--' + value[0] + '-total').text();
+		appTotal = $('#' + value[0] + '-total').text();
 		appTotal = appTotal.split('$');
 		appTotal = parseInt(appTotal[1]);
 	

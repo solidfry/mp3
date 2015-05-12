@@ -14,13 +14,18 @@ body {
     margin: 0 0 1em;
     padding: .25em 0 0;
     border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+.product-select {
+    margin: 2em 0;
 }
 
 .product-select__link {
     display: block;
-  text-decoration: none;
-  text-align: center;
-  margin: 0 auto 2em;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .product-select__link .ico {
@@ -31,7 +36,7 @@ body {
 /* Summary bar */
 
 .summary {
-    background-color: #e5e5e5;
+    background:#00a3ad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC) repeat;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -51,6 +56,15 @@ body {
     margin: 0;
 }
 
+.summary__expand {
+    font-size: 1.5em;
+    position: absolute;
+    top: .65em;
+    right: .65em;
+    color: white;
+    text-decoration: none;
+}
+
 .summary__element {
     margin: 0;
     color: #fff;
@@ -64,7 +78,7 @@ body {
     font-size: 2em;
     margin: 0 auto;
     line-height: 1em;
-    padding-top:0.1em;
+    padding-top: 0.1em;
 }
 
 .summary__label {
@@ -74,7 +88,7 @@ body {
     color: #91CCDD;
 }
 
-.summary__expand {
+.summary__checkout {
     position: absolute !important;
     top: 3.1em;
     right: 1em;
@@ -82,7 +96,7 @@ body {
 }
 
 @media only screen and (min-width: 860px) {
-    .summary__expand {
+    .summary__checkout {
         position: absolute !important;
         left: 15em;
         right: initial;
@@ -101,8 +115,8 @@ body {
 }
 
 .summary.animated {
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }

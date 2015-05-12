@@ -45,6 +45,10 @@ body {
     z-index:9999;
 }
 
+    .summary.expand {
+        top:0;
+    }
+
 .summary__info {
     padding: 1em;
 }

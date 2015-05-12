@@ -11,6 +11,8 @@ $(document).ready(function(){
 		appTotal = parseInt(appTotal[1]);
 	
 		if (value[2] == "selected"){
+		
+			console.log('Something was already selected');
 	
 			appTotal -= parseInt(value[1]);
 		
@@ -22,7 +24,12 @@ $(document).ready(function(){
 		
 		}
 		
-		 $('#' + value[0] + '-total').html('&#36;' + appTotal);
+		 $('#' + value[0] + '-total')
+			.addClass('animated flipOutX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				
+				$(this).html('&#36;' + appTotal).removeClass('animated flipOutX').addClass('animated flipInX');
+			
+			});
 	
 	}
 

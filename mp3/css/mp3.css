@@ -78,6 +78,14 @@ body {
     text-align: center;
     color: #91CCDD;
 }
+
+.summary__expand {
+    position: absolute !important;
+    top: 3.1em;
+    right: 1em;
+    padding:1.2em 2em !important;
+}
+
 /* Safari, Chrome and Opera > 12.1 */
 
 @-webkit-keyframes fadein {

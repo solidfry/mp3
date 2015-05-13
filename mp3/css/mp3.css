@@ -21,6 +21,16 @@ body {
     margin: 2em 0;
 }
 
+    .product-select .button {
+        text-decoration:none;
+        margin:0 auto;
+        display:inline-block;
+    }
+
+    .product-select .button:focus {
+        text-decoration:none;
+    }
+
 .product-select__link {
     display: block;
     text-decoration: none;

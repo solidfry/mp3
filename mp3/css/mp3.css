@@ -37,17 +37,25 @@ body {
 
 .summary {
     background: #245463;
-    background: rgba(2, 57, 75, 0.9);
+    background: rgba(2, 57, 75, 0.95);
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     font-size: .80em;
     z-index: 9999;
+
+    -webkit-transition: background-color 300ms ease-out;
+       -moz-transition: background-color 300ms ease-out;
+         -o-transition: background-color 300ms ease-out;
+        -ms-transition: background-color 300ms ease-out;
+            transition: background-color 300ms ease-out;
+
 }
 
 .summary.expand {
     top: 0;
+    background:white;
 }
 
 .summary__info {
@@ -72,6 +80,11 @@ body {
     display: block;
     line-height: 1em;
 }
+
+    .summary__expand:hover, .summary__expand:active, .summary__expand:focus {
+        color:white;
+        text-decoration:underline;
+    }
 
 .summary__expand .ico {
   font-size: 2em;
@@ -120,6 +133,42 @@ body {
         padding: 1.5em 4em !important;
     }
 }
+
+.summary__full {
+    display:none;
+}
+
+.expand .summary__full {
+  display: block;
+  overflow-x: scroll;
+  position: relative;
+  padding-top: 4em;
+  border-top: 1px solid #ccc;
+}
+
+.summary__item {
+    padding-bottom:1em;
+    margin-bottom:1em;
+}
+
+.summary__item ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.summary__item img {
+    margin: 0 0 1em 0;
+}
+
+.summary__item h3 {
+    margin:0 0 .2em 0;
+}
+
+.summary__item li {
+    line-height:1;
+}
+
 /* Safari, Chrome and Opera > 12.1 */
 
 @-webkit-keyframes fadein {

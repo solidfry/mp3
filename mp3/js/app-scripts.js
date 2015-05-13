@@ -1,73 +1,97 @@
 	
 $(document).ready(function(){
-
 	
-	function updateAppTotal(value){
-	
-		appTotal = $('#' + value[0] + '-total').text();
-		appTotal = appTotal.split('$');
-		appTotal = parseInt(appTotal[1]);
-	
-		if (value[2] == "selected"){
+	var cycleCount = 1;
+	var currentCycle = 1;
 		
-			appTotal -= parseInt(value[1]);
-		
-		}
-		
-		else {
-		
-			appTotal += parseInt(value[1]);
-		
-		}
-		
-		 $('#' + value[0] + '-total')
-			.addClass('animated flipOutX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-				
-				$(this).html('&#36;' + appTotal).removeClass('animated flipOutX').addClass('animated flipInX');
-			
-			});
-	
-	}
-
-	// Calculate App Totals
-		
-	var appTotal = 0;
-	
 	$('.value').on('click', function(e){
 	
-		// Check if any other element within the view is selected
-		
-		var currentlySelected = $('.selected');
-		
-		if (currentlySelected.length !== 0){
-		
-			selectedValue = currentlySelected.attr('data-val');
-			selectedValue = selectedValue.split('-');
-			
-			selectedValue[selectedValue.length] = "selected";
-			
-			updateAppTotal(selectedValue);
-			
-			currentlySelected.removeClass('selected');
-			
-			
-		} else {
+		var $this = $(this);
 	
-		var clickedOption = $(this);
+		// If handset is selected, pass an array to update the summary cmp and device
 		
-		var clickedOptionValue = clickedOption.attr('data-val');
+		if($this.attr('data-group') == "handset"){
 		
-		clickedOptionValue = clickedOptionValue.split('-');
-		
-		clickedOption.addClass('selected');
-		
-		updateAppTotal(clickedOptionValue);
+			var handsetValue = ['handset', parseInt($this.attr('data-val'))];
+			
+			updateSummary(handsetValue);
+			
+			$this.addClass('selected');
 		
 		}
+		
 		e.preventDefault();
-	
+		
 	});
+	
+	function updateSummary(value){
+	
+		// Get the current totals
+		// Split the dollar value and setup the summary values
+		var tempTotal = $('#cpm-total').text();
+		tempTotal = tempTotal.split('$');
+		tempTotal = tempTotal[1];
+		var cmpTotal = parseInt(tempTotal);
+		var deviceTotal = parseInt($('#device-total').text());
 		
 		
+		// If we have navigated back a step (edit) we need to remove the value of the perviously selected device/plan
+		if (currentCycle < cycleCount) {
 		
+			// remove value
+		
+		}
+		
+		// If we've selected a handset...
+		if(value[0] == 'handset'){
+		
+			var selectedHandset = $('.planSelectButton.selected');
+		
+			if (selectedHandset.length !== 0){
+			
+				cmpTotal = cmpTotal - parseInt(selectedHandset.attr('data-val'));
+				
+				selectedHandset.removeClass('selected');
+				
+			} else {
+			
+				deviceTotal = deviceTotal + 1;
+				
+				$('#device-total').html(deviceTotal)
+					.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				
+						$(this).html(deviceTotal).removeClass('animated flipInX');
+			
+				});
+			
+			//	 $('#device-total').html(deviceTotal).addClass('animated flipInX');
+			
+			}
+		
+			cmpTotal = cmpTotal + value[1];
+			
+			$('#cpm-total').html('$' + cmpTotal)
+				.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+										
+					$(this).removeClass('flipInX');
+		
+			});
+			
+			// $('#cpm-total').html('$' + cmpTotal).addClass('animated flipInX');
+			
+		}
+		
+		// If we've selected a plan
+		else if (value[0] == 'plan') {
+		
+			$('#device-total').html('$' + value[1]);
+		
+		}
+	
+			
+	
+	}
+	
+	
+	
 });

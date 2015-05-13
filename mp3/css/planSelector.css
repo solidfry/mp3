@@ -1,3 +1,249 @@
+/**
+* Colour Variables
+* not to be used directly
+*/
+/**
+ * Typography
+ */
+/**
+ * Quote
+ */
+/**
+* QnA
+*/
+/**
+ * Button colors
+ */
+/**
+ * Forms
+ */
+/**
+ * Autocomplete
+ */
+/**
+ * Sub Header
+ */
+/**
+ * Feature tiles
+ */
+/**
+ * Promo tiles
+ */
+/**
+ * Table colours
+*/
+/**
+ * Foundation settings
+ */
+/***************************
+ * THEMES - WIP cleanup    */
+/**
+ * PERSONAL THEME
+ */
+/**
+ * BUSINESS THEME
+ */
+/**
+ * DEFAULT THEME = PERSONAL
+ */
+/*== Font Family ================================== */
+/* optus beta bold */
+/* Trade Gothic Roman */
+/* Trade Gothic Pro Bold Condensed No 20  */
+/* Trade Gothic Pro Bold */
+/* Optus Icons Bold */
+/*== Icons ================================== */
+/*== Navigation Heading ================================== */
+/*== Campaign Heading / Bubble Font ================================== */
+/*== General Heading / Trade Condensed ================================== */
+/*== Primary Heading / h1 ================================== */
+/*== Secondary Heading / h2 ================================== */
+/*== Tertiary Heading / h3 ================================== */
+/*== Quaternary Heading / h4 ================================== */
+/*== Quinary Heading / h5 ================================== */
+/*==Default Font / h1 ========================================*/
+/*== Body Copy ================================== */
+/*== Major article body Copy ================================== */
+/*== small copy ================================== */
+/*== Senary Heading / h6 ================================== */
+/*== Article heading ================================== */
+/*== Body Copy - Bold ================================== */
+/*== Quote Box Copy - Bold ================================== */
+/*== Links ================================== */
+/*== Fine Print ================================== */
+/*== Lists ================================== */
+/* ordered lists */
+/* Menu item description text */
+/* breadcrumb */
+/*== QNA ================================== */
+/*== Buttons ================================== */
+/*== Forms ================================== */
+/*-- Error -- */
+/*== Foundation Settings ================================== */
+/**
+* Colour Variables
+* not to be used directly
+*/
+/**
+ * Typography
+ */
+/**
+ * Quote
+ */
+/**
+* QnA
+*/
+/**
+ * Button colors
+ */
+/**
+ * Forms
+ */
+/**
+ * Autocomplete
+ */
+/**
+ * Sub Header
+ */
+/**
+ * Feature tiles
+ */
+/**
+ * Promo tiles
+ */
+/**
+ * Table colours
+*/
+/**
+ * Foundation settings
+ */
+/***************************
+ * THEMES - WIP cleanup    */
+/**
+ * PERSONAL THEME
+ */
+/**
+ * BUSINESS THEME
+ */
+/**
+ * DEFAULT THEME = PERSONAL
+ */
+/*== Font Family ================================== */
+/* optus beta bold */
+/* Trade Gothic Roman */
+/* Trade Gothic Pro Bold Condensed No 20  */
+/* Trade Gothic Pro Bold */
+/* Optus Icons Bold */
+/*== Icons ================================== */
+/*== Navigation Heading ================================== */
+/*== Campaign Heading / Bubble Font ================================== */
+/*== General Heading / Trade Condensed ================================== */
+/*== Primary Heading / h1 ================================== */
+/*== Secondary Heading / h2 ================================== */
+/*== Tertiary Heading / h3 ================================== */
+/*== Quaternary Heading / h4 ================================== */
+/*== Quinary Heading / h5 ================================== */
+/*==Default Font / h1 ========================================*/
+/*== Body Copy ================================== */
+/*== Major article body Copy ================================== */
+/*== small copy ================================== */
+/*== Senary Heading / h6 ================================== */
+/*== Article heading ================================== */
+/*== Body Copy - Bold ================================== */
+/*== Quote Box Copy - Bold ================================== */
+/*== Links ================================== */
+/*== Fine Print ================================== */
+/*== Lists ================================== */
+/* ordered lists */
+/* Menu item description text */
+/* breadcrumb */
+/*== QNA ================================== */
+/*== Buttons ================================== */
+/*== Forms ================================== */
+/*-- Error -- */
+/*== Foundation Settings ================================== */
+.tabs {
+  margin: 0; }
+  .tabs .recontractTabLink {
+    margin-bottom: 10px; }
+  .tabs .linkTab {
+    background: white !important;
+    text-decoration: underline !important;
+    text-transform: none !important; }
+    @media (max-width: 53.75em) {
+      .tabs .linkTab {
+        border-bottom: none !important; } }
+    .tabs .linkTab .lt-ie9 {
+      border-bottom: none !important; }
+  .tabs .tab {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: bold;
+    color: #006685;
+    background-color: #e5e5e5; }
+    @media (min-width: 31.25em) {
+      .tabs .tab {
+        border-bottom: 2px solid #006685;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px; } }
+    .tabs .tab .lt-ie9 {
+      border-bottom: 2px solid #006685;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px; }
+    .tabs .tab a {
+      text-decoration: none;
+      display: block;
+      outline: none; }
+      .tabs .tab a:hover {
+        text-decoration: underline; }
+    .tabs .tab.active {
+      background: #006685; }
+      .tabs .tab.active a {
+        color: white; }
+        @media (max-width: 31.1875em) {
+          .tabs .tab.active a:before {
+            position: absolute;
+            height: 0;
+            width: 0;
+            content: "";
+            transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+            border-width: 10px 10px 0px 10px;
+            bottom: 25px;
+            left: -2%; } }
+  .tabs .tabs-pane {
+    padding-top: 20px; }
+
+.recontractSubTabs.tabs-pane {
+  padding-top: 35px; }
+.recontractSubTabs .subTabsLinks {
+  height: 50px; }
+  .recontractSubTabs .subTabsLinks .button.white-cta {
+    padding: 0.8em; }
+.recontractSubTabs .button {
+  background-color: #e5e5e5;
+  color: #006685; }
+  .recontractSubTabs .button.active {
+    background-color: white !important;
+    color: #191919 !important;
+    border-color: #006685; }
+    .recontractSubTabs .button.active:after {
+      position: absolute;
+      height: 0;
+      width: 0;
+      content: "";
+      border-style: solid;
+      border-color: #006685 transparent transparent transparent;
+      border-width: 10px 10px 0px 10px;
+      bottom: -10px;
+      left: 50%;
+      margin-left: -10px; }
 
 .planSelectorWidget .button {
   display: block; }

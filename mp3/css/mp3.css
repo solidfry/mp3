@@ -43,7 +43,14 @@ body {
     text-align: center;
     margin-bottom: .1em;
 }
-/* Summary bar */
+
+/* -----
+
+
+Summary bar
+
+
+----- */
 
 .summary {
     position: fixed;
@@ -184,7 +191,13 @@ body {
     line-height:1;
 }
 
-/* Safari, Chrome and Opera > 12.1 */
+/* -----
+
+
+Safari, Chrome and Opera > 12.1
+
+
+----- */
 
 @-webkit-keyframes fadein {
     from {
@@ -200,4 +213,22 @@ body {
     animation-duration: .5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+}
+
+/* -----
+
+
+Carousel Widget alterations
+
+
+----- */
+
+.planSelectorWidget {
+    padding-top: 2em;
+}
+
+.planSelectorWidget .carousel.is-carousel .carousel-pageIndicatorsWrapper {
+  position: absolute;
+  top: -8%;
+  left: 50%;
 }

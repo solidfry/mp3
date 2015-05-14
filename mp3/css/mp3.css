@@ -37,7 +37,9 @@ body {
     margin-right: inherit !important;
 }*/
 
-.view {}
+.view 			{ display:none; }
+
+.view.visible 	{ display:block; }
 
 .step__title {
     text-align: center;
@@ -128,6 +130,8 @@ Summary bar
          -o-transition: background-color 300ms ease-out;
         -ms-transition: background-color 300ms ease-out;
             transition: background-color 300ms ease-out;*/
+			
+			display:none;
 }
 
 @media only screen and (min-width: 860px) {

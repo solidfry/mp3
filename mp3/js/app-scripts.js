@@ -24,7 +24,7 @@ $(document).ready(function(){
 		
 		windowPosition = $(document).scrollTop();
 		
-		$('.summary').animate({ top : 0 }, 1000, function(){
+		$('.summary').animate({ top : 0 }, 400, function(){
 			
 			$(this).css('position', 'absolute');
 			$('.view').hide();
@@ -46,7 +46,7 @@ $(document).ready(function(){
 		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
 
 		// Animate the window height - the summary top bar height
-		summary.animate({ top : ($(window).height() - summaryHeight) }, 1000, function(){
+		summary.animate({ top : ($(window).height() - summaryHeight) }, 400, function(){
 
 
 		});

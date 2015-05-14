@@ -1,19 +1,22 @@
 	
 $(document).ready(function(){
 
-	var windowPosition;
-	
-
 	// Position Summary Panel
-
-	var summaryTitleHeight =  $('.summary__title').outerHeight();
-	var summaryHeight =  $('.summary__info').outerHeight();
-	$('.summary').css({ 'position' : 'fixed', 'top' : $(window).height() + 20 });
 	
+	var windowPosition;
+	var summary = $('.summary');
 	
 	function showSummary(){
 		
-		$('.summary').css('position', 'fixed').animate({ top : ($(window).height() - summaryHeight - summaryTitleHeight) });
+		// Display the summary below the window
+		summary.css({ 'display' : 'block', 'position' : 'fixed', 'top' : $(window).height() + 20 });
+
+		// Once displayed off screen, get combined summary top bar height
+		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
+
+		// Animate the window height - the summary top bar height
+		summary.animate({ top : ($(window).height() - summaryHeight) });
+
 	
 	}
 	
@@ -28,31 +31,30 @@ $(document).ready(function(){
 			$(document).scrollTop($('html').scrollTop())
 			
 		});
+
 		$('.summary__title--link').toggleClass('full');
 		
 	}
 	
 	function hideFullSummary(){
-	
-		$('.view').show();
-		showSummary();
+
+		$('.summary').css('position', 'fixed');
+		$('.view.visible').show();
 		$(window).scrollTop(windowPosition);
+		
+		// Get combined summary top bar height
+		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
+
+		// Animate the window height - the summary top bar height
+		summary.animate({ top : ($(window).height() - summaryHeight) }, 1000, function(){
+
+
+		});
+
+		
 		$('.summary__title--link').toggleClass('full');
 	}
-	
-	$('.value').on('click', function(e){
-	
-		//if (tick == true) {
-		
-	//	} else {
-	
-			showSummary();
-		
-	//	}
-		
-		e.preventDefault();
-	
-	});
+
 	
 	$('.summary__title--link').on('click', function(e){
 		
@@ -70,16 +72,38 @@ $(document).ready(function(){
 	});
 
 
-
-
-
-
-
-
 	// Setup cycle iterations
 	
-	var cycleCount = 1;
-	var currentCycle = 1;
+	var cycleCount = 0;
+	var currentCycle = 0;
+
+	// Cycle between views
+
+	var views = $('.view');
+	$(views[0]).fadeIn().addClass('visible');
+
+	//
+
+	$('[data-step]').on('click', function(){
+
+		var nextStep = $(this).attr('data-step');
+
+		$('.view.visible').fadeOut('slow', function(){
+
+			$('.view.visible').removeClass('visible');
+
+				$('.view.' + nextStep).fadeIn('slow', function(){
+
+					$('.view.' + nextStep).addClass('visible')
+
+			});
+
+		});
+
+
+
+	});
+
 		
 	$('.value').on('click', function(e){
 	
@@ -87,7 +111,7 @@ $(document).ready(function(){
 	
 		// If handset is selected, pass an array to update the summary cmp and device
 		
-		if($this.attr('data-group') == "handset"){
+		if(!$this.hasClass('selected') && $this.attr('data-group') == "handset"){
 		
 			var handsetValue = ['handset', parseInt($this.attr('data-val'))];
 			
@@ -112,7 +136,7 @@ $(document).ready(function(){
 		var deviceTotal = parseInt($('#device-total').text());
 		
 		
-		// If we have navigated back a step (edit) we need to remove the value of the perviously selected device/plan
+		// If we have navigated back a step (edit) we need to remove the value of the previously selected device/plan
 		if (currentCycle < cycleCount) {
 		
 			// remove value
@@ -132,8 +156,7 @@ $(document).ready(function(){
 				
 			} else {
 			
-				var tick = true;
-				showSummary(tick);
+				showSummary();
 			
 				deviceTotal = deviceTotal + 1;
 				

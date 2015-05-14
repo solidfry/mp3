@@ -12,8 +12,8 @@ $(document).ready(function(){
 	
 	
 	function showSummary(){
-	
-		$('.summary').animate({ position : 'fixed', top : ($(window).height() - summaryHeight - summaryTitleHeight) });
+		
+		$('.summary').css('position', 'fixed').animate({ top : ($(window).height() - summaryHeight - summaryTitleHeight) });
 	
 	}
 	
@@ -21,8 +21,9 @@ $(document).ready(function(){
 		
 		windowPosition = $(document).scrollTop();
 		
-		$('.summary').animate({ position : 'absolute', top : 0 }, 1000, function(){
+		$('.summary').animate({ top : 0 }, 1000, function(){
 			
+			$(this).css('position', 'absolute');
 			$('.view').hide();
 			$(document).scrollTop($('html').scrollTop())
 			
@@ -39,9 +40,15 @@ $(document).ready(function(){
 		$('.summary__title--link').toggleClass('full');
 	}
 	
-	$('.showSummary').on('click', function(e){
+	$('.value').on('click', function(e){
 	
-		showSummary();
+		//if (tick == true) {
+		
+	//	} else {
+	
+			showSummary();
+		
+	//	}
 		
 		e.preventDefault();
 	
@@ -69,7 +76,7 @@ $(document).ready(function(){
 
 
 
-
+	// Setup cycle iterations
 	
 	var cycleCount = 1;
 	var currentCycle = 1;
@@ -115,7 +122,7 @@ $(document).ready(function(){
 		// If we've selected a handset...
 		if(value[0] == 'handset'){
 		
-			var selectedHandset = $('.planSelectButton.selected');
+			var selectedHandset = $('.phoneSelectButton.selected');
 		
 			if (selectedHandset.length !== 0){
 			
@@ -124,6 +131,9 @@ $(document).ready(function(){
 				selectedHandset.removeClass('selected');
 				
 			} else {
+			
+				var tick = true;
+				showSummary(tick);
 			
 				deviceTotal = deviceTotal + 1;
 				
@@ -134,7 +144,6 @@ $(document).ready(function(){
 			
 				});
 			
-			//	 $('#device-total').html(deviceTotal).addClass('animated flipInX');
 			
 			}
 		
@@ -147,7 +156,6 @@ $(document).ready(function(){
 		
 			});
 			
-			// $('#cpm-total').html('$' + cmpTotal).addClass('animated flipInX');
 			
 		}
 		

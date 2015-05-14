@@ -1,5 +1,75 @@
 	
 $(document).ready(function(){
+
+	var windowPosition;
+	
+
+	// Position Summary Panel
+
+	var summaryTitleHeight =  $('.summary__title').outerHeight();
+	var summaryHeight =  $('.summary__info').outerHeight();
+	$('.summary').css({ 'position' : 'fixed', 'top' : $(window).height() + 20 });
+	
+	
+	function showSummary(){
+	
+		$('.summary').animate({ position : 'fixed', top : ($(window).height() - summaryHeight - summaryTitleHeight) });
+	
+	}
+	
+	function showFullSummary(){
+		
+		windowPosition = $(document).scrollTop();
+		
+		$('.summary').animate({ position : 'absolute', top : 0 }, 1000, function(){
+			
+			$('.view').hide();
+			$(document).scrollTop($('html').scrollTop())
+			
+		});
+		$('.summary__title--link').toggleClass('full');
+		
+	}
+	
+	function hideFullSummary(){
+	
+		$('.view').show();
+		showSummary();
+		$(window).scrollTop(windowPosition);
+		$('.summary__title--link').toggleClass('full');
+	}
+	
+	$('.showSummary').on('click', function(e){
+	
+		showSummary();
+		
+		e.preventDefault();
+	
+	});
+	
+	$('.summary__title--link').on('click', function(e){
+		
+		if ($(this).hasClass('full')){
+		
+			hideFullSummary();
+		
+		} else {
+		
+			showFullSummary();
+		}
+		
+		e.preventDefault();
+		
+	});
+
+
+
+
+
+
+
+
+
 	
 	var cycleCount = 1;
 	var currentCycle = 1;

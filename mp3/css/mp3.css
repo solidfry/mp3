@@ -236,3 +236,8 @@ Carousel Widget alterations
   top: -8%;
   left: 50%;
 }
+
+/* Mobile Listing Widget alterations */
+
+.row .row { margin-left:auto !important; margin-right:auto !important; }
+.mobileListingWidget .feature-container { border-bottom:0px !important; }

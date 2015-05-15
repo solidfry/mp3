@@ -124,11 +124,13 @@ $(document).ready(function(){
 		
 		$('.view.visible').fadeOut('fast', function(){
 		
-		console.log('We\'re moving on');
+		console.log('Gotta get up, gotta get up, gotta get up');
 				
 			// Temporary solution to get next view
 			
 			var nextView = $('.view.visible').next('.view');
+			
+			$('.carousel-button.carousel-button-next').removeClass('is-disabled');
 			
 			nextView.fadeIn('fast', function(){
 
@@ -140,11 +142,19 @@ $(document).ready(function(){
 			
 		// If handset is selected, pass an array to update the summary cmp and device
 		
-		if(!$this.hasClass('selected') && $this.attr('data-group') == "handset"){
+		if (!$this.hasClass('selected') && $this.attr('data-group') == "handset") {
 		
 			var handsetValue = ['handset', parseInt($this.attr('data-val'))];
 			
 			updateSummary(handsetValue);
+			
+			$this.addClass('selected');
+			
+		} else if (!$this.hasClass('selected') && $this.attr('data-group') == "plan") {
+		
+			var planValue = ['plan', parseInt($this.attr('data-val'))];
+			
+			updateSummary(planValue);
 			
 			$this.addClass('selected');
 			
@@ -216,7 +226,8 @@ $(document).ready(function(){
 		// If we've selected a plan
 		else if (value[0] == 'plan') {
 		
-			$('#device-total').html('$' + value[1]);
+			$('#gb-total').html('$' + value[1]);
+			
 		
 		}
 	

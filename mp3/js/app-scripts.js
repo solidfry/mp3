@@ -24,7 +24,7 @@ $(document).ready(function(){
 		
 		windowPosition = $(document).scrollTop();
 		
-		$('.summary').animate({ top : 0 }, 400, function(){
+		$('.summary').animate({ top : 0 }, 300, function(){
 			
 			$(this).css('position', 'absolute');
 			$('.view').hide();
@@ -46,7 +46,7 @@ $(document).ready(function(){
 		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
 
 		// Animate the window height - the summary top bar height
-		summary.animate({ top : ($(window).height() - summaryHeight) }, 400, function(){
+		summary.animate({ top : ($(window).height() - summaryHeight) }, 300, function(){
 
 
 		});
@@ -88,11 +88,11 @@ $(document).ready(function(){
 
 		var nextStep = $(this).attr('data-step');
 
-		$('.view.visible').fadeOut('slow', function(){
+		$('.view.visible').fadeOut('fast', function(){
 
 			$('.view.visible').removeClass('visible');
 
-				$('.view.' + nextStep).fadeIn('slow', function(){
+				$('.view.' + nextStep).fadeIn('fast', function(){
 
 					$('.view.' + nextStep).addClass('visible')
 
@@ -121,9 +121,40 @@ $(document).ready(function(){
 		
 		}
 		
+		
+		$('.view.visible').fadeOut('fast', function(){
+		
+		console.log('We\'re moving on');
+				
+			// Temporary solution to get next view
+			
+			var nextView = $('.view.visible').next('.view');
+			
+			nextView.fadeIn('fast', function(){
+
+				$('.view.visible').removeClass('visible').next('.view').addClass('visible');
+
+			});
+			
+		});
+			
+		// If handset is selected, pass an array to update the summary cmp and device
+		
+		if(!$this.hasClass('selected') && $this.attr('data-group') == "handset"){
+		
+			var handsetValue = ['handset', parseInt($this.attr('data-val'))];
+			
+			updateSummary(handsetValue);
+			
+			$this.addClass('selected');
+			
+		}
+		
 		e.preventDefault();
 		
 	});
+		
+
 	
 	function updateSummary(value){
 	

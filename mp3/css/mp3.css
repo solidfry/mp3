@@ -346,3 +346,7 @@ Mobile Listing Widget alterations
 form.custom .custom.dropdown.open ul {
     right: 0;
 }
+
+.mobileListingWidget .carousel.is-carousel .carousel-pageIndicatorsContainer {
+    display:none;
+}

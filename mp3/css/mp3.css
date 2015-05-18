@@ -29,6 +29,13 @@
     *zoom: 1;
 }
 
+html,
+body {
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC);
+
+    background-color: #00a3ad;
+}
+
 .back-button {
     display: none;
   opacity: .5;
@@ -50,11 +57,6 @@
 
 .back-button:hover {
      opacity:.9;
-}
-
-html,
-body {
-    background-color: #006685;
 }
 
 body {

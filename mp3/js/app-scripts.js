@@ -75,9 +75,9 @@ $(document).ready(function(){
 		
 		currentStep += 1;
 		
-		if (!currentStep == '0'){
+		if (currentStep == '1'){
 		
-			$('.back-button').show();
+			$('.back-button a').show();
 		}
 	
 		// Keep track of where we are by adding data-step to the global
@@ -121,17 +121,17 @@ $(document).ready(function(){
 		}, 500, 'easeInOutExpo');
 		
 		
-		
-		if (currentStep == '0'){
-		
-			$(this).hide();
-		
-		}
-		
 		console.log('The current view is ' + cycleSteps[currentStep]);
 		console.log('The previous view is ' + cycleSteps[(currentStep - 1)]);
 		
 		console.log('We have removed ' + cycleSteps[cycleSteps.length-1]);
+
+		
+		if (currentStep == '1'){
+		
+			$(this).hide();
+		
+		}
 		
 		
 		

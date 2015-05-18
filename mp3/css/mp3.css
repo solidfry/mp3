@@ -36,8 +36,9 @@ body {
     background-color: #00a3ad;
 }
 
-.back-button {
-    display: none;
+
+.back-button a {
+  display: none;
   opacity: .5;
   position: absolute;
   z-index: 9000;

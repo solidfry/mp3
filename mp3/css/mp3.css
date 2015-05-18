@@ -34,12 +34,12 @@
 }
 
 html {
-    background: #00a3ad;
+    background: #e5e5e5;
 }
 
 body {
     padding-bottom: 12em;
-    background: #00a3ad;
+    background: #e5e5e5;
     padding-top: 1em;
 }
 /*.row {
@@ -357,6 +357,10 @@ body .model__item {
     border-bottom: 0;
 }
 
+.model__img {
+    padding-left: 0;
+}
+
 .model__specs {
     padding: 0;
     margin: 0;
@@ -378,19 +382,30 @@ body .model__item {
 }
 
 .model__price--number {
-      font-size: 1.75em;
-      line-height: 1.25em;
-      display: block;
-      border-radius: 6px;
-      background: #5a1b4c;
-      padding: 0.2em;
+    font-size: 1.75em;
+    line-height: 1.25em;
+    display: block;
+    border-radius: 6px;
+    background: #da3a00;
+    padding: 0.2em;
+    box-shadow: inset 0 -2px 0px rgba(0,0,0,0.2);
+
 }
 
 .model__price--number::first-letter {
     vertical-align: text-bottom;
     font-size: .7em;
+    font-weight:normal;
 }
 
+.model__config {
+    display:inline-block;
+    margin:0 auto;
+}
+
+.view button .ico {
+    font-size:1em;
+}
 /* -----
 
 

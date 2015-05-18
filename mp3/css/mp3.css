@@ -31,11 +31,15 @@
 
 .back-button 	{ display:none; }
 
-body {
-    padding-bottom: 12em !important;
-    background:#00a3ad !important;
+html {
+    background:#00a3ad;
+}
 
-    padding-top: 1em !important;
+body {
+    padding-bottom: 12em;
+    background:#00a3ad;
+
+    padding-top: 1em;
 }
 /*.row {
     margin-left: inherit !important;

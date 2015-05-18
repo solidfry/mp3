@@ -39,6 +39,8 @@ $(document).ready(function(){
 	var currentCycle = 0;
 	var currentStep = 0;
 	var cycleSteps = ['step-1'];
+	
+	console.log('The current view is ' + cycleSteps[0]);
 
 	// Cycle between views
 
@@ -49,61 +51,89 @@ $(document).ready(function(){
 
 	$('[data-step]').on('click', function(){
 	
-		if (currentStep == '1'){
-		
-			$(this).show();
-		}
-
 		var nextStep = $(this).attr('data-step');
 
-		$('.view.visible').css('position', 'absolute').addClass('animated fadeOutLeft').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
 		
-			$(this).removeClass('visible fadeOutLeft fadeOut');
+		$('.view.' + cycleSteps[currentStep]).css({position : 'absolute', width : currentViewWidth}).animate({
 			
+			left: '-800px'
+			
+		}, function(){
+		
+			$(this).removeClass('visible').css({position : 'static', width : 'inherit', left : '0'});
 			
 		});
 		
-		$('.view.' + nextStep).css('position', 'absolute').addClass('visible animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		$('.view.' + nextStep).css({position : 'absolute', width : currentViewWidth, left : $(window).outerWidth()});
 			
-			$('.view.' + nextStep).removeClass('fadeInRight');
+			$('.view.' + nextStep).addClass('visible').animate({
+		
+			left: 0
 		
 		});
-		
-		// Keep track of where we are by adding data-step to the global
 		
 		currentStep += 1;
 		
-		console.log(currentStep);
+		if (!currentStep == '0'){
+		
+			$('.back-button').show();
+		}
+	
+		// Keep track of where we are by adding data-step to the global
 		
 		cycleSteps[currentStep] = $(this).attr('data-step');
 		
-		console.log(cycleSteps[currentStep]);
+		console.log('The current view is ' + cycleSteps[currentStep]);
+		console.log('The previous view is ' + cycleSteps[(currentStep - 1)]);
 		
 	});
 	
 	// When Back button is clicked, cycle back to the previous view
 	
-	$('.back-button').on('click', function(){
-		
-		console.log('The previous step is ' + cycleSteps[(currentStep - 1)]);
+	$('.back-button a').on('click', function(){
 		
 		var prevStep = $('.view.' + cycleSteps[(currentStep - 1)]);
-
-		$('.view.visible').addClass('slideOutRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
 		
-			$('.view.visible').removeClass('visible slideOutRight');
+		$('.view.' + cycleSteps[currentStep]).css({position : 'absolute', width : currentViewWidth}).animate({
 			
-			$(prevStep).addClass('visible fadeInLeft fadeIn');
+			left: '800px'
+			
+		}, 1000, 'easeOutBounce', function(){
+		
+			console.log('Animating ' + cycleSteps[currentStep])
+		
+			$('.view.' + cycleSteps[currentStep]).css({position : 'static', width : 'inherit', left : '0'}).removeClass('visible');
+			
+			currentStep -= 1;
+			cycleSteps.splice(-1,1);
 			
 		});
 		
-		currentStep -= 1;
+		
+		$(prevStep).css({position : 'absolute', width : currentViewWidth, left : '-' + $(window).outerWidth() + 'px'});
+			
+		$(prevStep).addClass('visible').animate({
+	
+			left: 0
+		
+		});
+		
+		
 		
 		if (currentStep == '0'){
 		
 			$(this).hide();
 		
 		}
+		
+		console.log('The current view is ' + cycleSteps[currentStep]);
+		console.log('The previous view is ' + cycleSteps[(currentStep - 1)]);
+		
+		console.log('We have removed ' + cycleSteps[cycleSteps.length-1]);
+		
+		
 		
 	});
 
@@ -124,25 +154,6 @@ $(document).ready(function(){
 		
 		}
 		
-		
-		$('.view.visible').fadeOut('fast', function(){
-		
-		console.log('Gotta get up, gotta get up, gotta get up');
-				
-			// Temporary solution to get next view
-			
-			var nextView = $('.view.visible').next('.view');
-			
-			$('.carousel-button.carousel-button-next').removeClass('is-disabled');
-			
-			nextView.fadeIn('fast', function(){
-
-				$('.view.visible').removeClass('visible').next('.view').addClass('visible');
-
-			});
-			
-		});
-			
 		// If handset is selected, pass an array to update the summary cmp and device
 		
 		if (!$this.hasClass('selected') && $this.attr('data-group') == "handset") {

@@ -59,7 +59,7 @@ $(document).ready(function(){
 			
 			left: '-800px'
 			
-		}, function(){
+		}, 1000, 'easeInOutExpo', function(){
 		
 			$(this).removeClass('visible').css({position : 'static', width : 'inherit', left : '0'});
 			
@@ -71,7 +71,7 @@ $(document).ready(function(){
 		
 			left: 0
 		
-		});
+		}, 1000, 'easeInOutExpo');
 		
 		currentStep += 1;
 		
@@ -100,7 +100,7 @@ $(document).ready(function(){
 			
 			left: '800px'
 			
-		}, 1000, 'easeOutBounce', function(){
+		}, 1000, 'easeInOutExpo', function(){
 		
 			console.log('Animating ' + cycleSteps[currentStep])
 		
@@ -118,7 +118,7 @@ $(document).ready(function(){
 	
 			left: 0
 		
-		});
+		}, 1000, 'easeInOutExpo');
 		
 		
 		

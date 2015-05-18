@@ -29,15 +29,13 @@
     *zoom: 1;
 }
 
-html {
-    background:#00a3ad !important;
-}
+.back-button 	{ display:none; }
 
 body {
     padding-bottom: 12em !important;
+    background:#00a3ad !important;
 
     padding-top: 1em !important;
-    background:transparent !important;
 }
 /*.row {
     margin-left: inherit !important;
@@ -334,10 +332,11 @@ Carousel Widget alterations
 /* -----
 
 
-Mobile Listing Widget
+Mobile Listing Widget alterations
 
 
 ----- */
+
 
 .model__title {
      margin:0 0 .25em;

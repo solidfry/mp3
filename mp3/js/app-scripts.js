@@ -1,4 +1,3 @@
-	
 $(document).ready(function(){
 
 	// Position Summary Panel
@@ -17,44 +16,7 @@ $(document).ready(function(){
 		// Animate the window height - the summary top bar height
 		summary.animate({ top : ($(window).height() - summaryHeight) });
 
-	
 	}
-	
-	function showFullSummary(){
-		
-		windowPosition = $(document).scrollTop();
-		
-		$('.summary').animate({ top : 0 }, 300, function(){
-			
-			$(this).css('position', 'absolute');
-			$('.view').hide();
-			$(document).scrollTop($('html').scrollTop())
-			
-		});
-
-		$('.summary__title--link').toggleClass('full');
-		
-	}
-	
-	function hideFullSummary(){
-
-		$('.summary').css('position', 'fixed');
-		$('.view.visible').show();
-		$(window).scrollTop(windowPosition);
-		
-		// Get combined summary top bar height
-		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
-
-		// Animate the window height - the summary top bar height
-		summary.animate({ top : ($(window).height() - summaryHeight) }, 300, function(){
-
-
-		});
-
-		
-		$('.summary__title--link').toggleClass('full');
-	}
-
 	
 	$('.summary__title--link').on('click', function(e){
 		
@@ -70,38 +32,79 @@ $(document).ready(function(){
 		e.preventDefault();
 		
 	});
-
-
+	
 	// Setup cycle iterations
 	
 	var cycleCount = 0;
 	var currentCycle = 0;
+	var currentStep = 0;
+	var cycleSteps = ['step-1'];
 
 	// Cycle between views
 
 	var views = $('.view');
-	$(views[0]).fadeIn().addClass('visible');
+	$(views[0]).addClass('visible');
 
 	//
 
 	$('[data-step]').on('click', function(){
+	
+		if (currentStep == '1'){
+		
+			$(this).show();
+		}
 
 		var nextStep = $(this).attr('data-step');
 
-		$('.view.visible').fadeOut('fast', function(){
-
-			$('.view.visible').removeClass('visible');
-
-				$('.view.' + nextStep).fadeIn('fast', function(){
-
-					$('.view.' + nextStep).addClass('visible')
-
-			});
-
+		$('.view.visible').css('position', 'absolute').addClass('animated fadeOutLeft').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		
+			$(this).removeClass('visible fadeOutLeft fadeOut');
+			
+			
 		});
+		
+		$('.view.' + nextStep).css('position', 'absolute').addClass('visible animated fadeInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			
+			$('.view.' + nextStep).removeClass('fadeInRight');
+		
+		});
+		
+		// Keep track of where we are by adding data-step to the global
+		
+		currentStep += 1;
+		
+		console.log(currentStep);
+		
+		cycleSteps[currentStep] = $(this).attr('data-step');
+		
+		console.log(cycleSteps[currentStep]);
+		
+	});
+	
+	// When Back button is clicked, cycle back to the previous view
+	
+	$('.back-button').on('click', function(){
+		
+		console.log('The previous step is ' + cycleSteps[(currentStep - 1)]);
+		
+		var prevStep = $('.view.' + cycleSteps[(currentStep - 1)]);
 
-
-
+		$('.view.visible').addClass('slideOutRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		
+			$('.view.visible').removeClass('visible slideOutRight');
+			
+			$(prevStep).addClass('visible fadeInLeft fadeIn');
+			
+		});
+		
+		currentStep -= 1;
+		
+		if (currentStep == '0'){
+		
+			$(this).hide();
+		
+		}
+		
 	});
 
 		
@@ -164,8 +167,6 @@ $(document).ready(function(){
 		
 	});
 		
-
-	
 	function updateSummary(value){
 	
 		// Get the current totals

@@ -56,7 +56,7 @@ body {
     transition: opacity 300ms ease-out;
 }
 
-.back-button:hover {
+.back-button a:hover {
      opacity:.9;
 }
 

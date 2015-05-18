@@ -49,9 +49,9 @@ $(document).ready(function(){
 
 	//
 
-	$('[data-step]').on('click', function(){
+	$('.product-select').on('click', function(){
 	
-		var nextStep = $(this).attr('data-step');
+		var nextStep = $(this).find('button').attr('data-step');
 
 		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
 		
@@ -59,7 +59,7 @@ $(document).ready(function(){
 			
 			left: '-800px'
 			
-		}, 1000, 'easeInOutExpo', function(){
+		}, 500, 'easeInOutExpo', function(){
 		
 			$(this).removeClass('visible').css({position : 'static', width : 'inherit', left : '0'});
 			
@@ -71,7 +71,7 @@ $(document).ready(function(){
 		
 			left: 0
 		
-		}, 1000, 'easeInOutExpo');
+		}, 500, 'easeInOutExpo');
 		
 		currentStep += 1;
 		
@@ -82,7 +82,7 @@ $(document).ready(function(){
 	
 		// Keep track of where we are by adding data-step to the global
 		
-		cycleSteps[currentStep] = $(this).attr('data-step');
+		cycleSteps[currentStep] = $(this).find('button').attr('data-step');
 		
 		console.log('The current view is ' + cycleSteps[currentStep]);
 		console.log('The previous view is ' + cycleSteps[(currentStep - 1)]);
@@ -100,7 +100,7 @@ $(document).ready(function(){
 			
 			left: '800px'
 			
-		}, 1000, 'easeInOutExpo', function(){
+		}, 500, 'easeInOutExpo', function(){
 		
 			console.log('Animating ' + cycleSteps[currentStep])
 		
@@ -118,7 +118,7 @@ $(document).ready(function(){
 	
 			left: 0
 		
-		}, 1000, 'easeInOutExpo');
+		}, 500, 'easeInOutExpo');
 		
 		
 		

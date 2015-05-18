@@ -31,6 +31,9 @@
 
 body {
     padding-bottom: 12em !important;
+    background:#00a3ad !important;
+
+    padding-top: 1em !important;
 }
 /*.row {
     margin-left: inherit !important;
@@ -39,6 +42,8 @@ body {
 
 .view {
     display: none;
+    background: white;
+    margin: 0 1em;
 }
 
 .view.visible {
@@ -51,7 +56,6 @@ body {
     margin: 0 0 .55em;
     padding: .25em 0 0;
     border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
 }
 
 .product-select {

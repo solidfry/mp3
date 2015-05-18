@@ -29,15 +29,13 @@
     *zoom: 1;
 }
 
-html {
-    background:#00a3ad !important;
-}
+.back-button 	{ display:none; }
 
 body {
     padding-bottom: 12em !important;
+    background:#00a3ad !important;
 
     padding-top: 1em !important;
-    background:transparent !important;
 }
 /*.row {
     margin-left: inherit !important;
@@ -331,12 +329,30 @@ Carousel Widget alterations
 /* -----
 
 
-Mobile Listing Widget
+Mobile Listing Widget alterations
 
 
 ----- */
 
-.model__specs {
-    padding:0;
-    margin:0;
+.row .row {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.mobileListingWidget .feature-container {
+    border-bottom: 0px !important;
+}
+
+@media (max-width: 53.75em) {
+    .medium-8.small-12.large-12.columns.mobileDesktopScroll.fixedTop {
+        margin-top: 0;
+    }
+}
+
+form.custom .custom.dropdown.open ul {
+    right: 0;
+}
+
+.mobileListingWidget .carousel.is-carousel .carousel-pageIndicatorsContainer {
+    display:none;
 }

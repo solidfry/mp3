@@ -29,7 +29,7 @@
     *zoom: 1;
 }
 
-.back-button {
+.back-button a {
     display: none;
 }
 

@@ -336,7 +336,16 @@ Mobile Listing Widget
 
 ----- */
 
+.model__title {
+     margin:0 0 .25em;
+}
+
 .model__specs {
     padding:0;
     margin:0;
+    font-size:.8em;
 }
+
+    .model__specs-item {
+         line-height:1.5em;
+    }

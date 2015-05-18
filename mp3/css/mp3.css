@@ -340,6 +340,19 @@ Mobile Listing Widget
      margin:0 0 .25em;
 }
 
+body .model__list {
+    margin:0;
+}
+
+.model__item {
+    border-bottom:1px solid #fefefe;
+    padding-top: 1.25em
+}
+
+.model__item:last-child {
+     border-bottom:0;
+}
+
 .model__specs {
     padding:0;
     margin:0;

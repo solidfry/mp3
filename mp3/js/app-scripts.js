@@ -30,10 +30,19 @@ $(document).ready(function(){
         $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 		
 	}
-	
+
+
+
 		
 		
      });
+
+    $('.capacityButton').click(function() {
+        $('.capacityButton.active').removeClass('active');
+        $(this).toggleClass('active');
+
+    });
+
 
 	// Position Summary Panel
 	

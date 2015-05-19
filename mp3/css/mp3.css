@@ -374,6 +374,7 @@ body .model__list {
 body .model__item {
     border-bottom: 1px solid #e5e5e5;
     padding: 1em;
+    cursor:pointer;
 }
 
 .model__item:last-child {
@@ -441,6 +442,7 @@ body .model__item {
     background: #f5f5f5;
     overflow: hidden;
     border: 2px solid #e5e5e5;
+    cursor:auto;
     /*
     position: absolute;
     z-index:9500;

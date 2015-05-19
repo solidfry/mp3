@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     // Model Config reveal
-	
+
      $('.model__item .tap').click(function(e) {
 	 
 		$this = $(this);
@@ -14,15 +14,15 @@ $(document).ready(function(){
 		} else {
 	 
 		$(".model__config-panel.on").slideToggle(300).removeClass('on');
-		
+
         $this
 			.parent()
             .find(".model__config-panel")
             .stop(true,true)
             .slideToggle(300, function(){
-			
+
 				$('body, html').animate({
-				
+
 					scrollTop: $this.parent().offset().top -15
 
 				}, 500, 'easeOutQuint');
@@ -35,7 +35,8 @@ $(document).ready(function(){
 		
 
 	 }
-	
+
+
 
      });
 

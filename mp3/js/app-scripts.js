@@ -21,9 +21,10 @@ $(document).ready(function(){
 				
 				$('body, html').animate({
 				
-					scrollTop: $this.offset().top
+					scrollTop: $this.offset().top,
+
 				
-				});
+				}, 100);
 			
 			})
 			.addClass('on');

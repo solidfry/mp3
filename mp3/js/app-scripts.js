@@ -9,6 +9,7 @@ $(document).ready(function(){
 		if ($this.parent().find(".model__config-panel").hasClass('on')){
 		
 			 $this.parent().find(".model__config-panel").slideToggle().removeClass('on');
+			 $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 		
 		} else {
 	 
@@ -29,6 +30,7 @@ $(document).ready(function(){
 			})
 			.addClass('on');
 			
+		
         $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 		
 

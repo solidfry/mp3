@@ -1,34 +1,34 @@
 $(document).ready(function(){
 
     // Model Config reveal
-     $('.model__config').click(function() {
+     $('li.model__item').click(function() {
 	 
 		$this = $(this);
 	 
-		if ($this.next(".model__config-panel").hasClass('on')){
+		if ($this.find(".model__config-panel").hasClass('on')){
 		
-			 $this.next(".model__config-panel").slideToggle().removeClass('on');
+			 $this.find(".model__config-panel").slideToggle().removeClass('on');
 		
 		} else {
 	 
 		$(".model__config-panel.on").slideToggle(300).removeClass('on');
 	 
         $this
-            .next(".model__config-panel")
+            .find(".model__config-panel")
             .stop(true,true)
             .slideToggle(300, function(){
 			
 				
 				$('body, html').animate({
 				
-					scrollTop: $this.closest('.model__item').offset().top
+					scrollTop: $this.offset().top
 				
 				});
 			
 			})
 			.addClass('on');
 			
-        $this.children().toggleClass('ico-arrow-up');
+        $this.find('.model__config span').toggleClass('ico-arrow-up');
 		
 	}
 	

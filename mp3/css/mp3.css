@@ -407,7 +407,7 @@ body .model__item {
 
 .model__price-label {
     text-transform: uppercase;
-    font-size: .3em;
+    font-size: .5em;
     line-height: 1;
     display: block;
     padding: .5em 0 .25em;

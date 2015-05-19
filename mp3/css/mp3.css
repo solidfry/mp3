@@ -32,7 +32,7 @@
 html,
 body {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC);
-    background-color: #00a3ad;
+    background-color: #e5e5e5;
 }
 
 .back-button {
@@ -90,9 +90,13 @@ body {
     line-height: 2em;
     margin: 0 0 .55em;
     padding: .25em 0 0;
-    border-bottom: 2px solid #e5e5e5;
+    border-bottom: 4px solid #e5e5e5;
+    background: #178093;
+    border-radius: 6px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    color:white;
 }
-
 .product-select {
     margin: 0em 0 1em;
 }
@@ -120,7 +124,7 @@ body {
     text-align: left;
     background-color: #fff;
     border-radius: 6px;
-    border: 1px solid #e5e5e5;
+    border: 2px solid #e5e5e5;
     padding: 1em 0 .25em;
     -webkit-transition: background-color 300ms ease-out;
     -moz-transition: background-color 300ms ease-out;

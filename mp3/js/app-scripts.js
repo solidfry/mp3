@@ -3,20 +3,32 @@ $(document).ready(function(){
     // Model Config reveal
      $('.model__config').click(function() {
 	 
+		$this = $(this);
+	 
+		if ($this.next(".model__config-panel").hasClass('on')){
+		
+			 $this.next(".model__config-panel").slideToggle().removeClass('on');
+		
+		} else {
+	 
 		$(".model__config-panel.on").slideToggle(300).removeClass('on');
 	 
-        $(this)
+        $this
             .next(".model__config-panel")
             .stop(true,true)
             .slideToggle(300)
 			.addClass('on');
-        $(this).children().toggleClass('ico-arrow-up');
-		
+			
+        $this.children().toggleClass('ico-arrow-up');
 		$('body, html').animate({
 		
 			scrollTop: $(this).closest('.model__item').offset().top
 		
 		});
+	
+	}
+	
+		
 		
      });
 

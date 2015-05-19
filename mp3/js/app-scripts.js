@@ -21,11 +21,8 @@ $(document).ready(function(){
 			
 				
 				$('body, html').animate({
-				
-					scrollTop: $this.offset().top,
-
-				
-				}, 500, 'easeOutQuint');
+					scrollTop: $this.offset().top - 15,
+				}, 800, 'easeOutQuint');
 			
 			})
 			.addClass('on');

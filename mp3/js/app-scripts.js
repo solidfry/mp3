@@ -29,12 +29,8 @@ $(document).ready(function(){
 			
         $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 		
-	}
+	   }
 
-
-
-		
-		
      });
 
     $('.capacityButton').click(function() {

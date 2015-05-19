@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+    // Model Config reveal
+     $('.model__config').click(function() {
+        $(this)
+            .next(".model__config-panel")
+            .stop(true,true)
+            .slideToggle(300);
+        $(this).children().toggleClass('ico-arrow-up');
+
+     });
+
 	// Position Summary Panel
 	
 	var windowPosition;
@@ -248,5 +258,7 @@ $(document).ready(function(){
 	}
 	
 	
+
+
 	
 });

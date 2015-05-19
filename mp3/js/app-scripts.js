@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
     // Model Config reveal
-     $('.model__item .tap').click(function() {
+	
+     $('.model__item .tap').click(function(e) {
 	 
 		$this = $(this);
 	 
@@ -12,27 +13,26 @@ $(document).ready(function(){
 		} else {
 	 
 		$(".model__config-panel.on").slideToggle(300).removeClass('on');
-	 
+		
         $this
 			.parent()
             .find(".model__config-panel")
             .stop(true,true)
             .slideToggle(300, function(){
 			
-				
 				$('body, html').animate({
-					scrollTop: $this.offset().top - 15,
-				}, 800, 'easeOutQuint');
+				
+					scrollTop: $this.parent().offset().top -15
+
+				}, 500, 'easeOutQuint');
 			
 			})
 			.addClass('on');
 			
         $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 		
-	}
+	 }
 	
-		
-		
      });
 
 	// Position Summary Panel

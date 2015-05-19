@@ -104,7 +104,8 @@ $(document).ready(function(){
 		
 		$('.view.' + cycleSteps[currentStep]).css({position : 'absolute', width : currentViewWidth}).animate({
 			
-			left: '-800px'
+			left: '-100%',
+            opacity:0
 			
 		}, 500, 'easeInOutExpo', function(){
 		
@@ -116,7 +117,8 @@ $(document).ready(function(){
 			
 			$('.view.' + nextStep).addClass('visible').animate({
 		
-			left: 0
+			left: 0,
+            opacity:100
 		
 		}, 500, 'easeInOutExpo');
 		
@@ -124,7 +126,7 @@ $(document).ready(function(){
 		
 		if (currentStep == '1'){
 		
-			$('.back-button a').show();
+			$('.back-button a').show(200);
 		}
 	
 		// Keep track of where we are by adding data-step to the global
@@ -145,7 +147,8 @@ $(document).ready(function(){
 		
 		$('.view.' + cycleSteps[currentStep]).css({position : 'absolute', width : currentViewWidth}).animate({
 			
-			left: '800px'
+			left: '100%',
+            opacity:0
 			
 		}, 500, 'easeInOutExpo', function(){
 		
@@ -163,7 +166,8 @@ $(document).ready(function(){
 			
 		$(prevStep).addClass('visible').animate({
 	
-			left: 0
+			left: 0,
+            opacity:100
 		
 		}, 500, 'easeInOutExpo');
 		

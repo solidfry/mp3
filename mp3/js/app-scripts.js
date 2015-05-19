@@ -16,16 +16,20 @@ $(document).ready(function(){
         $this
             .next(".model__config-panel")
             .stop(true,true)
-            .slideToggle(300)
+            .slideToggle(300, function(){
+			
+				
+				$('body, html').animate({
+				
+					scrollTop: $this.closest('.model__item').offset().top
+				
+				});
+			
+			})
 			.addClass('on');
 			
         $this.children().toggleClass('ico-arrow-up');
-		$('body, html').animate({
 		
-			scrollTop: $(this).closest('.model__item').offset().top
-		
-		});
-	
 	}
 	
 		

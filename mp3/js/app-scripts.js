@@ -2,12 +2,22 @@ $(document).ready(function(){
 
     // Model Config reveal
      $('.model__config').click(function() {
+	 
+		$(".model__config-panel.on").slideToggle(300).removeClass('on');
+	 
         $(this)
             .next(".model__config-panel")
             .stop(true,true)
-            .slideToggle(300);
+            .slideToggle(300)
+			.addClass('on');
         $(this).children().toggleClass('ico-arrow-up');
-
+		
+		$('body, html').animate({
+		
+			scrollTop: $(this).closest('.model__item').offset().top
+		
+		});
+		
      });
 
 	// Position Summary Panel

@@ -1,19 +1,20 @@
 $(document).ready(function(){
 
     // Model Config reveal
-     $('li.model__item').click(function() {
+     $('.model__item .tap').click(function() {
 	 
 		$this = $(this);
 	 
-		if ($this.find(".model__config-panel").hasClass('on')){
+		if ($this.parent().find(".model__config-panel").hasClass('on')){
 		
-			 $this.find(".model__config-panel").slideToggle().removeClass('on');
+			 $this.parent().find(".model__config-panel").slideToggle().removeClass('on');
 		
 		} else {
 	 
 		$(".model__config-panel.on").slideToggle(300).removeClass('on');
 	 
         $this
+			.parent()
             .find(".model__config-panel")
             .stop(true,true)
             .slideToggle(300, function(){
@@ -29,7 +30,7 @@ $(document).ready(function(){
 			})
 			.addClass('on');
 			
-        $this.find('.model__config span').toggleClass('ico-arrow-up');
+        $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 		
 	}
 	

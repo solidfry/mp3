@@ -571,6 +571,10 @@ body .model__item {
 .model__device-select {
     margin-top: 1em;
 }
+
+.model__device-select .button {
+     margin:0;
+}
 /* -----
 
 

@@ -25,7 +25,7 @@ $(document).ready(function(){
 					scrollTop: $this.offset().top,
 
 				
-				}, 100);
+				}, 500, 'easeOutQuint');
 			
 			})
 			.addClass('on');

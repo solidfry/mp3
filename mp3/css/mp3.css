@@ -411,10 +411,11 @@ body .model__item {
     text-align: center;
     position: relative;
     top: -.1em;
-    color: white;
     border-radius: 6px;
-    background: #ff8200;
-    box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.2);
+    background: white;
+    color: #ff8200;
+    border:2px solid #ff8200;
+    /*box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.2);*/
     line-height: 1em;
 }
 

@@ -44,8 +44,8 @@ $(document).ready(function(){
         $('.capacityButton.active').removeClass('active');
         $(this).toggleClass('active');
 
-    });
 
+    });
 
 	// Position Summary Panel
 	

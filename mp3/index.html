@@ -33,7 +33,7 @@
 
 <body class="animated fadeInUp">
 
-    <p class="back-button"><a href="#"><span class="ico ico-arrow-left"></span></a>
+    <p class="back-button"><a href="#" class="animated fadeInLeft"><span class="ico ico-arrow-left"></span></a>
     </p>
 
     <div class="view home radius">
@@ -203,8 +203,6 @@
 					</span>
 				</div>
 
-
-
                 <div class="small-12">
 
                     <div class="model__config-panel hide radius small-12 medium-12 large-12">
@@ -246,7 +244,7 @@
                             </div>
                         </div>
                         <div class="small-12 columns model__device-select">
-                            <button class="button radius small yellow small-12" data-group="handset" data-step="plans">Select Model</button>
+                            <button class="button radius small yellow small-12" data-step="plans">Select Model</button>
                         </div>
                     </div>
                 </div>
@@ -723,7 +721,7 @@
                         </div>
 
                         <div class="small-12 columns model__device-select">
-                            <button class="button radius small yellow small-12" data-group="handset" data-step="plans">Select Model</button>
+                            <button class="button radius small yellow small-12" data-step="plans">Select Model</button>
                         </div>
                     </div>
                 </div>
@@ -741,7 +739,7 @@
     <div class="view step-5 plans radius">
         <div class="row">
             <div class="large-12 center">
-                <h2 class="step__title">Select one of our amazing plans!</h2>
+                <h2 class="step__title">Select a plan!</h2>
                 <p class="columns">Remember, all the data that you select here goes to your common family pool of data!</p>
             </div>
         </div>
@@ -864,7 +862,7 @@
         <!-- Start Mobile Plan Tables -->
 
         <div class="planSelectorWidget">
-            <div class="carousel show-for-small" unselectable="on">
+            <div class="show-for-small" unselectable="on">
                 <div class="carousel-itemOuterContainer carousel-itemOuterContainer-plans">
 
                     <div class="carousel-itemContainer data-equalizer">
@@ -883,7 +881,11 @@
                                 </div>
                                 <div class="planBody">
                                    <div class="planBorder">
-                                        <h4><p><span style="font-size: 1.0em; line-height: 20px;">$30 Per Month</span></p> </h4>
+                                        <h4>
+                                            <p>
+                                                <span style="font-size: 1.0em; line-height: 20px;">$30 Per Month + $12 device cost</span>
+                                            </p>
+                                        </h4>
                                         <p class="hide"><span class="planCalloutText">Something here</span>
                                         </p>
                                     </div>
@@ -898,7 +900,7 @@
                                         </p>
                                     </div>
                                     <div class="planBorder">
-                                        <h4>500MB&nbsp; of Data</h4>
+                                        <h4>500MB of Data</h4>
                                         <p class="hide"><span class="planCalloutText">$10 per extra 1GB</span>
                                             <br><span class="planCalloutText">Cost of 1MB included data $0.0293</span>
                                         </p>
@@ -925,7 +927,7 @@
                                 </div>
                                 <div class="planBody">
                                     <div class="planBorder">
-                                        <h4><p><span style="font-size: 1.0em; line-height: 20px;">$45 Per Month</span></p> </h4>
+                                        <h4><p><span style="font-size: 1.0em; line-height: 20px;">$45 Per Month + $12 device cost</span></h4>
                                         <p class="hide"><span class="planCalloutText">Something here</span>
                                         </p>
                                     </div>
@@ -940,7 +942,49 @@
                                         </p>
                                     </div>
                                     <div class="planBorder">
-                                        <h4>500MB&nbsp; of Data</h4>
+                                        <h4>1GB of Data</h4>
+                                        <p class="hide"><span class="planCalloutText">$10 per extra 1GB</span>
+                                            <br><span class="planCalloutText">Cost of 1MB included data $0.0293</span>
+                                        </p>
+                                    </div>
+                                    <p><a href="/opfiles/Shop/All/cis/Cis Documents/1400925_CIS_35_My_Plan_Plus.pdf">Critical Info Summary</a>
+                                    </p>
+                                    <p><a href="#" class="button radius small yellow full-width planSelectButton value" data-group="plan" data-val="65" data-column="0">Select this plan</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item data-equalizer-watch" unselectable="off">
+                            <div class="planSummaryItem panel">
+                                <div class="planHeading">
+                                    <h2><span class="heading-emphasis">2<sup>GB</sup></span> <!--<span class="uppercase calloutPlan">per month</span>--></h2>
+                                </div>
+                                <div class="planViewDetails">
+                                    <div class="large-10 small-10 columns">
+                                        <h5>View Details</h5>
+                                    </div>
+                                    <div class="large-2 small-2 columns"><span class="ico ico-arrow-down"></span>
+                                    </div>
+                                </div>
+                                <div class="planBody">
+                                    <div class="planBorder">
+                                        <h4><p><span style="font-size: 1.0em; line-height: 20px;">$60 Per Month + $12 device cost</span></p> </h4>
+                                        <p class="hide"><span class="planCalloutText">Something here</span>
+                                        </p>
+                                    </div>
+                                    <div class="planBorder">
+                                        <h4><p><span style="font-size: 1.0em; line-height: 20px;">Unlimited Talk</span><br><span style="font-size: 13px; line-height: 20px; font-weight: normal;">for standard national calls</span></p> </h4>
+                                        <p class="hide"><span class="planCalloutText">Use more and get 200 mins for $10 or UNLIMITED mins for $20</span>
+                                        </p>
+                                    </div>
+                                    <div class="planBorder">
+                                        <h4>Unlimited SMS/MMS</h4>
+                                        <p class="hide"><span class="planCalloutText"><span style="font-size: 12px; font-weight: normal;">Standard national &amp; international^ SMS/MMS</span></span>
+                                        </p>
+                                    </div>
+                                    <div class="planBorder">
+                                        <h4>2GB of Data</h4>
                                         <p class="hide"><span class="planCalloutText">$10 per extra 1GB</span>
                                             <br><span class="planCalloutText">Cost of 1MB included data $0.0293</span>
                                         </p>

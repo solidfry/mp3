@@ -86,6 +86,10 @@ body {
     display: block;
 }
 
+    .view.plans {
+         margin-bottom:8em;
+    }
+
 .step__title {
     text-align: center;
     line-height: 2em;
@@ -182,6 +186,7 @@ Summary bar
 ----- */
 
 .summary {
+    -webkit-transform: translateX(0);
     width: 100%;
     font-size: .80em;
     z-index: 9999;

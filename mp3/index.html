@@ -31,10 +31,32 @@
     <!-- <link rel="stylesheet" href="css/foundation.css" /> -->
 </head>
 
-<body class="animated fadeIn">
+<body class="animated fadeInUp">
 
     <p class="back-button"><a href="#"><span class="ico ico-arrow-left"></span></a>
     </p>
+
+    <div class="view home radius">
+
+        <div class="row">
+            <div class="large-12 center">
+                <h2 class="step__title">Start builing your package!</h2>
+                <p class="columns">This is your home base. As you add services to your package they will appear here.</p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="columns large-6 medium-6 product-select" data-step="step-1">
+                <a href="#" class="product-select__link product-select__link--add">
+                    <span class="ico ico-add teal small-2 medium-12 large-12 columns"></span>
+                    <h3 class="product-select__title small-8 medium-12 large-12 columns">Add a service</h3>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <!-- end Home Step -->
 
     <div class="view step-1 radius">
 
@@ -953,7 +975,7 @@
     <div class="summary animated fadeInUp">
 
         <h2 class="summary__title cf">
-            <a href="#" class="summary__expand">What you will get...<span class="summary__title--link"><span class="ico ico-arrow-up-left-organic-small"></span> View Summary</span></a>
+            <a href="#" class="summary__expand">Your Package Includes...</a>
         </h2>
 
         <div class="summary__info cf">
@@ -1007,16 +1029,6 @@
                     $(this).removeClass("animated pulse");
                 }
             );*/
-            $(".summary__expand").click(function () {
-                $('.summary__expand .ico').toggleClass('ico-arrow-down-right-organic-small').toggleClass('ico-arrow-up-right-organic-small');
-                $(".summary").toggleClass("expand");
-                if ($('#toggleLink').text() == 'Hide Full Summary') {
-                    $('#toggleLink').text('View Full Summary');
-                } else {
-                    $('#toggleLink').text('Hide Full Summary');
-                }
-
-            });
 
 
 

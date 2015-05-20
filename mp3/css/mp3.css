@@ -1,3 +1,19 @@
+Skip to content
+This repository
+Explore
+Gist
+Blog
+Help
+@solidfry solidfry
+
+ Unwatch 2
+  Star 0
+  Fork 0
+solidfry/mp3
+ tree: 504e6bbce4  mp3/mp3/css/mp3.css
+@solidfrysolidfry 7 minutes ago Styles for price
+2 contributors @solidfry @simonlayfield
+RawBlameHistory    1036 lines (934 sloc)  21.206 kb
 /**
  * For modern browsers
  * 1. The space content is one way to avoid an Opera bug when the
@@ -35,16 +51,28 @@ body {
     background-color: #e5e5e5;
 }
 
+body.animated {
+    -webkit-animation-delay: .7s;
+    animation-delay: .7s;
+    -webkit-animation-duration: .65s;
+    animation-duration: .65s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
+    animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
+}
+
 .back-button {
     position: absolute;
     left: .5em;
     top: .5em;
 }
 
-.back-button  {
+.back-button {
     display: none;
     opacity: .7;
     text-align: center;
+    position: absolute;
     z-index: 9000;
     background: white;
     padding: .12em 0 0 0;
@@ -54,15 +82,24 @@ body {
     border-radius: 50%;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     font-size: 2.5em;
-    -webkit-transition: opacity 300ms ease-out;
+    /*-webkit-transition: opacity 300ms ease-out;
     -moz-transition: opacity 300ms ease-out;
     -o-transition: opacity 300ms ease-out;
     -ms-transition: opacity 300ms ease-out;
-    transition: opacity 300ms ease-out;
+    transition: opacity 300ms ease-out;*/
 }
 
 .back-button:hover {
     opacity: .9;
+}
+
+.back-button.animated {
+     -webkit-animation-duration: .65s;
+    animation-duration: .65s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
+    animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
 }
 
 body {
@@ -78,16 +115,16 @@ body {
     display: none;
     background: white;
     margin: 0 1em 1em;
-    box-shadow: 0 3px 7px rgba(0,0,0,0.05);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
 }
 
 .view.visible {
     display: block;
 }
 
-    .view.plans {
-         margin-bottom:8em;
-    }
+.view.plans {
+    margin-bottom: 8em;
+}
 
 .step__title {
     text-align: center;
@@ -99,8 +136,9 @@ body {
     border-radius: 6px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    color:white;
+    color: white;
 }
+
 .product-select {
     margin: 0em 0 1em;
 }
@@ -135,7 +173,7 @@ body {
     -o-transition: background-color 300ms ease-out;
     -ms-transition: background-color 300ms ease-out;
     transition: background-color 300ms ease-out;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .product-select__link:hover {
@@ -143,7 +181,7 @@ body {
 }
 
 .product-select__link--add {
-    padding:1em 0;
+    padding: 1em 0;
 }
 
 .product-select__link .ico {
@@ -177,15 +215,12 @@ body {
     }
 }
 /* -----
-
-
 Summary bar
-
-
 ----- */
 
 .summary {
-    /* -webkit-transform: translateX(0); */
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
     width: 100%;
     font-size: .80em;
     z-index: 9999;
@@ -335,11 +370,7 @@ Summary bar
     line-height: 1;
 }
 /* -----
-
-
 Safari, Chrome and Opera > 12.1
-
-
 ----- */
 
 @-webkit-keyframes fadein {
@@ -358,11 +389,7 @@ Safari, Chrome and Opera > 12.1
     animation-fill-mode: both;
 }
 /* -----
-
-
 Carousel Widget alterations
-
-
 ----- */
 
 .planSelectorWidget {
@@ -370,11 +397,11 @@ Carousel Widget alterations
 }
 
 .planSelectorWidget .carousel-itemOuterContainer {
-     padding:0 1em;
+    padding: 0 1em;
 }
 
 .planSelectorWidget .carousel-item {
-    margin-bottom:1em;
+    margin-bottom: 1em;
 }
 
 .planSelectorWidget .carousel.is-carousel .carousel-pageIndicatorsWrapper {
@@ -383,11 +410,7 @@ Carousel Widget alterations
     left: 50%;
 }
 /* -----
-
-
 Mobile Listing Widget alterations
-
-
 ----- */
 
 .model__title {
@@ -425,16 +448,16 @@ body .model__item {
 .model__price {
     display: block;
     margin: 0;
-    padding: 0;
+    padding: .4em 0 0;
     text-align: center;
     position: relative;
     top: -.1em;
     border-radius: 6px;
-    background: white;
-    color: #ff8200;
+    background: #ffc300;
+    color: #323232;
+    line-height: 1em;
     /*border:2px solid #ff8200;
     box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.2);*/
-    line-height: 1em;
 }
 
 .model__price-label {
@@ -449,11 +472,10 @@ body .model__item {
 .model__price-number {
     font-size: 2em;
     display: block;
-    text-indent: -.25em;
-    padding-bottom:.15em;
+    text-indent: -.1em;
+    padding-bottom: .15em;
     /*height: .9em;
     line-height: 1.1em;*/
-
 }
 
 .model__price-number::first-letter {
@@ -466,7 +488,7 @@ body .model__item {
     display: block;
     margin: 0 auto;
     clear: both;
-    text-transform:uppercase;
+    text-transform: uppercase;
 }
 
 .model__config-panel {
@@ -475,7 +497,7 @@ body .model__item {
     overflow: hidden;
     border: 2px solid #e5e5e5;
     cursor: auto;
-    margin-top:1em;
+    margin-top: 1em;
     /*
     position: absolute;
     z-index:9500;
@@ -514,8 +536,8 @@ body .model__item {
     text-decoration: none;
     position: relative;
     display: block;
-    width:100%;
-    line-height:1.75em;
+    width: 100%;
+    line-height: 1.75em;
 }
 
 .model__size-item .capacityButton.active,
@@ -523,7 +545,7 @@ body .model__item {
     background: white;
     border: 2px solid #006685;
     color: #006685;
-    margin:0;
+    margin: 0;
 }
 
 .view button .ico {
@@ -600,14 +622,10 @@ body .model__item {
 }
 
 .model__device-select .button {
-     margin:0;
+    margin: 0;
 }
 /* -----
-
-
 FOUNDATION MEDIUM BLOCK GRID READDED TO STYLES
-
-
 ----- */
 
 @media only screen and (min-width: 500px) {
@@ -1011,3 +1029,5 @@ FOUNDATION MEDIUM BLOCK GRID READDED TO STYLES
         clear: both;
     }
 }
+Status API Training Shop Blog About
+© 2015 GitHub, Inc. Terms Privacy Security Contact

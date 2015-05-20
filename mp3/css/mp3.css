@@ -1,19 +1,3 @@
-Skip to content
-This repository
-Explore
-Gist
-Blog
-Help
-@solidfry solidfry
-
- Unwatch 2
-  Star 0
-  Fork 0
-solidfry/mp3
- tree: 504e6bbce4  mp3/mp3/css/mp3.css
-@solidfrysolidfry 7 minutes ago Styles for price
-2 contributors @solidfry @simonlayfield
-RawBlameHistory    1036 lines (934 sloc)  21.206 kb
 /**
  * For modern browsers
  * 1. The space content is one way to avoid an Opera bug when the
@@ -68,6 +52,39 @@ body {
     top: .5em;
 }
 
+@-webkit-keyframes fadeInHalfLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: .7;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInHalfLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: .7;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInHalfLeft {
+  -webkit-animation-name: fadeInHalfLeft;
+  animation-name: fadeInHalfLeft;
+}
+
 .back-button {
     display: none;
     opacity: .7;
@@ -101,6 +118,8 @@ body {
     -webkit-animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
     animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
 }
+
+
 
 body {
     padding-bottom: 12em;
@@ -1029,5 +1048,3 @@ FOUNDATION MEDIUM BLOCK GRID READDED TO STYLES
         clear: both;
     }
 }
-Status API Training Shop Blog About
-© 2015 GitHub, Inc. Terms Privacy Security Contact

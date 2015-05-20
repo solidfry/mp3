@@ -99,10 +99,10 @@ $(document).ready(function(){
 
 	//
 
-	$('*[data-step]').on('click', function(e){
+	$('[data-step]').on('click', function(e){
 	
 		var nextStep = $(this).attr('data-step');
-
+		
 		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
 		
 		$('.view.' + cycleSteps[currentStep]).css({position : 'absolute', width : currentViewWidth}).animate({
@@ -123,7 +123,9 @@ $(document).ready(function(){
 			left: 0,
             opacity:100
 		
-		}, 500, 'easeInOutExpo');
+		}, 500, 'easeInOutExpo', function(){
+		
+		});
 		
 		currentStep += 1;
 		
@@ -137,7 +139,7 @@ $(document).ready(function(){
 		cycleSteps[currentStep] = $(this).attr('data-step');
 		
 		console.log('The current view is ' + cycleSteps[currentStep]);
-		console.log('The previous view is ' + cycleSteps[(currentStep - 1)]);
+		console.log('The previous view is ' + cycleSteps[currentStep - 1]);
 		
 	});
 	

@@ -13,30 +13,27 @@ $(document).ready(function(){
 		
 		} else {
 	 
-		$(".model__config-panel.on").slideToggle(300).removeClass('on');
+			$(".model__config-panel.on").slideToggle(300).removeClass('on');
 
-        $this
-			.parent()
-            .find(".model__config-panel")
-            .stop(true,true)
-            .slideToggle(300, function(){
+			$this
+				.parent()
+				.find(".model__config-panel")
+				.stop(true,true)
+				.slideToggle(300, function(){
 
-				$('body, html').animate({
+					$('body, html').animate({
 
-					scrollTop: $this.parent().offset().top -15
+						scrollTop: $this.parent().offset().top -15
 
-				}, 500, 'easeOutQuint');
-			
-			})
-			.addClass('on');
+					}, 500, 'easeOutQuint');
+				
+				})
+				.addClass('on');
 			
 		
-        $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
+			$this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 		
-
-	 }
-
-
+		}
 
      });
 
@@ -141,6 +138,8 @@ $(document).ready(function(){
 		console.log('The current view is ' + cycleSteps[currentStep]);
 		console.log('The previous view is ' + cycleSteps[currentStep - 1]);
 		
+		e.preventDefault();
+		
 	});
 	
 	// When Back button is clicked, cycle back to the previous view
@@ -188,8 +187,6 @@ $(document).ready(function(){
 			$(this).hide();
 		
 		}
-		
-		
 		
 	});
 
@@ -276,7 +273,6 @@ $(document).ready(function(){
 			
 				});
 			
-			
 			}
 		
 			cmpTotal = cmpTotal + value[1];
@@ -303,8 +299,5 @@ $(document).ready(function(){
 	
 	}
 	
-	
-
-
 	
 });

@@ -470,7 +470,7 @@ body .model__item {
 }
 
 .model__price-number {
-    font-size: 2.2em;
+    font-size: 2em;
     display: block;
     text-indent: -.1em;
     padding-bottom: .15em;

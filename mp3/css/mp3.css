@@ -396,7 +396,7 @@ body .model__list {
 
 body .model__item {
     border-bottom: 1px solid #e5e5e5;
-    padding: 1em;
+    padding: 2em 1em 2em 1em;
     cursor: pointer;
 }
 

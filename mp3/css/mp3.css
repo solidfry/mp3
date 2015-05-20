@@ -66,15 +66,24 @@ body.animated {
     border-radius: 50%;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     font-size: 2.5em;
-    -webkit-transition: opacity 300ms ease-out;
+    /*-webkit-transition: opacity 300ms ease-out;
     -moz-transition: opacity 300ms ease-out;
     -o-transition: opacity 300ms ease-out;
     -ms-transition: opacity 300ms ease-out;
-    transition: opacity 300ms ease-out;
+    transition: opacity 300ms ease-out;*/
 }
 
 .back-button a:hover {
     opacity: .9;
+}
+
+.back-button a.animated {
+     -webkit-animation-duration: .65s;
+    animation-duration: .65s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
+    animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
 }
 
 body {

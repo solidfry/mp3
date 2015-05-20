@@ -151,7 +151,7 @@ $(document).ready(function(){
 		
 		if (currentStep == '1'){
 		
-			$('.back-button a').show(200);
+			$('.back-button a').css({display:'block'});
 		}
 	
 		// Keep track of where we are by adding data-step to the global

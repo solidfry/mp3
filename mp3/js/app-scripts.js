@@ -52,8 +52,8 @@ $(document).ready(function(){
 	var windowPosition;
 	var summary = $('.summary');
 	
-	function showSummary(){
-		
+	function showSummary(element){
+	
 		// Display the summary below the window
 		summary.css({ 'display' : 'block', 'position' : 'fixed', 'top' : $(window).height() + 20 });
 
@@ -61,7 +61,24 @@ $(document).ready(function(){
 		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
 
 		// Animate the window height - the summary top bar height
-		summary.animate({ top : ($(window).height() - summaryHeight) });
+		summary.animate({ top : ($(window).height() - summaryHeight) }, 500, 'easeOutQuint', function(){
+		
+		
+			if (element.attr('data-group') === "handset"){
+			
+				console.log('Summary shown, updating device...');
+				
+				var handsetValue = ['handset'];
+				
+				updateSummary(handsetValue);
+				
+			} else {
+			
+				
+			
+			}
+		
+		});
 
 	}
 	
@@ -100,7 +117,7 @@ $(document).ready(function(){
 	
 		if ($(this).attr('data-step') == 'plans'){
 		
-			showSummary();		
+			showSummary($(this));		
 		
 		}
 	
@@ -239,6 +256,7 @@ $(document).ready(function(){
 	
 		// Get the current totals
 		// Split the dollar value and setup the summary values
+		
 		var tempTotal = $('#cpm-total').text();
 		tempTotal = tempTotal.split('$');
 		tempTotal = tempTotal[1];
@@ -256,17 +274,15 @@ $(document).ready(function(){
 		// If we've selected a handset...
 		if(value[0] == 'handset'){
 		
-			var selectedHandset = $('.phoneSelectButton.selected');
-		
-			if (selectedHandset.length !== 0){
-			
-				cmpTotal = cmpTotal - parseInt(selectedHandset.attr('data-val'));
-				
-				selectedHandset.removeClass('selected');
-				
-			} else {
-			
-				showSummary();
+		//	var selectedHandset = $('.phoneSelectButton.selected');
+		//
+		//	if (selectedHandset.length !== 0){
+		//	
+		//		cmpTotal = cmpTotal - parseInt(selectedHandset.attr('data-val'));
+		//		
+		//		selectedHandset.removeClass('selected');
+		//		
+		//	} else {
 			
 				deviceTotal = deviceTotal + 1;
 				
@@ -277,16 +293,16 @@ $(document).ready(function(){
 			
 				});
 			
-			}
+		//	}
 		
-			cmpTotal = cmpTotal + value[1];
-			
-			$('#cpm-total').html('$' + cmpTotal)
-				.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-										
-					$(this).removeClass('flipInX');
-		
-			});
+		//	cmpTotal = cmpTotal + value[1];
+		//	
+		//	$('#cpm-total').html('$' + cmpTotal)
+		//		.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		//								
+		//			$(this).removeClass('flipInX');
+		//
+		//	});
 			
 			
 		}

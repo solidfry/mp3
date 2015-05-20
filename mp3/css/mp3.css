@@ -48,8 +48,8 @@ body {
 
 .back-button {
     position: absolute;
-    left: .5em;
-    top: .5em;
+    left: .25em;
+    top: .25em;
 }
 
 @-webkit-keyframes fadeInHalfLeft {

@@ -5,7 +5,7 @@ $(document).ready(function(){
      $('.model__item .tap').click(function(e) {
 	 
 		$this = $(this);
-	 
+
 		if ($this.parent().find(".model__config-panel").hasClass('on')){
 		
 			 $this.parent().find(".model__config-panel").slideToggle().removeClass('on');

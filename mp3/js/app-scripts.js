@@ -88,7 +88,7 @@ $(document).ready(function(){
 	var cycleCount = 0;
 	var currentCycle = 0;
 	var currentStep = 0;
-	var cycleSteps = ['step-1'];
+	var cycleSteps = ['home'];
 	
 	console.log('The current view is ' + cycleSteps[0]);
 

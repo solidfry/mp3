@@ -132,6 +132,7 @@ body {
     -o-transition: background-color 300ms ease-out;
     -ms-transition: background-color 300ms ease-out;
     transition: background-color 300ms ease-out;
+    overflow:hidden;
 }
 
 .product-select__link:hover {

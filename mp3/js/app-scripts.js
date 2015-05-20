@@ -54,14 +54,16 @@ $(document).ready(function(){
 	
 	function showSummary(element){
 	
+		var windowTop = $(window).scrollTop();
+	
 		// Display the summary below the window
-		summary.css({ 'display' : 'block', 'position' : 'fixed', 'top' : $(window).height() + 20 });
+		summary.css({ 'display' : 'block', 'position' : 'fixed', 'top' : (windowTop + $(window).height()) });
 
 		// Once displayed off screen, get combined summary top bar height
 		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
 
 		// Animate the window height - the summary top bar height
-		summary.animate({ top : ($(window).height() - summaryHeight) }, 500, 'easeOutQuint', function(){
+		summary.animate({ top : ((windowTop + $(window).height()) - summaryHeight) }, 500, 'easeOutQuint', function(){
 		
 		
 			if (element.attr('data-group') === "handset"){
@@ -151,7 +153,7 @@ $(document).ready(function(){
 		
 		if (currentStep == '1'){
 		
-			$('.back-button a').css({display:'block'});
+			$('.back-button').show(200);
 		}
 	
 		// Keep track of where we are by adding data-step to the global
@@ -167,7 +169,7 @@ $(document).ready(function(){
 	
 	// When Back button is clicked, cycle back to the previous view
 	
-	$('.back-button a').on('click', function(){
+	$('.back-button').on('click', function(){
 		
 		var prevStep = $('.view.' + cycleSteps[(currentStep - 1)]);
 		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
@@ -205,7 +207,7 @@ $(document).ready(function(){
 		
 		if (currentStep == '1'){
 		
-			$(this).hide();
+			$(this).animate({ right: '50px' }, 1000);
 		
 		}
 		

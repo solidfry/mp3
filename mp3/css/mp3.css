@@ -51,7 +51,7 @@ body {
     background-color: #e5e5e5;
 }
 
-body.animated {
+.view.animated {
     -webkit-animation-delay: .7s;
     animation-delay: .7s;
     -webkit-animation-duration: .65s;
@@ -94,7 +94,7 @@ body.animated {
 }
 
 .back-button.animated {
-     -webkit-animation-duration: .65s;
+    -webkit-animation-duration: .65s;
     animation-duration: .65s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;

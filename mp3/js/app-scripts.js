@@ -207,7 +207,7 @@ $(document).ready(function(){
 		
 		if (currentStep == '1'){
 		
-			$(this).animate({ right: '50px' }, 1000);
+			$(this).removeClass('animated fadeInHalfLeft').animate({ left: '-50px' }, 500, 'easeInOutExpo');
 		
 		}
 		

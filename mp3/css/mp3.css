@@ -132,6 +132,7 @@ body {
     -o-transition: background-color 300ms ease-out;
     -ms-transition: background-color 300ms ease-out;
     transition: background-color 300ms ease-out;
+    overflow:hidden;
 }
 
 .product-select__link:hover {
@@ -423,23 +424,25 @@ body .model__item {
     border-radius: 6px;
     background: white;
     color: #ff8200;
-    border:2px solid #ff8200;
-    /*box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.2);*/
+    /*border:2px solid #ff8200;
+    box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.2);*/
     line-height: 1em;
 }
 
 .model__price-label {
     text-transform: uppercase;
     font-size: .5em;
-    line-height: 1;
+    line-height: 1.6em;
     display: block;
-    padding: .5em 0 .25em;
+    padding: 0em 0 .25em;
     font-weight: bold;
 }
 
 .model__price-number {
-    font-size: 1.75em;
+    font-size: 2.5em;
     display: block;
+    text-indent: -.25em;
+    padding-bottom:.15em;
     /*height: .9em;
     line-height: 1.1em;*/
 
@@ -455,6 +458,7 @@ body .model__item {
     display: block;
     margin: 0 auto;
     clear: both;
+    text-transform:uppercase;
 }
 
 .model__config-panel {

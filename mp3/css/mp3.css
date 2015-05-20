@@ -430,19 +430,16 @@ body .model__item {
 
 .model__price-number {
     font-size: 1.75em;
-    line-height: 1.1em;
     display: block;
-    height: .9em;
+    /*height: .9em;
+    line-height: 1.1em;*/
+
 }
 
 .model__price-number::first-letter {
-    vertical-align: text-bottom;
-    font-size: .7em;
+    vertical-align: super;
+    font-size: .5em;
     font-weight: normal;
-}
-
-.model__item .row.tap + div {
-    margin-top:1em;
 }
 
 .model__config {
@@ -457,6 +454,7 @@ body .model__item {
     overflow: hidden;
     border: 2px solid #e5e5e5;
     cursor: auto;
+    margin-top:1em;
     /*
     position: absolute;
     z-index:9500;

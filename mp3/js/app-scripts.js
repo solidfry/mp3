@@ -99,9 +99,9 @@ $(document).ready(function(){
 
 	//
 
-	$('.product-select').on('click', function(){
+	$('*[data-step]').on('click', function(e){
 	
-		var nextStep = $(this).find('button').attr('data-step');
+		var nextStep = $(this).attr('data-step');
 
 		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
 		
@@ -134,7 +134,7 @@ $(document).ready(function(){
 	
 		// Keep track of where we are by adding data-step to the global
 		
-		cycleSteps[currentStep] = $(this).find('button').attr('data-step');
+		cycleSteps[currentStep] = $(this).attr('data-step');
 		
 		console.log('The current view is ' + cycleSteps[currentStep]);
 		console.log('The previous view is ' + cycleSteps[(currentStep - 1)]);

@@ -40,9 +40,12 @@ $(document).ready(function(){
 
      });
 
-    $('.capacityButton').click(function() {
+    $('.capacityButton').click(function(e) {
+	
         $('.capacityButton.active').removeClass('active');
         $(this).toggleClass('active');
+		
+		e.preventDefault();
 
     });
 

@@ -153,7 +153,7 @@ $(document).ready(function(){
 		
 		if (currentStep == '1'){
 		
-			$('.back-button').css({display:'block'});
+			$('.back-button').css({display:'block', opacity: '.7'});
 		}
 	
 		// Keep track of where we are by adding data-step to the global
@@ -170,7 +170,7 @@ $(document).ready(function(){
 	// When Back button is clicked, cycle back to the previous view
 	
 	$('.back-button').on('click', function(){
-		
+		$('.home').removeClass('animated');
 		var prevStep = $('.view.' + cycleSteps[(currentStep - 1)]);
 		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
 		

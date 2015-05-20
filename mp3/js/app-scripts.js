@@ -151,9 +151,14 @@ $(document).ready(function(){
 		
 		currentStep += 1;
 		
-		if (currentStep == '1'){
+		if (currentStep == '1' && $('.back-button').hasClass('fadeInHalfLeft')){
 		
 			$('.back-button').css({display:'block', opacity: '.7'});
+			
+		} else {
+		
+			$('.back-button').animate({ left: '0.25em' }, 500, 'easeInOutExpo');
+		
 		}
 	
 		// Keep track of where we are by adding data-step to the global
@@ -198,7 +203,6 @@ $(document).ready(function(){
             opacity:100
 		
 		}, 500, 'easeInOutExpo');
-		
 		
 		console.log('The current view is ' + cycleSteps[currentStep]);
 		console.log('The previous view is ' + cycleSteps[(currentStep - 1)]);

@@ -35,6 +35,17 @@ body {
     background-color: #e5e5e5;
 }
 
+body.animated {
+    -webkit-animation-delay:.75s; /* Chrome, Safari, Opera */
+            animation-delay:.75s;
+    -webkit-animation-duration: .75s;
+            animation-duration: .75s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0, 1.07, 0.74, 1.13);
+            animation-timing-function: cubic-bezier(0, 1.07, 0.74, 1.13);
+}
+
 .back-button {
     position: absolute;
     left: .5em;
@@ -187,6 +198,7 @@ Summary bar
 
 .summary {
     -webkit-transform: translateX(0);
+    transform: translateX(0);
     width: 100%;
     font-size: .80em;
     z-index: 9999;

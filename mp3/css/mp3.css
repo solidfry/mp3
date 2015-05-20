@@ -1,29 +1,3 @@
-Skip to content
-This repository
-Explore
-Gist
-Blog
-Help
-@solidfry solidfry
-
- Unwatch 2
-  Star 0
-  Fork 0
-solidfry/mp3
- tree: 504e6bbce4  mp3/mp3/css/mp3.css
-@solidfrysolidfry 7 minutes ago Styles for price
-2 contributors @solidfry @simonlayfield
-RawBlameHistory    1036 lines (934 sloc)  21.206 kb
-/**
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
 .cf:before,
 .cf:after {
     content: " ";
@@ -219,8 +193,8 @@ Summary bar
 ----- */
 
 .summary {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+   /* -webkit-transform: translateX(0);
+    transform: translateX(0); */
     width: 100%;
     font-size: .80em;
     z-index: 9999;
@@ -1029,5 +1003,3 @@ FOUNDATION MEDIUM BLOCK GRID READDED TO STYLES
         clear: both;
     }
 }
-Status API Training Shop Blog About
-© 2015 GitHub, Inc. Terms Privacy Security Contact

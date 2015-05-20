@@ -79,6 +79,7 @@ body {
     display: none;
     background: white;
     margin: 0 1em 1em;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.05);
 }
 
 .view.visible {
@@ -356,7 +357,15 @@ Carousel Widget alterations
 ----- */
 
 .planSelectorWidget {
-    padding-top: 2em;
+    padding-top: 1em;
+}
+
+.planSelectorWidget .carousel-itemOuterContainer {
+     padding:0 1em;
+}
+
+.planSelectorWidget .carousel-item {
+    margin-bottom:1em;
 }
 
 .planSelectorWidget .carousel.is-carousel .carousel-pageIndicatorsWrapper {

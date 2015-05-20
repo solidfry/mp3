@@ -63,7 +63,7 @@ $(document).ready(function(){
 		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
 
 		// Animate the window height - the summary top bar height
-		summary.animate({ top : ((windowTop + $(window).height()) - summaryHeight) }, 500, 'easeOutQuint', function(){
+		summary.animate({ top : $(window).height() - summaryHeight }, 500, 'easeOutQuint', function(){
 		
 		
 			if (element.attr('data-group') === "handset"){

@@ -238,8 +238,8 @@ Summary bar
 ----- */
 
 .summary {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+   /* -webkit-transform: translateX(0);
+    transform: translateX(0); */
     width: 100%;
     font-size: .80em;
     z-index: 9999;

@@ -447,7 +447,7 @@ body .model__item {
 }
 
 .model__price-number {
-    font-size: 2.5em;
+    font-size: 2em;
     display: block;
     text-indent: -.25em;
     padding-bottom:.15em;

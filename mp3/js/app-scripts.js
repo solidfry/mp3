@@ -98,6 +98,12 @@ $(document).ready(function(){
 
 	$('[data-step]').on('click', function(e){
 	
+		if ($(this).attr('data-step') == 'plans'){
+		
+			showSummary();		
+		
+		}
+	
 		var nextStep = $(this).attr('data-step');
 		
 		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
@@ -165,7 +171,6 @@ $(document).ready(function(){
 			
 		});
 		
-		
 		$(prevStep).css({position : 'absolute', width : currentViewWidth, left : '-' + $(window).outerWidth() + 'px'});
 			
 		$(prevStep).addClass('visible').animate({
@@ -178,7 +183,6 @@ $(document).ready(function(){
 		
 		console.log('The current view is ' + cycleSteps[currentStep]);
 		console.log('The previous view is ' + cycleSteps[(currentStep - 1)]);
-		
 		console.log('We have removed ' + cycleSteps[cycleSteps.length-1]);
 
 		

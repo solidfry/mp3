@@ -118,7 +118,6 @@ body {
 }
 
 body {
-    padding-bottom: 12em;
     padding-top: 1em;
 }
 /*.row {
@@ -129,7 +128,7 @@ body {
 .view {
     display: none;
     background: white;
-    margin: 0 1em 1em;
+    margin: 0 1em 8em;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
 }
 
@@ -137,9 +136,6 @@ body {
     display: block;
 }
 
-.view.plans {
-    margin-bottom: 8em;
-}
 
 .view.home .model__item {
     position: relative;

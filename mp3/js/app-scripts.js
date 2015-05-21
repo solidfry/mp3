@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    $('.home .model__item').each(function() {
+        $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
+    });
     // Model Config reveal
 
      $('.model__item .tap').click(function(e) {

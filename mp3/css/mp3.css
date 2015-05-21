@@ -53,36 +53,34 @@ body {
 }
 
 @-webkit-keyframes fadeInHalfLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  100% {
-    opacity: .7;
-    -webkit-transform: none;
-    transform: none;
-  }
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        opacity: .7;
+        -webkit-transform: none;
+        transform: none;
+    }
 }
 
 @keyframes fadeInHalfLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  100% {
-    opacity: .7;
-    -webkit-transform: none;
-    transform: none;
-  }
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        opacity: .7;
+        -webkit-transform: none;
+        transform: none;
+    }
 }
 
 .fadeInHalfLeft {
-  -webkit-animation-name: fadeInHalfLeft;
-  animation-name: fadeInHalfLeft;
+    -webkit-animation-name: fadeInHalfLeft;
+    animation-name: fadeInHalfLeft;
 }
 
 .back-button {
@@ -119,8 +117,6 @@ body {
     animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
 }
 
-
-
 body {
     padding-bottom: 12em;
     padding-top: 1em;
@@ -143,6 +139,40 @@ body {
 
 .view.plans {
     margin-bottom: 8em;
+}
+
+.view.home .model__item {
+    position: relative;
+}
+
+.view.home .model__count {
+    z-index: 9999;
+    position: absolute;
+    top: 1em;
+    left: .25em;
+
+    width: 2em;
+    height: 2em;
+
+    display: block;
+
+    background: #323232;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 2.2em;
+    border-radius: 50%;
+
+
+    box-shadow:inset 0 -3px 0 rgba(0,0,0,0.5);
+}
+
+.view.home .checkout {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    padding-top: 1em;
+    background-color: #f5f5f5;
+    border-top: 2px solid #e5e5e5;
 }
 
 .step__title {
@@ -238,8 +268,9 @@ Summary bar
 ----- */
 
 .summary {
-   /* -webkit-transform: translateX(0);
+    /* -webkit-transform: translateX(0);
     transform: translateX(0); */
+
     width: 100%;
     font-size: .80em;
     z-index: 9999;

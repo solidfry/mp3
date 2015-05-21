@@ -208,7 +208,7 @@ $(document).ready(function(){
 
 					console.log('product to be shown ' + i);
 
-					$(el).show();
+					$(el).css('display', 'block');
 
 				}
 

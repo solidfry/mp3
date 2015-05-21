@@ -202,13 +202,14 @@ $(document).ready(function(){
 			
 			currentCycle += 1;
 			
-			console.log('The new cycle number is ' + currentCycle);
+			$('.view.home .checkout').show();
+			
+			$('.view.home .step__title').text('Add more stuff!');
 			
 			$('.view.home .model__item').each(function(i, el){
 			
 				if (i < currentCycle) {
 					
-					console.log('product to be shown ' + i);
 					
 					$(el).css('display', 'block');				
 				

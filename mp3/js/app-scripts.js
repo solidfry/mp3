@@ -65,13 +65,13 @@ $(document).ready(function(){
 		var windowTop = $(window).scrollTop();
 	
 		// Display the summary below the window
-		summary.css({ 'display' : 'block', 'position' : 'fixed', 'top' : (windowTop + $(window).height()) });
+		summary.css({ 'display' : 'block', 'position' : 'fixed', 'bottom' : '-300px' });
 
 		// Once displayed off screen, get combined summary top bar height
 		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
 
 		// Animate the window height - the summary top bar height
-		summary.animate({ top : $(window).height() - summaryHeight }, 500, 'easeOutQuint', function(){
+		summary.animate({ bottom : '0px' }, 500, 'easeOutQuint', function(){
 		
 		
 			if (element.attr('data-group') === "handset"){

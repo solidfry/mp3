@@ -36,7 +36,10 @@ $(document).ready(function(){
 		}
 
      });
+	 
+	 
 
+	 
     $('.capacityButton').click(function(e) {
 	
         $('.capacityButton.active').removeClass('active');
@@ -46,6 +49,8 @@ $(document).ready(function(){
 
 
     });
+	
+	
 
 	// Position Summary Panel
 	
@@ -84,6 +89,9 @@ $(document).ready(function(){
 
 	}
 	
+	
+	
+	
 	$('.summary__title--link').on('click', function(e){
 		
 		if ($(this).hasClass('full')){
@@ -98,6 +106,8 @@ $(document).ready(function(){
 		e.preventDefault();
 		
 	});
+	
+	
 	
 	// Setup cycle iterations
 	
@@ -246,7 +256,7 @@ $(document).ready(function(){
 			
 		} else if (!$this.hasClass('selected') && $this.attr('data-group') == "plan") {
 		
-			var planValue = ['plan', parseInt($this.attr('data-val'))];
+			var planValue = ['plan', $this.attr('data-val')];
 			
 			updateSummary(planValue);
 			
@@ -289,8 +299,9 @@ $(document).ready(function(){
 		//		selectedHandset.removeClass('selected');
 		//		
 		//	} else {
+		
 			
-				deviceTotal = deviceTotal + 1;
+				deviceTotal = cycleCount+1;
 				
 				$('#device-total').html(deviceTotal)
 					.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -316,7 +327,21 @@ $(document).ready(function(){
 		// If we've selected a plan
 		else if (value[0] == 'plan') {
 		
-			$('#gb-total').html('$' + value[1]);
+			var planValue = value[1].split('-');
+			
+			$('#gb-total').html(planValue[0])
+				.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			
+					$(this).removeClass('animated flipInX');
+		
+			});
+			
+			$('#cpm-total').html('$' + planValue[1])
+				.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			
+					$(this).removeClass('animated flipInX');
+		
+			});
 			
 		
 		}

@@ -1,8 +1,10 @@
 $(document).ready(function(){
 
+
     $('.home .model__item').each(function() {
         $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
     });
+	
     // Model Config reveal
 
      $('.model__item .tap').click(function(e) {
@@ -61,8 +63,6 @@ $(document).ready(function(){
 	var summary = $('.summary');
 	
 	function showSummary(element){
-	
-		var windowTop = $(window).scrollTop();
 	
 		// Display the summary below the window
 		summary.css({ 'display' : 'block', 'position' : 'fixed', 'bottom' : '-300px' });
@@ -158,15 +158,11 @@ $(document).ready(function(){
 		}
 		
 		
-		
 		if (currentCycle == 0 && currentStep == 0) {
 				
 			$('.view.home').removeClass('animated fadeInUp');
 		
 		}
-		
-		
-		
 		
 		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
 		
@@ -199,6 +195,18 @@ $(document).ready(function(){
 		if (cycleSteps[cycleSteps.length-1] == 'plans'){
 		
 			$('.back-button').removeClass('animated fadeInHalfLeft').animate({ left: '-50px' }, 500, 'easeInOutExpo');
+			
+			$('.model__config-panel').hide();
+			
+			currentCycle += 1;
+			
+			console.log('The new cycle number is ' + currentCycle);
+			
+			$('.viw.home .model__item').each(function(i){
+			
+				
+			
+			});
 		
 			
 			

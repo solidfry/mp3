@@ -139,6 +139,7 @@ body {
 
 .view.home .model__item {
     position: relative;
+	display:none;
 }
 
 .view.home .model__count {
@@ -169,6 +170,7 @@ body {
     padding-top: 1em;
     background-color: #f5f5f5;
     border-top: 2px solid #e5e5e5;
+	display:none;
 }
 
 .step__title {
@@ -300,7 +302,7 @@ Summary bar
     padding: .5em .5em .25em;
     margin: 0;
     vertical-align: middle;
-    font-size: 1em;
+    font-size: 1.34em;
 }
 
 .summary__title--link {

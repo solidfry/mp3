@@ -127,16 +127,35 @@ $(document).ready(function(){
 	$(views[0]).addClass('visible');
 
 	//
-
+	
 	$('[data-step]').on('click', function(e){
 	
-		if ($(this).attr('data-step') == 'plans'){
+		if(e.target != this) {
+		
+			switchView($(this).closest('[data-step]'));
+
+		} else {
+		
+			switchView($(e.target));
+			
+		}
+	
+		e.preventDefault();
+	
+	});
+	
+
+	function switchView(element){
+	
+		$this = element;
+		
+		if ($this.attr('data-step') == 'plans'){
 		
 			showSummary($(this));		
 		
 		}
 	
-		var nextStep = $(this).attr('data-step');
+		var nextStep = $this.attr('data-step');
 		
 		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
 		
@@ -164,7 +183,7 @@ $(document).ready(function(){
 		
 		currentStep += 1;
 		
-		if (currentStep == '1' && $('.back-button').hasClass('fadeInHalfLeft')){
+		if (currentStep == '4' || currentStep == '1' && $('.back-button').hasClass('fadeInHalfLeft')){
 		
 			$('.back-button').css({display:'block', opacity: '.7'});
 			
@@ -176,14 +195,12 @@ $(document).ready(function(){
 	
 		// Keep track of where we are by adding data-step to the global
 		
-		cycleSteps[currentStep] = $(this).attr('data-step');
+		cycleSteps[currentStep] = $this.attr('data-step');
 		
-		console.log('The current view is ' + cycleSteps[currentStep]);
+		console.log('The current view is ' + '[' + currentStep + '] ' + cycleSteps[currentStep]);
 		console.log('The previous view is ' + cycleSteps[currentStep - 1]);
 		
-		e.preventDefault();
-		
-	});
+	}
 	
 	// When Back button is clicked, cycle back to the previous view
 	

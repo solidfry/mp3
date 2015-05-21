@@ -145,6 +145,27 @@ body {
     margin-bottom: 8em;
 }
 
+.view.home .model__item {
+     position:relative;
+}
+
+.view.home .model__count {
+     position:absolute;
+    top:0;
+    left:0;
+    width:1em;
+    height:1em;
+    display:block;
+    background:blue;
+}
+
+.view.home .checkout {
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding-top: 1em;
+  background-color: #f5f5f5;
+  border-top: 2px solid #e5e5e5;
+}
 .step__title {
     text-align: center;
     line-height: 2em;

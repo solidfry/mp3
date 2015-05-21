@@ -202,9 +202,15 @@ $(document).ready(function(){
 			
 			console.log('The new cycle number is ' + currentCycle);
 			
-			$('.viw.home .model__item').each(function(i){
+			$('.view.home .model__item').each(function(i, el){
 			
+				if (i < currentCycle) {
+					
+					console.log('product to be shown ' + i);
+					
+					$(el).show();				
 				
+				}
 			
 			});
 		

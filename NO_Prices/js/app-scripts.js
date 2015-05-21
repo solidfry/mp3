@@ -82,9 +82,11 @@ $(document).ready(function(){
 
 				updateSummary(handsetValue);
 
-			} else {
+			} else if (element.attr('data-group') === "sim") {
 
+				var simValue = ['sim'];
 
+				updateSummary(simValue);
 
 			}
 
@@ -340,7 +342,9 @@ $(document).ready(function(){
 		}
 
 		// If we've selected a handset...
-		if(value[0] == 'handset'){
+		if(value[0] == 'handset' || value[0] == 'sim'){
+
+			console.log('we selected a ' + value[0]);
 
 		//	var selectedHandset = $('.phoneSelectButton.selected');
 		//

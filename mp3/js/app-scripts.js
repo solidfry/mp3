@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     $('.home .model__item').each(function() {
-    $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
+        $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
     });
     // Model Config reveal
 

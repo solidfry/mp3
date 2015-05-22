@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
     $('.home .model__item').each(function() {
         $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
     });
@@ -113,7 +112,7 @@ $(document).ready(function(){
 	//
 	
 	$('[data-step]').on('click', function(e){
-	
+
 		if(e.target != this) {
 		
 			switchView($(this).closest('[data-step]'));

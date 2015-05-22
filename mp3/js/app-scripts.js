@@ -96,24 +96,6 @@ $(document).ready(function(){
 	
 	
 	
-	
-	$('.summary__title--link').on('click', function(e){
-		
-		if ($(this).hasClass('full')){
-		
-			hideFullSummary();
-		
-		} else {
-		
-			showFullSummary();
-		}
-		
-		e.preventDefault();
-		
-	});
-	
-	
-	
 	// Setup cycle iterations
 	
 	var cycleCount = 0;
@@ -153,7 +135,7 @@ $(document).ready(function(){
 	
 		var nextStep = $this.attr('data-step');
 	
-		if (nextStep == 'plans'){
+		if (cycleCount == 0 && nextStep == 'plans'){
 		
 			showSummary($this);	
 		
@@ -193,7 +175,6 @@ $(document).ready(function(){
 		currentStep += 1;
 		
 		
-		
 		if (cycleSteps[cycleSteps.length-1] == 'plans'){
 		
 			$('.back-button').removeClass('animated fadeInHalfLeft').animate({ left: '-50px' }, 500, 'easeInOutExpo');
@@ -201,6 +182,7 @@ $(document).ready(function(){
 			$('.model__config-panel').hide();
 			
 			currentCycle += 1;
+			cycleCount += 1;
 			
 			$('.view.home .checkout').show();
 			
@@ -233,6 +215,8 @@ $(document).ready(function(){
 		
 		console.log('The current view is ' + '[' + currentStep + '] ' + cycleSteps[currentStep]);
 		console.log('The previous view is ' + cycleSteps[currentStep - 1]);
+		
+		// console.log('The cycleCount is ' + cycleCount);
 		
 		
 	}

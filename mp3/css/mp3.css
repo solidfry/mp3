@@ -33,6 +33,7 @@ html,
 body {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC);
     background-color: #e5e5e5;
+    box-sizing: content-box;
 }
 
 .view.animated {
@@ -229,6 +230,12 @@ body {
 
 .product-select__link--add {
     padding: 1em 0;
+}
+
+.product-select__link--add .ico:before {
+     background:#00a3ad;
+    color:white;
+    border-radius:50%;
 }
 
 .product-select__link .ico {

@@ -26,7 +26,7 @@ $(document).ready(function(){
 				.stop(true,true)
 				.slideToggle(300, function(){
 
-					$('body, html').animate({
+					$('body, html').velocity({
 
 						scrollTop: $this.parent().offset().top -15
 
@@ -71,7 +71,7 @@ $(document).ready(function(){
 		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
 
 		// Animate the window height - the summary top bar height
-		summary.animate({ bottom : '0px' }, 500, 'easeOutQuint', function(){
+		summary.velocity({ bottom : '0px' }, 500, 'easeOutQuint', function(){
 		
 		
 			if (element.attr('data-group') === "handset"){
@@ -150,7 +150,7 @@ $(document).ready(function(){
 		
 		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
 		
-		$('.view.' + cycleSteps[currentStep]).css({position : 'absolute', width : currentViewWidth}).animate({
+		$('.view.' + cycleSteps[currentStep]).css({position : 'absolute', width : currentViewWidth}).velocity({
 			
 			left: '-100%',
             opacity:0
@@ -163,7 +163,7 @@ $(document).ready(function(){
 		
 		$('.view.' + nextStep).css({position : 'absolute', width : currentViewWidth, left : $(window).outerWidth()});
 			
-			$('.view.' + nextStep).addClass('visible').animate({
+			$('.view.' + nextStep).addClass('visible').velocity({
 		
 			left: 0,
             opacity:100
@@ -177,7 +177,7 @@ $(document).ready(function(){
 		
 		if (cycleSteps[cycleSteps.length-1] == 'plans'){
 		
-			$('.back-button').removeClass('animated fadeInHalfLeft').animate({ left: '-50px' }, 500, 'easeInOutExpo');
+			$('.back-button').removeClass('animated fadeInHalfLeft').velocity({ left: '-50px' }, 500, 'easeInOutExpo');
 			
 			$('.model__config-panel').hide();
 			
@@ -203,7 +203,7 @@ $(document).ready(function(){
 			
 		} else {
 		
-			$('.back-button').show().animate({ left: '0.25em' }, 500, 'easeInOutExpo');
+			$('.back-button').show().velocity({ left: '0.25em' }, 500, 'easeInOutExpo');
 		
 		}
 		
@@ -228,7 +228,7 @@ $(document).ready(function(){
 		var prevStep = $('.view.' + cycleSteps[(currentStep - 1)]);
 		var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
 		
-		$('.view.' + cycleSteps[currentStep]).css({position : 'absolute', width : currentViewWidth}).animate({
+		$('.view.' + cycleSteps[currentStep]).css({position : 'absolute', width : currentViewWidth}).velocity({
 			
 			left: '100%',
             opacity:0
@@ -246,7 +246,7 @@ $(document).ready(function(){
 		
 		$(prevStep).css({position : 'absolute', width : currentViewWidth, left : '-' + $(window).outerWidth() + 'px'});
 			
-		$(prevStep).addClass('visible').animate({
+		$(prevStep).addClass('visible').velocity({
 	
 			left: 0,
             opacity:100
@@ -260,7 +260,7 @@ $(document).ready(function(){
 		
 		if (currentStep == '1'){
 		
-			$(this).removeClass('animated fadeInHalfLeft').animate({ left: '-50px' }, 500, 'easeInOutExpo');
+			$(this).removeClass('animated fadeInHalfLeft').velocity({ left: '-50px' }, 500, 'easeInOutExpo');
 		
 		}
 		

@@ -35,6 +35,10 @@ body {
     background-color: #e5e5e5;
 }
 
+body {
+    padding-top: 1em;
+}
+
 .view.animated {
     -webkit-animation-delay: .7s;
     animation-delay: .7s;
@@ -117,9 +121,6 @@ body {
     animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
 }
 
-body {
-    padding-top: 1em;
-}
 /*.row {
     margin-left: inherit !important;
     margin-right: inherit !important;
@@ -229,6 +230,12 @@ body {
 
 .product-select__link--add {
     padding: 1em 0;
+}
+
+.product-select__link--add .ico:before {
+     background:#00a3ad;
+    color:white;
+    border-radius:50%;
 }
 
 .product-select__link .ico {

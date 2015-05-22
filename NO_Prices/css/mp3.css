@@ -33,7 +33,10 @@ html,
 body {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC);
     background-color: #e5e5e5;
-    box-sizing: content-box;
+}
+
+body {
+    padding-top: 1em;
 }
 
 .view.animated {
@@ -118,9 +121,6 @@ body {
     animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
 }
 
-body {
-    padding-top: 1em;
-}
 /*.row {
     margin-left: inherit !important;
     margin-right: inherit !important;

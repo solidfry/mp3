@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	$('body').css('min-height', $(window).height());
+
     $('.home .model__item').each(function() {
         $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
     });

@@ -1073,7 +1073,7 @@ Carousel Widget alterations
 }
 
 .planSelectorWidget .carousel-itemOuterContainer {
-    padding: 0 1em;
+    padding: 0 .5em;
 }
 
 .planSelectorWidget .carousel-item {

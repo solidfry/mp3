@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-	$('body').css('min-height', $(window).height());
-
     $('.home .model__item').each(function() {
         $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
     });
@@ -135,6 +133,12 @@ $(document).ready(function(){
 		$this = element;
 	
 		var nextStep = $this.attr('data-step');
+		
+		 var appHeight = $('.view.' + nextStep).outerHeight() + $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
+		 
+		 console.log(appHeight);
+		 
+		 $('body').css('min-height', appHeight);
 	
 		if (cycleCount == 0 && nextStep == 'plans'){
 		

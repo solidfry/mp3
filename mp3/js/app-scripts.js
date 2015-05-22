@@ -112,7 +112,6 @@ $(document).ready(function(){
 	//
 	
 	$('[data-step]').on('click', function(e){
-	         $(".product-select").velocity("transition.slideLeftIn", { stagger: 250 });
 
 		if(e.target != this) {
 		

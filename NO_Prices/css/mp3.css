@@ -1249,18 +1249,19 @@ Carousel Widget alterations
 }
 
 .planBorder:after {
-  content: "+";
+  font-family: "optus-icons";
+  content: "\e613";
   display: block;
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   background: white;
-    color:#cccccc;
+  color: #cccccc;
   border-radius: 50%;
-  line-height: 2em;
+  line-height: 1.5em;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 2.5em;
   position: absolute;
-  bottom: -1.45em;
+  bottom: -1em;
   z-index: 9999;
   left: 41%;
 }

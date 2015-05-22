@@ -157,7 +157,7 @@ $(document).ready(function(){
 			
 		}, 500, 'easeInOutExpo', function(){
 		
-			$(this).removeClass('visible').css({position : 'static', width : 'inherit', left : '0'});
+			$(this).removeClass('visible').css({position : 'relative', width : 'inherit', left : '0'});
 			
 		});
 		
@@ -237,7 +237,7 @@ $(document).ready(function(){
 		
 			console.log('Animating ' + cycleSteps[currentStep])
 		
-			$('.view.' + cycleSteps[currentStep]).css({position : 'static', width : 'inherit', left : '0'}).removeClass('visible');
+			$('.view.' + cycleSteps[currentStep]).css({position : 'relative', width : 'inherit', left : '0'}).removeClass('visible');
 			
 			currentStep -= 1;
 			cycleSteps.splice(-1,1);

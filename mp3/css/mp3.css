@@ -495,7 +495,7 @@ body .model__item {
 }
 
 .model__specs {
-    padding: 0;
+    padding: 0 0 0 1em;
     margin: 0;
     font-size: .8em;
     list-style:disc;
@@ -513,7 +513,7 @@ body .model__item {
     position: relative;
     top: -.1em;
     border-radius: 6px;
-    background: #ffc300;
+    background: #e5e5e5;
     color: #323232;
     line-height: 1em;
     /*border:2px solid #ff8200;
@@ -534,6 +534,7 @@ body .model__item {
     display: block;
     text-indent: -.1em;
     padding-bottom: .15em;
+    color:#178093;
     /*height: .9em;
     line-height: 1.1em;*/
 }

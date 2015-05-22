@@ -134,11 +134,11 @@ $(document).ready(function(){
 	
 		var nextStep = $this.attr('data-step');
 		
-		 var appHeight = $('.view.' + nextStep).outerHeight() + $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
+	//	var appHeight = $('.view.' + nextStep).position().top + $('.view.' + nextStep).outerHeight() + $('.summary__title').outerHeight() + $('.summary__info').outerHeight() + 50;
 		 
-		 console.log(appHeight);
+	//	 console.log(appHeight);
 		 
-		 $('body').css('min-height', appHeight);
+	//	 $('body').css('min-height', appHeight);
 	
 		if (cycleCount == 0 && nextStep == 'plans'){
 		
@@ -174,6 +174,8 @@ $(document).ready(function(){
             opacity:100
 		
 		}, 500, 'easeInOutExpo', function(){
+		
+			$(this).css('position', 'relative');
 		
 		});
 		

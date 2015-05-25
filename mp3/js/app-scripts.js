@@ -75,7 +75,7 @@ $(document).ready(function(){
 
 		// Animate the window height - the summary top bar height
 		summary.animate({ bottom : '0px' }, 500, 'easeOutQuint', function(){
-		
+
 			if (element.attr('data-group') === "handset"){
 			
 				console.log('Summary shown, updating device...');
@@ -174,7 +174,7 @@ $(document).ready(function(){
 		$('.view.' + nextStep).css({position : 'absolute', width : currentViewWidth, left : $(window).outerWidth()});
 			
 			$('.view.' + nextStep).addClass('visible')
-			
+
 			.animate({
 		
 			left: 0,

@@ -63,6 +63,8 @@ $(document).ready(function(){
 	
 	function showSummary(element){
 	
+		console.log('We\'re running showSummary...');
+	
 		// Display the summary below the window
 		summary.css({ 'display' : 'block', 'position' : 'fixed', 'bottom' : '-300px' });
 
@@ -141,6 +143,8 @@ $(document).ready(function(){
 	//	 $('body').css('min-height', appHeight);
 	
 		if (cycleCount == 0 && nextStep == 'plans'){
+		
+			console.log('It\'s true!');
 		
 			showSummary($this);	
 		
@@ -351,12 +355,12 @@ $(document).ready(function(){
 			
 				deviceTotal = cycleCount+1;
 				
-				$('#device-total').html(deviceTotal)
-					.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-				
-						$(this).html(deviceTotal).removeClass('animated flipInX');
-			
-				});
+				$('#device-total').html(deviceTotal);
+				//	.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				//
+				//		$(this).html(deviceTotal).removeClass('animated flipInX');
+			    //
+				//});
 			
 		//	}
 		
@@ -377,19 +381,19 @@ $(document).ready(function(){
 		
 			var planValue = value[1].split('-');
 			
-			$('#gb-total').html(planValue[0])
-				.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			$('#gb-total').html(planValue[0]);
+			//	.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			//
+			//		$(this).removeClass('animated flipInX');
+		    //
+			//});
 			
-					$(this).removeClass('animated flipInX');
-		
-			});
-			
-			$('#cpm-total').html('$' + planValue[1])
-				.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-			
-					$(this).removeClass('animated flipInX');
-		
-			});
+			$('#cpm-total').html('$' + planValue[1]);
+			//	.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			//
+			//		$(this).removeClass('animated flipInX');
+		    //
+			//});
 			
 		
 		}

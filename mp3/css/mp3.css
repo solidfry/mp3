@@ -224,6 +224,7 @@ body {
     background: white;
     margin: 0 1em 8em;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
+    max-width:1170px;
 }
 
 .view.visible {
@@ -545,6 +546,13 @@ body .model__list {
 body .model__item {
     border-bottom: 1px solid #e5e5e5;
     padding: 2em 1em 2em 1em;
+}
+
+@media only screen and (min-width: 860px) {
+    body .model__list .model__item {
+        border:0;
+        padding:1.5em;
+    }
 }
 
 .tap {

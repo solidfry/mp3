@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	$('.viewport').css('width', $(window).width());
+
     $('.home .model__item').each(function() {
         $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
     });
@@ -66,15 +68,14 @@ $(document).ready(function(){
 		console.log('We\'re running showSummary...');
 	
 		// Display the summary below the window
-		summary.css({ 'display' : 'block', 'position' : 'fixed', 'bottom' : '-300px' });
+		summary.css({ 'display' : 'block', 'position' : 'fixed', 'bottom' : '-300px', 'right' : '0px' });
 
 		// Once displayed off screen, get combined summary top bar height
 		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
 
 		// Animate the window height - the summary top bar height
 		summary.animate({ bottom : '0px' }, 500, 'easeOutQuint', function(){
-		
-		
+
 			if (element.attr('data-group') === "handset"){
 			
 				console.log('Summary shown, updating device...');
@@ -172,7 +173,9 @@ $(document).ready(function(){
 		
 		$('.view.' + nextStep).css({position : 'absolute', width : currentViewWidth, left : $(window).outerWidth()});
 			
-			$('.view.' + nextStep).addClass('visible').animate({
+			$('.view.' + nextStep).addClass('visible')
+
+			.animate({
 		
 			left: 0,
             opacity:100

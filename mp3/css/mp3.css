@@ -99,11 +99,13 @@ body {
 }
 
 .loading:before {
-    top: 40%;
-    left: 42%;
+    top: 50%;
+    left: 50%;
     content: "";
     width: 4em;
     height: 4em;
+    margin-left:-2em;
+    margin-top:-2em;
     background-color: #fff;
   border-radius: 100%;
   -webkit-animation: scaleout 1.0s infinite ease-in-out;

@@ -33,11 +33,10 @@ html,
 body {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC);
     background-color: #e5e5e5;
-   /* height: 100%;
+    /* height: 100%;
     position: relative;
     width: 375px;
     overflow-x: hidden; */
-
 }
 
 body {
@@ -45,7 +44,7 @@ body {
 }
 
 .loading {
-    background: rgba(0, 138 , 146, 0.75);
+    background: rgba(0, 138, 146, 0.75);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -76,7 +75,7 @@ body {
     }
     100% {
         opacity: 0;
-        visibility:hidden;
+        visibility: hidden;
     }
 }
 
@@ -95,53 +94,41 @@ body {
     }
     100% {
         opacity: 0;
-        visibility:hidden;
+        visibility: hidden;
     }
 }
 
 .loading:before {
-    top: 45%;
-    left: 45%;
+    top: 40%;
+    left: 42%;
     content: "";
-    height: 3em;
-    width: 3em;
+    width: 4em;
+    height: 4em;
+    background-color: #fff;
+  border-radius: 100%;
+  -webkit-animation: scaleout 1.0s infinite ease-in-out;
+  animation: scaleout 1.0s infinite ease-in-out;
     position: absolute;
-    border-top: 4px solid #ffd100;
-    border-right: 4px solid #ffd100;
-    border-radius: 50%;
-    -moz-animation: spin 1s linear infinite;
-    animation: spin 1s linear infinite;
-    display:inline-block;
+    display: inline-block;
 }
 
--moz-keyframes spin {
-    0% {
-        -moz-transform: rotate(0deg);
-
-    }
-    100% {
-        -moz-transform: rotate(360deg);
-    }
+@-webkit-keyframes scaleout {
+  0% { -webkit-transform: scale(0.0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
 }
 
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
-}
-
-@keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
+@keyframes scaleout {
+  0% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
 }
 
 .view.animated {
@@ -229,7 +216,6 @@ body {
     margin-left: inherit !important;
     margin-right: inherit !important;
 }*/
-
 
 .view {
     display: none;

@@ -278,45 +278,45 @@ $(document).ready(function(){
 	});
 
 		
-	$('.value').on('click', function(e){
-	
-		var $this = $(this);
-	
-		// If handset is selected, pass an array to update the summary cmp and device
-		
-		if(!$this.hasClass('selected') && $this.attr('data-group') == "handset"){
-		
-			var handsetValue = ['handset', parseInt($this.attr('data-val'))];
-			
-			updateSummary(handsetValue);
-			
-			$this.addClass('selected');
-		
-		}
-		
-		// If handset is selected, pass an array to update the summary cmp and device
-		
-		if (!$this.hasClass('selected') && $this.attr('data-group') == "handset") {
-		
-			var handsetValue = ['handset', parseInt($this.attr('data-val'))];
-			
-			updateSummary(handsetValue);
-			
-			$this.addClass('selected');
-			
-		} else if (!$this.hasClass('selected') && $this.attr('data-group') == "plan") {
-		
-			var planValue = ['plan', $this.attr('data-val')];
-			
-			updateSummary(planValue);
-			
-			$this.addClass('selected');
-			
-		}
-		
-		e.preventDefault();
-		
-	});
+//	$('.value').on('click', function(e){
+//	
+//		var $this = $(this);
+//	
+//		// If handset is selected, pass an array to update the summary cmp and device
+//		
+//		if(!$this.hasClass('selected') && $this.attr('data-group') == "handset"){
+//		
+//			var handsetValue = ['handset', parseInt($this.attr('data-val'))];
+//			
+//			updateSummary(handsetValue);
+//			
+//			$this.addClass('selected');
+//		
+//		}
+//		
+//		// If handset is selected, pass an array to update the summary cmp and device
+//		
+//		if (!$this.hasClass('selected') && $this.attr('data-group') == "handset") {
+//		
+//			var handsetValue = ['handset', parseInt($this.attr('data-val'))];
+//			
+//			updateSummary(handsetValue);
+//			
+//			$this.addClass('selected');
+//			
+//		} else if (!$this.hasClass('selected') && $this.attr('data-group') == "plan") {
+//		
+//			var planValue = ['plan', $this.attr('data-val')];
+//			
+//			updateSummary(planValue);
+//			
+//			$this.addClass('selected');
+//			
+//		}
+//		
+//		e.preventDefault();
+//		
+//	});
 		
 	function updateSummary(value){
 	
@@ -355,12 +355,12 @@ $(document).ready(function(){
 			
 				deviceTotal = cycleCount+1;
 				
-				$('#device-total').html(deviceTotal);
-				//	.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-				//
-				//		$(this).html(deviceTotal).removeClass('animated flipInX');
-			    //
-				//});
+				$('#device-total').html(deviceTotal)
+					.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				
+						$(this).html(deviceTotal).removeClass('animated flipInX');
+			    
+				});
 			
 		//	}
 		
@@ -381,19 +381,18 @@ $(document).ready(function(){
 		
 			var planValue = value[1].split('-');
 			
-			$('#gb-total').html(planValue[0]);
-			//	.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-			//
-			//		$(this).removeClass('animated flipInX');
-		    //
-			//});
+			$('#gb-total').html(planValue[0])
+				.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 			
-			$('#cpm-total').html('$' + planValue[1]);
-			//	.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-			//
-			//		$(this).removeClass('animated flipInX');
-		    //
-			//});
+					$(this).removeClass('animated flipInX');
+		    
+			});
+			
+			$('#cpm-total').html('$' + planValue[1]).addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			
+					$(this).removeClass('animated flipInX');
+		    
+			});
 			
 		
 		}

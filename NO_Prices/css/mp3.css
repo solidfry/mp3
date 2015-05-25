@@ -33,15 +33,107 @@ html,
 body {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC);
     background-color: #e5e5e5;
+    /* height: 100%;
+    position: relative;
+    width: 375px;
+    overflow-x: hidden; */
 }
 
 body {
     padding-top: 1em;
 }
 
+.loading {
+    background: rgba(0, 138, 146, 0.75);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    -webkit-animation-name: fadeOutLoad;
+    animation-name: fadeOutLoad;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    opacity: 1;
+}
+
+@-webkit-keyframes fadeOutLoad {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fadeOutLoad {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loading:before {
+    top: 40%;
+    left: 42%;
+    content: "";
+    width: 4em;
+    height: 4em;
+    background-color: #fff;
+  border-radius: 100%;
+  -webkit-animation: scaleout 1.0s infinite ease-in-out;
+  animation: scaleout 1.0s infinite ease-in-out;
+    position: absolute;
+    display: inline-block;
+}
+
+@-webkit-keyframes scaleout {
+  0% { -webkit-transform: scale(0.0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleout {
+  0% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
 .view.animated {
-    -webkit-animation-delay: .7s;
-    animation-delay: .7s;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
     -webkit-animation-duration: .65s;
     animation-duration: .65s;
     -webkit-animation-fill-mode: both;
@@ -436,7 +528,6 @@ Safari, Chrome and Opera > 12.1
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
-
 /* -----
 Mobile Listing Widget alterations
 ----- */
@@ -1063,7 +1154,6 @@ FOUNDATION MEDIUM BLOCK GRID READDED TO STYLES
         clear: both;
     }
 }
-
 /* -----
 Carousel Widget alterations
 ----- */
@@ -1085,10 +1175,7 @@ Carousel Widget alterations
     top: -8%;
     left: 50%;
 }
-
-
 /* CUSTOM PLANS CSS */
-
 
 .planSelectorWidget .button {
     display: block;
@@ -1168,9 +1255,9 @@ Carousel Widget alterations
 }
 
 .planSelectorWidget .planSummaryItem.panel {
-  padding: .2em;
-  border-radius: 6px;
-    background:white;
+    padding: .2em;
+    border-radius: 6px;
+    background: white;
 }
 
 .planSelectorWidget .planSummaryItem h2 {
@@ -1204,7 +1291,7 @@ Carousel Widget alterations
     height: 30px;
     padding: 10px;
     color: white;
-    margin-bottom:.2em;
+    margin-bottom: .2em;
 }
 
 .planSelectorWidget .planSummaryItem .planViewDetails h5 {
@@ -1221,54 +1308,51 @@ Carousel Widget alterations
 
 @media (max-width: 31.1875em) {
     .planSelectorWidget .planSummaryItem .planBody .planBorder {
-      border-bottom: 0;
-      background: #f5f5f5;
-      padding: 2.25em 0 1em;
-      margin-bottom: 1em;
+        border-bottom: 0;
+        background: #f5f5f5;
+        padding: 2.25em 0 1em;
+        margin-bottom: 1em;
     }
 }
 
-
 .planSelectorWidget .planSummaryItem .planBody .planBorder {
-     position: relative;
+    position: relative;
 }
 
-
-
 .planBody .planBorder:last-of-type:after {
-    content:"";
-    display:none;
+    content: "";
+    display: none;
 }
 
 .planSelectorWidget .planSummaryItem .planBody .planBorder:last-of-type {
-     margin:0 0 .15em;
+    margin: 0 0 .15em;
 }
 
 .planBorder h4 {
-     text-transform: none;
+    text-transform: none;
 }
 
 .planBorder:after {
-  font-family: "optus-icons";
-  content: "\e613";
-  display: block;
-  width: 1.5em;
-  height: 1.5em;
-  background: white;
-  color: #cccccc;
-  border-radius: 50%;
-  line-height: 1.5em;
-  font-weight: bold;
-  font-size: 2.5em;
-  position: absolute;
-  bottom: -1em;
-  z-index: 9999;
-  left: 41%;
+    font-family: "optus-icons";
+    content: "\e613";
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    background: white;
+    color: #cccccc;
+    border-radius: 50%;
+    line-height: 1.5em;
+    font-weight: bold;
+    font-size: 2.5em;
+    position: absolute;
+    bottom: -1em;
+    z-index: 9999;
+    left: 41%;
 }
 
 .selectWrap {
-   padding: 2em 1em 0em;
-    border-top:2px solid #e5e5e5;
+    padding: 2em 1em 0em;
+    border-top: 2px solid #e5e5e5;
 }
 
 .planSelectorWidget .carousel.is-carousel {

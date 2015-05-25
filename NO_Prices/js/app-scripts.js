@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+	$('.viewport').css('width', $(window).width());
 
     $('.home .model__item').each(function() {
         $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
@@ -64,16 +65,17 @@ $(document).ready(function(){
 	
 	function showSummary(element){
 	
+		console.log('We\'re running showSummary...');
+
 		// Display the summary below the window
-		summary.css({ 'display' : 'block', 'position' : 'fixed', 'bottom' : '-300px' });
+		summary.css({ 'display' : 'block', 'position' : 'fixed', 'bottom' : '-300px', 'right' : '0px' });
 
 		// Once displayed off screen, get combined summary top bar height
 		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
 
 		// Animate the window height - the summary top bar height
 		summary.animate({ bottom : '0px' }, 500, 'easeOutQuint', function(){
-		
-		
+
 			if (element.attr('data-group') === "handset"){
 			
 				console.log('Summary shown, updating device...');
@@ -95,25 +97,7 @@ $(document).ready(function(){
 	}
 	
 	
-	
-	
-	$('.summary__title--link').on('click', function(e){
-		
-		if ($(this).hasClass('full')){
-		
-			hideFullSummary();
-		
-		} else {
-		
-			showFullSummary();
-		}
-		
-		e.preventDefault();
-		
-	});
-	
-	
-	
+
 	// Setup cycle iterations
 	
 	var cycleCount = 0;
@@ -131,7 +115,7 @@ $(document).ready(function(){
 	//
 	
 	$('[data-step]').on('click', function(e){
-	
+
 		if(e.target != this) {
 		
 			switchView($(this).closest('[data-step]'));
@@ -152,8 +136,16 @@ $(document).ready(function(){
 		$this = element;
 	
 		var nextStep = $this.attr('data-step');
+
+	//	var appHeight = $('.view.' + nextStep).position().top + $('.view.' + nextStep).outerHeight() + $('.summary__title').outerHeight() + $('.summary__info').outerHeight() + 50;
+
+	//	 console.log(appHeight);
+
+	//	 $('body').css('min-height', appHeight);
 	
-		if (nextStep == 'plans'){
+		if (cycleCount == 0 && nextStep == 'plans'){
+
+			console.log('It\'s true!');
 		
 			showSummary($this);	
 		
@@ -175,25 +167,28 @@ $(document).ready(function(){
 			
 		}, 500, 'easeInOutExpo', function(){
 		
-			$(this).removeClass('visible').css({position : 'static', width : 'inherit', left : '0'});
+			$(this).removeClass('visible').css({position : 'relative', width : 'inherit', left : '0'});
 			
 		});
 		
 		$('.view.' + nextStep).css({position : 'absolute', width : currentViewWidth, left : $(window).outerWidth()});
 			
-			$('.view.' + nextStep).addClass('visible').animate({
+			$('.view.' + nextStep).addClass('visible')
+
+			.animate({
 		
 			left: 0,
             opacity:100
 		
 		}, 500, 'easeInOutExpo', function(){
 		
+			$(this).css('position', 'relative');
+
 		});
 		
 		currentStep += 1;
 		
-		
-		
+
 		if (cycleSteps[cycleSteps.length-1] == 'plans'){
 		
 			$('.back-button').removeClass('animated fadeInHalfLeft').animate({ left: '-50px' }, 500, 'easeInOutExpo');
@@ -201,6 +196,7 @@ $(document).ready(function(){
 			$('.model__config-panel').hide();
 			
 			currentCycle += 1;
+			cycleCount += 1;
 			
 			$('.view.home .checkout').show();
 			
@@ -234,6 +230,8 @@ $(document).ready(function(){
 		console.log('The current view is ' + '[' + currentStep + '] ' + cycleSteps[currentStep]);
 		console.log('The previous view is ' + cycleSteps[currentStep - 1]);
 		
+		// console.log('The cycleCount is ' + cycleCount);
+
 		
 	}
 	
@@ -253,7 +251,7 @@ $(document).ready(function(){
 		
 			console.log('Animating ' + cycleSteps[currentStep])
 		
-			$('.view.' + cycleSteps[currentStep]).css({position : 'static', width : 'inherit', left : '0'}).removeClass('visible');
+			$('.view.' + cycleSteps[currentStep]).css({position : 'relative', width : 'inherit', left : '0'}).removeClass('visible');
 			
 			currentStep -= 1;
 			cycleSteps.splice(-1,1);
@@ -364,7 +362,7 @@ $(document).ready(function(){
 					.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 				
 						$(this).html(deviceTotal).removeClass('animated flipInX');
-			
+
 				});
 			
 		//	}
@@ -390,14 +388,13 @@ $(document).ready(function(){
 				.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 			
 					$(this).removeClass('animated flipInX');
-		
+
 			});
 			
-			$('#cpm-total').html('$' + planValue[1])
-				.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			$('#cpm-total').html('$' + planValue[1]).addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 			
 					$(this).removeClass('animated flipInX');
-		
+
 			});
 			
 		

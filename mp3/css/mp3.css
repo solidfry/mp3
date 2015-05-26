@@ -44,7 +44,7 @@ body {
 }
 
 .loading {
-    background: rgba(0, 138, 146, 0.75);
+    background: rgba(204, 204, 204, 0.75);
     position: fixed;
     top: 0;
     bottom: 0;

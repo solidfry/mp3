@@ -1329,14 +1329,14 @@ Carousel Widget alterations
     font-size: 0.7em;
 }
 
-@media (max-width: 31.1875em) {
+/*@media (max-width: 31.1875em) {*/
     .planSelectorWidget .planSummaryItem .planBody .planBorder {
         border-bottom: 0;
         background: #f5f5f5;
         padding: 2.25em 0 1em;
         margin-bottom: 1em;
     }
-}
+/*}*/
 
 .planSelectorWidget .planSummaryItem .planBody .planBorder {
     position: relative;

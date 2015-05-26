@@ -634,6 +634,7 @@ body .model__item {
     margin: 0 auto;
     clear: both;
     text-transform: uppercase;
+    line-height:2em;
 }
 
 .model__config-panel {

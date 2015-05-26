@@ -44,7 +44,7 @@ body {
 }
 
 .loading {
-    background: rgba(0, 138, 146, 0.75);
+    background: rgba(204, 204, 204, 0.75);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -99,36 +99,41 @@ body {
 }
 
 .loading:before {
-    top: 40%;
-    left: 42%;
+    top: 50%;
+    left: 50%;
     content: "";
     width: 4em;
     height: 4em;
+    margin-left: -2em;
+    margin-top: -2em;
     background-color: #fff;
-  border-radius: 100%;
-  -webkit-animation: scaleout 1.0s infinite ease-in-out;
-  animation: scaleout 1.0s infinite ease-in-out;
+    border-radius: 100%;
+    -webkit-animation: scaleout 1.0s infinite ease-in-out;
+    animation: scaleout 1.0s infinite ease-in-out;
     position: absolute;
     display: inline-block;
 }
 
 @-webkit-keyframes scaleout {
-  0% { -webkit-transform: scale(0.0) }
-  100% {
-    -webkit-transform: scale(1.0);
-    opacity: 0;
-  }
+    0% {
+        -webkit-transform: scale(0.0)
+    }
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
 }
 
 @keyframes scaleout {
-  0% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 100% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-    opacity: 0;
-  }
+    0% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
 }
 
 .view.animated {
@@ -222,6 +227,7 @@ body {
     background: white;
     margin: 0 1em 8em;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
+    max-width: 1170px;
 }
 
 .view.visible {
@@ -545,12 +551,27 @@ body .model__item {
     padding: 2em 1em 2em 1em;
 }
 
+@media only screen and (min-width: 860px) {
+    body .model__list .model__item {
+        border: 0;
+        padding: 1.5em;
+        height: 10em;
+    }
+}
+
 .tap {
     cursor: pointer;
 }
 
 .model__item:last-child {
     border-bottom: 0;
+    float: left;
+}
+
+@media only screen and (min-width: 860px) {
+    .model__list .model__item:last-child {
+        float: left;
+    }
 }
 
 .model__img {
@@ -613,6 +634,7 @@ body .model__item {
     margin: 0 auto;
     clear: both;
     text-transform: uppercase;
+    line-height:2em;
 }
 
 .model__config-panel {
@@ -623,9 +645,9 @@ body .model__item {
     border: 2px solid #e5e5e5;
     cursor: auto;
     margin-top: 1em;
+    z-index: 9500;
     /*
     position: absolute;
-    z-index:9500;
     left:0;
     */
 }
@@ -682,7 +704,7 @@ body .model__item {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     border-radius: 5px;
-    padding: 0px 0px 0px 0px;
+    padding: 1em 0;
     background: #00a3ad;
     color: white;
     text-transform: uppercase;
@@ -690,6 +712,7 @@ body .model__item {
     text-align: center;
     margin-top: 0;
     position: relative;
+    line-height:1em;
 }
 
 .stockConfigBanner.noPointer:after {

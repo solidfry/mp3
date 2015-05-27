@@ -524,6 +524,17 @@ Summary bar
     }
 }
 
+.summary__mtc {
+    clear: both;
+    font-size: 11px;
+    color: white;
+    font-weight: bold;
+    padding: .5em 0 0em 1em;
+    margin: 0;
+    line-height: 1em;
+
+}
+
 .summary__full {}
 
 .expand .summary__full {
@@ -638,11 +649,11 @@ body .model__item {
     position: relative;
     top: -.1em;
     border-radius: 6px;
-    background: #e5e5e5;
-    color: #323232;
+    background: #fff;
+    color: #178093;
     line-height: 1em;
-    /*border:2px solid #ff8200;
-    box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.2);*/
+    border:1px solid #178093;
+    /*box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.2);*/
 }
 
 .model__price-label {
@@ -659,7 +670,7 @@ body .model__item {
     display: block;
     text-indent: -.1em;
     padding-bottom: .15em;
-    color: #178093;
+    color: #323232;
     /*height: .9em;
     line-height: 1.1em;*/
 }
@@ -1330,11 +1341,11 @@ Carousel Widget alterations
 }
 
 .planSelectorWidget .planSummaryItem .planHeading {
-    height: 85px;
-    background: #00a3ad;
-    padding: 25px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+  height: auto;
+  background: #00a3ad;
+  padding: 2em 1em 1em;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .planSelectorWidget .planSummaryItem .planHeading .heading-emphasis {

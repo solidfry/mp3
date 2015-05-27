@@ -33,15 +33,112 @@ html,
 body {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC);
     background-color: #e5e5e5;
+    /* height: 100%;
+    position: relative;
+    width: 375px;
+    overflow-x: hidden; */
 }
 
 body {
     padding-top: 1em;
 }
 
+.loading {
+    background: rgba(204, 204, 204, 0.75);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    -webkit-animation-name: fadeOutLoad;
+    animation-name: fadeOutLoad;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    opacity: 1;
+}
+
+@-webkit-keyframes fadeOutLoad {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fadeOutLoad {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loading:before {
+    top: 50%;
+    left: 50%;
+    content: "";
+    width: 4em;
+    height: 4em;
+    margin-left: -2em;
+    margin-top: -2em;
+    background-color: #fff;
+    border-radius: 100%;
+    -webkit-animation: scaleout 1.0s infinite ease-in-out;
+    animation: scaleout 1.0s infinite ease-in-out;
+    position: absolute;
+    display: inline-block;
+}
+
+@-webkit-keyframes scaleout {
+    0% {
+        -webkit-transform: scale(0.0)
+    }
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleout {
+    0% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
 .view.animated {
-    -webkit-animation-delay: .7s;
-    animation-delay: .7s;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
     -webkit-animation-duration: .65s;
     animation-duration: .65s;
     -webkit-animation-fill-mode: both;
@@ -130,6 +227,7 @@ body {
     background: white;
     margin: 0 1em 8em;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
+    max-width: 1170px;
 }
 
 .view.visible {
@@ -180,6 +278,10 @@ body {
     color: white;
 }
 
+    .home .step__title {
+         background:#033241;
+    }
+
 .product-select {
     margin: 0em 0 1em;
 }
@@ -223,6 +325,8 @@ body {
 
 .product-select__link--add {
     padding: 1em 0;
+    -webkit-animation: jiggle 2s ease-in 4s 1;
+          animation: jiggle 2s ease-in 4s 1;
 }
 
 .product-select__link--add .ico:before {
@@ -230,6 +334,41 @@ body {
     color: white;
     border-radius: 50%;
 }
+
+.product-select__link--add:focus {
+  outline: none;
+}
+
+@-webkit-keyframes jiggle {
+  5% {
+    -webkit-transform: scale(1.1, 0.9);
+            transform: scale(1.1, 0.9);
+  }
+  10% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-0.5rem);
+            transform: scale(0.9, 1.1) translateY(-0.5rem);
+  }
+  15% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes jiggle {
+  5% {
+    -webkit-transform: scale(1.1, 0.9);
+            transform: scale(1.1, 0.9);
+  }
+  10% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-0.5rem);
+            transform: scale(0.9, 1.1) translateY(-0.5rem);
+  }
+  15% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 
 .product-select__link .ico {
     font-size: 2em;
@@ -436,7 +575,6 @@ Safari, Chrome and Opera > 12.1
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
-
 /* -----
 Mobile Listing Widget alterations
 ----- */
@@ -454,12 +592,27 @@ body .model__item {
     padding: 2em 1em 2em 1em;
 }
 
+@media only screen and (min-width: 860px) {
+    body .model__list .model__item {
+        border: 0;
+        padding: 1.5em;
+        height: 10em;
+    }
+}
+
 .tap {
     cursor: pointer;
 }
 
 .model__item:last-child {
     border-bottom: 0;
+    float: left;
+}
+
+@media only screen and (min-width: 860px) {
+    .model__list .model__item:last-child {
+        float: left;
+    }
 }
 
 .model__img {
@@ -522,6 +675,7 @@ body .model__item {
     margin: 0 auto;
     clear: both;
     text-transform: uppercase;
+    line-height:2em;
 }
 
 .model__config-panel {
@@ -532,9 +686,9 @@ body .model__item {
     border: 2px solid #e5e5e5;
     cursor: auto;
     margin-top: 1em;
+    z-index: 9500;
     /*
     position: absolute;
-    z-index:9500;
     left:0;
     */
 }
@@ -591,7 +745,7 @@ body .model__item {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     border-radius: 5px;
-    padding: 0px 0px 0px 0px;
+    padding: 1em 0;
     background: #00a3ad;
     color: white;
     text-transform: uppercase;
@@ -599,6 +753,7 @@ body .model__item {
     text-align: center;
     margin-top: 0;
     position: relative;
+    line-height:1em;
 }
 
 .stockConfigBanner.noPointer:after {
@@ -1063,7 +1218,6 @@ FOUNDATION MEDIUM BLOCK GRID READDED TO STYLES
         clear: both;
     }
 }
-
 /* -----
 Carousel Widget alterations
 ----- */
@@ -1085,10 +1239,7 @@ Carousel Widget alterations
     top: -8%;
     left: 50%;
 }
-
-
 /* CUSTOM PLANS CSS */
-
 
 .planSelectorWidget .button {
     display: block;
@@ -1168,9 +1319,9 @@ Carousel Widget alterations
 }
 
 .planSelectorWidget .planSummaryItem.panel {
-  padding: .2em;
-  border-radius: 6px;
-    background:white;
+    padding: .2em;
+    border-radius: 6px;
+    background: white;
 }
 
 .planSelectorWidget .planSummaryItem h2 {
@@ -1204,7 +1355,7 @@ Carousel Widget alterations
     height: 30px;
     padding: 10px;
     color: white;
-    margin-bottom:.2em;
+    margin-bottom: .2em;
 }
 
 .planSelectorWidget .planSummaryItem .planViewDetails h5 {
@@ -1219,56 +1370,53 @@ Carousel Widget alterations
     font-size: 0.7em;
 }
 
-@media (max-width: 31.1875em) {
+/*@media (max-width: 31.1875em) {*/
     .planSelectorWidget .planSummaryItem .planBody .planBorder {
-      border-bottom: 0;
-      background: #f5f5f5;
-      padding: 2.25em 0 1em;
-      margin-bottom: 1em;
+        border-bottom: 0;
+        background: #f5f5f5;
+        padding: 2.25em 0 1em;
+        margin-bottom: 1em;
     }
-}
-
+/*}*/
 
 .planSelectorWidget .planSummaryItem .planBody .planBorder {
-     position: relative;
+    position: relative;
 }
 
-
-
 .planBody .planBorder:last-of-type:after {
-    content:"";
-    display:none;
+    content: "";
+    display: none;
 }
 
 .planSelectorWidget .planSummaryItem .planBody .planBorder:last-of-type {
-     margin:0 0 .15em;
+    margin: 0 0 .15em;
 }
 
 .planBorder h4 {
-     text-transform: none;
+    text-transform: none;
 }
 
 .planBorder:after {
-  font-family: "optus-icons";
-  content: "\e613";
-  display: block;
-  width: 1.5em;
-  height: 1.5em;
-  background: white;
-  color: #cccccc;
-  border-radius: 50%;
-  line-height: 1.5em;
-  font-weight: bold;
-  font-size: 2.5em;
-  position: absolute;
-  bottom: -1em;
-  z-index: 9999;
-  left: 41%;
+    font-family: "optus-icons";
+    content: "\e613";
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    background: white;
+    color: #cccccc;
+    border-radius: 50%;
+    line-height: 1.5em;
+    font-weight: bold;
+    font-size: 2.5em;
+    position: absolute;
+    bottom: -1em;
+    z-index: 9999;
+    left: 41%;
 }
 
 .selectWrap {
-   padding: 2em 1em 0em;
-    border-top:2px solid #e5e5e5;
+    padding: 2em 1em 0em;
+    border-top: 2px solid #e5e5e5;
 }
 
 .planSelectorWidget .carousel.is-carousel {

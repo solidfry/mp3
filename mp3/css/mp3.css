@@ -282,6 +282,10 @@ body {
          background:#033241;
     }
 
+    .step__title .ico {
+        font-size:.85em;
+    }
+
 .product-select {
     margin: 0em 0 1em;
 }

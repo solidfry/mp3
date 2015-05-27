@@ -66,7 +66,7 @@ $(document).ready(function(){
 	function showSummary(element){
 	
 		console.log('We\'re running showSummary...');
-
+	
 		// Display the summary below the window
 		summary.css({ 'display' : 'block', 'position' : 'fixed', 'bottom' : '-300px', 'right' : '0px' });
 
@@ -97,7 +97,7 @@ $(document).ready(function(){
 	}
 	
 	
-
+	
 	// Setup cycle iterations
 	
 	var cycleCount = 0;
@@ -136,15 +136,15 @@ $(document).ready(function(){
 		$this = element;
 	
 		var nextStep = $this.attr('data-step');
-
+		
 	//	var appHeight = $('.view.' + nextStep).position().top + $('.view.' + nextStep).outerHeight() + $('.summary__title').outerHeight() + $('.summary__info').outerHeight() + 50;
-
+		 
 	//	 console.log(appHeight);
-
+		 
 	//	 $('body').css('min-height', appHeight);
 	
 		if (cycleCount == 0 && nextStep == 'plans'){
-
+		
 			console.log('It\'s true!');
 		
 			showSummary($this);	
@@ -183,12 +183,12 @@ $(document).ready(function(){
 		}, 500, 'easeInOutExpo', function(){
 		
 			$(this).css('position', 'relative');
-
+		
 		});
 		
 		currentStep += 1;
 		
-
+		
 		if (cycleSteps[cycleSteps.length-1] == 'plans'){
 		
 			$('.back-button').removeClass('animated fadeInHalfLeft').animate({ left: '-50px' }, 500, 'easeInOutExpo');
@@ -231,7 +231,7 @@ $(document).ready(function(){
 		console.log('The previous view is ' + cycleSteps[currentStep - 1]);
 		
 		// console.log('The cycleCount is ' + cycleCount);
-
+		
 		
 	}
 	
@@ -362,7 +362,7 @@ $(document).ready(function(){
 					.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 				
 						$(this).html(deviceTotal).removeClass('animated flipInX');
-
+			    
 				});
 			
 		//	}
@@ -388,13 +388,13 @@ $(document).ready(function(){
 				.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 			
 					$(this).removeClass('animated flipInX');
-
+		    
 			});
 			
 			$('#cpm-total').html('$' + planValue[1]).addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 			
 					$(this).removeClass('animated flipInX');
-
+		    
 			});
 			
 		

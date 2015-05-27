@@ -1364,7 +1364,7 @@ Carousel Widget alterations
     font-size: 0.6em;
 }
 
-.planSelectorWidget .planSummaryItem .planHeading h2 {
+.planSelectorWidget .planSummaryItem .planHeading h2, .planSelectorWidget .planSummaryItem .planHeading h4, .planSelectorWidget .planSummaryItem .planHeading h4 p  {
     color: white;
     margin: 0px;
 }

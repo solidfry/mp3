@@ -2,9 +2,9 @@ $(document).ready(function(){
 
 	$('.viewport').css('width', $(window).width());
 
-    $('.home .model__item').each(function() {
+    /*$('.home .model__item').each(function() {
         $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
-    });
+    });*/
 	
     // Model Config reveal
 

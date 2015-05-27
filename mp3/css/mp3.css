@@ -225,7 +225,7 @@ body {
 .view {
     display: none;
     background: white;
-    margin: 0 1em 8em;
+    margin: 0 1em 9.5em;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
     max-width: 1170px;
 }
@@ -482,16 +482,17 @@ Summary bar
 }
 
 .summary__element {
-    margin: 0 0 0 0.5em;
-    color: #fff;
-    background: #006685;
-    border-radius: .3em;
-    padding: .5em .5em .2em;
-    display: inline-block;
-    text-align: center;
-    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.5);
-    float: left;
-    font-size: 1.2em;
+  margin: 0 0 0 0.5em;
+  color: #fff;
+  background: #006685;
+  border-radius: .3em;
+  padding: .75em .5em;
+  display: inline-block;
+  text-align: center;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.5);
+  float: left;
+  font-size: 1.2em;
+  width: 30.75%;
 }
 
 .summary__data {
@@ -536,7 +537,6 @@ Summary bar
     padding: .5em 0 0em 1em;
     margin: 0;
     line-height: 1em;
-
 }
 
 .summary__full {}
@@ -596,6 +596,7 @@ Mobile Listing Widget alterations
 
 .model__title {
     margin: 0 0 .25em;
+    padding-top:0.1em;
 }
 
 body .model__list {
@@ -611,7 +612,7 @@ body .model__item {
     body .model__list .model__item {
         border: 0;
         padding: 1.5em;
-        height: 10em;
+        height: 14em;
     }
 }
 
@@ -1247,7 +1248,10 @@ Carousel Widget alterations
 
 .planSelectorWidget .carousel-item {
     margin-bottom: 1em;
+    padding:0;
 }
+
+
 
 .planSelectorWidget .carousel.is-carousel .carousel-pageIndicatorsWrapper {
     position: absolute;

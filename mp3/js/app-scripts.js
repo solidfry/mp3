@@ -71,7 +71,7 @@ $(document).ready(function(){
 		summary.css({ 'display' : 'block', 'position' : 'fixed', 'bottom' : '-300px', 'right' : '0px' });
 
 		// Once displayed off screen, get combined summary top bar height
-		var summaryHeight =  $('.summary__title').outerHeight() + $('.summary__info').outerHeight();
+		var summaryHeight =  summary.outerHeight();
 
 		// Animate the window height - the summary top bar height
 		summary.animate({ bottom : '0px' }, 500, 'easeOutQuint', function(){

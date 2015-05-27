@@ -200,7 +200,7 @@ $(document).ready(function(){
 			
 			$('.view.home .checkout').show();
 			
-			$('.view.home .step__title').text('Add more stuff!');
+			$('.view.home .step__title').html('<span class="ico ico-home yellow"></span> Add more stuff!');
 			
 			$('.view.home .model__item').each(function(i, el){
 			

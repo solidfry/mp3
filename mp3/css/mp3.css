@@ -1330,11 +1330,11 @@ Carousel Widget alterations
 }
 
 .planSelectorWidget .planSummaryItem .planHeading {
-    height: 85px;
-    background: #00a3ad;
-    padding: 25px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+  height: auto;
+  background: #00a3ad;
+  padding: 2em 1em 1em;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .planSelectorWidget .planSummaryItem .planHeading .heading-emphasis {

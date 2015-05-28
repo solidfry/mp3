@@ -193,7 +193,7 @@ $(document).ready(function(){
 		
 			$('.back-button').removeClass('animated fadeInHalfLeft').animate({ left: '-50px' }, 500, 'easeInOutExpo');
 			
-			$('.model__config-panel').hide();
+			$('.model__config-panel').removeClass('on').hide();
 			
 			currentCycle += 1;
 			cycleCount += 1;

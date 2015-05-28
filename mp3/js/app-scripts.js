@@ -185,7 +185,7 @@ $(document).ready(function(){
 			$(this).css('position', 'relative');
 		
 		});
-		$(window).scrollTop(0);
+		$("html, body").animate({ scrollTop: 0 }, "slow");
 		currentStep += 1;
 		
 		

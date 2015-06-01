@@ -44,7 +44,7 @@ body {
 }
 
 .loading {
-    background: rgba(204, 204, 204, 0.75);
+    background: rgba(0, 138, 146, 0.75);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -409,19 +409,10 @@ Summary bar
 ----- */
 
 .summary {
-    /* -webkit-transform: translateX(0);
-    transform: translateX(0); */
-
+    background: #022a37;
     width: 100%;
     font-size: .80em;
     z-index: 9999;
-    background: white;
-    /*-webkit-transition: background-color 300ms ease-out;
-       -moz-transition: background-color 300ms ease-out;
-         -o-transition: background-color 300ms ease-out;
-        -ms-transition: background-color 300ms ease-out;
-            transition: background-color 300ms ease-out;*/
-
     display: none;
 }
 
@@ -435,8 +426,6 @@ Summary bar
 
 .summary__info {
     padding: 1em 0;
-    background: #245463;
-    background: rgba(2, 57, 75, 0.95);
 }
 
 .summary__title {
@@ -751,6 +740,80 @@ body .model__item {
     color: #006685;
     margin: 0;
 }
+
+
+
+.updated {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.85);
+  border-radius: 6px;
+  z-index: 9999;
+  -webkit-animation: updateFadeOut .6s 1 ease-out;
+  animation: updateFadeOut .6s 1 ease-out;
+  -webkit-animation-delay:2s;
+  animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards ;
+}
+
+@-webkit-keyframes updateFadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes updateFadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.checkmarkWrap {
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -2.5em;
+  margin-top: -2.5em;
+  display: block;
+    -webkit-animation: zoomIn .3s cubic-bezier(0.14, 0.87, 0.74, 1.22);
+    animation: zoomIn .3s cubic-bezier(0.14, 0.87, 0.74, 1.22);
+}
+
+.checkmark {
+    display:inline-block;
+    width: 5em;
+    height:5em;
+}
+
+.checkmark_circle {
+  position: absolute;
+  width: 1em;
+  background-color: #00a3ad;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  line-height: 1em;
+  font-size: 5em;
+  color: white;
+}
+
+
 
 .view button .ico {
     font-size: 1em;
@@ -1268,16 +1331,6 @@ Carousel Widget alterations
     margin-top: 0px !important;
 }
 
-@media (min-width: 53.75em) {
-    .planSelectorWidget .heading-emphasis {
-        font-size: 4.625em;
-    }
-}
-
-.planSelectorWidget .lt-ie9 .heading-emphasis {
-    font-size: 4.625em;
-}
-
 .planSelectorWidget .hide {
     display: none;
 }
@@ -1360,6 +1413,12 @@ Carousel Widget alterations
     font-size: 2.375em;
 }
 
+@media (min-width: 53.75em) {
+    .planSelectorWidget .planSummaryItem .planHeading  .heading-emphasis {
+        font-size: 2em;
+    }
+}
+
 .planSelectorWidget .planSummaryItem .planHeading .calloutPlan {
     font-size: 0.6em;
 }
@@ -1383,6 +1442,7 @@ Carousel Widget alterations
 
 .planSelectorWidget .planSummaryItem .planBody {
     padding: 0;
+    width:100%;
 }
 
 .planSelectorWidget .planSummaryItem .planBody .planCalloutText {
@@ -1430,7 +1490,8 @@ Carousel Widget alterations
     position: absolute;
     bottom: -1em;
     z-index: 9999;
-    left: 41%;
+    left: 50%;
+    margin-left: -.75em;
 }
 
 .selectWrap {

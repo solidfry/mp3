@@ -18,22 +18,22 @@ $(document).ready(function(){
 	
     // Model Config reveal
 
-     $('.model__item .tap').click(function(e) {
+     $('.model__item .tap, .carousel-item .tap').click(function(e) {
 	 
 		$this = $(this);
 
-		if ($this.parent().find(".model__config-panel").hasClass('on')){
+		if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')){
 		
-			 $this.parent().find(".model__config-panel").slideToggle().removeClass('on');
+			 $this.parent().find(".model__config-panel, .planBody ").slideToggle().removeClass('on');
 			 $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 		
 		} else {
 	 
-			$(".model__config-panel.on").slideToggle(300).removeClass('on');
+			$(".model__config-panel.on, .planBody.on ").slideToggle(300).removeClass('on');
 
 			$this
 				.parent()
-				.find(".model__config-panel")
+				.find(".model__config-panel, .planBody ")
 				.stop(true,true)
 				.slideToggle(300, function(){
 

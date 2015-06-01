@@ -1442,6 +1442,7 @@ Carousel Widget alterations
 
 .planSelectorWidget .planSummaryItem .planBody {
     padding: 0;
+    width:100%;
 }
 
 .planSelectorWidget .planSummaryItem .planBody .planCalloutText {

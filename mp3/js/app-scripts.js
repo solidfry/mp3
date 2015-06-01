@@ -18,7 +18,7 @@ $(document).ready(function(){
 	
     // Model Config reveal
 
-     $('.model__item .tap, .carousel-item .tap').click(function(e) {
+     $('.tap').click(function(e) {
 	 
 		$this = $(this);
 

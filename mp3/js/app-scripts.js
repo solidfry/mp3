@@ -22,7 +22,7 @@ $(document).ready(function () {
     $('.tap').click(function (e) {
 
         $this = $(this);
-
+        $this.toggleClass('active');
         if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {
 
             $this.parent().find(".model__config-panel, .planBody ").slideToggle().removeClass('on');

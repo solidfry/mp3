@@ -254,7 +254,7 @@ $(document).ready(function(){
 			$('.view.' + cycleSteps[currentStep]).css({position : 'relative', width : 'inherit', left : '0'}).removeClass('visible');
 			
 			currentStep -= 1;
-			cycleSteps.splice(-1,1);
+			cycleSteps.pop();
 			
 		});
 		

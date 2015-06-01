@@ -4,6 +4,10 @@ $(document).ready(function(){
     var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle"></div><div class="checkmark_stem"></div><div class="checkmark_kick"></div></span></span></div>';
     updateDevice.click(function() {
         $this.parent().find(".model__config-panel").prepend(updateAnim);
+
+        setTimeout(function() {
+            $('.updated').remove();
+        }, 3000);
     });
 
 	$('.viewport').css('width', $(window).width());

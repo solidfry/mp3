@@ -1405,8 +1405,7 @@ Carousel Widget alterations
   height: auto;
   background: #00a3ad;
   padding: 2em 1em 1em;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-radius:6px;
 }
 
 .planSelectorWidget .planSummaryItem .planHeading .heading-emphasis {

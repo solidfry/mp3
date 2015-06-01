@@ -1407,6 +1407,16 @@ Carousel Widget alterations
   padding: 2em 1em 1em;
   border-radius:6px;
 }
+/* TAP active state for plan */
+
+.planSelectorWidget .active {
+     border-color:#006685 ;
+    border-width: 2px;
+}
+
+.planSelectorWidget .active .planHeading {
+     background-color:#006685;
+}
 
 .planSelectorWidget .planSummaryItem .planHeading .heading-emphasis {
     font-size: 2.375em;

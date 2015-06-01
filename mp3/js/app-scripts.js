@@ -22,16 +22,16 @@ $(document).ready(function () {
     $('.tap').click(function (e) {
 
         $this = $(this);
-        $this.toggleClass('active');
+
         if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {
 
             $this.parent().find(".model__config-panel, .planBody ").slideToggle().removeClass('on');
             $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
-
+            $this.parent().removeClass('active');
         } else {
 
             $(".model__config-panel.on, .planBody.on ").slideToggle(300).removeClass('on');
-
+            $(".planSummaryItem").removeClass('active');
             $this
                 .parent()
                 .find(".model__config-panel, .planBody ")
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
                 })
                 .addClass('on');
-
+                $this.parent().addClass('active');
 
             $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 
@@ -227,7 +227,7 @@ $(document).ready(function () {
             }, 500, 'easeInOutExpo');
 
             $('.model__config-panel').removeClass('on').hide();
-
+            $('.planSummaryItem.active').removeClass('active').hide();
             currentCycle += 1;
             cycleCount += 1;
 

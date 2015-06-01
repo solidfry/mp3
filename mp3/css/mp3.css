@@ -791,8 +791,8 @@ body .model__item {
   margin-left: -2.5em;
   margin-top: -2.5em;
   display: block;
-    -webkit-animation: zoomIn .3s 1 cubic-bezier(0.14, 0.87, 0.74, 1.22);
-    animation: zoomIn .3s 1 cubic-bezier(0.14, 0.87, 0.74, 1.22);
+    -webkit-animation: zoomIn .3s cubic-bezier(0.14, 0.87, 0.74, 1.22);
+    animation: zoomIn .3s cubic-bezier(0.14, 0.87, 0.74, 1.22);
 }
 
 .checkmark {
@@ -802,7 +802,7 @@ body .model__item {
 }
 
 .checkmark_circle {
-position: absolute;
+  position: absolute;
   width: 1em;
   background-color: #00a3ad;
   border-radius: 50%;
@@ -813,23 +813,7 @@ position: absolute;
   color: white;
 }
 
-/*.checkmark_stem {
-  position: absolute;
-  width: 3px;
-  height: 18px;
-  background-color: #fff;
-  left: 25px;
-  top: 12px;
-}
 
-.checkmark_kick {
-  position: absolute;
-  width: 11px;
-  height: 3px;
-  background-color: #fff;
-  left: 17px;
-  top: 27px;
-}*/
 
 .view button .ico {
     font-size: 1em;

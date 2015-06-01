@@ -794,13 +794,13 @@ body .model__item {
 }
 
 .checkmarkWrap {
-  width: 3em;
-  height: 3em;
+  width: 5em;
+  height: 5em;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -1.5em;
-  margin-top: -1.5em;
+  margin-left: -2.5em;
+  margin-top: -2.5em;
   display: block;
     -webkit-animation: zoomIn .3s 1 cubic-bezier(0.14, 0.87, 0.74, 1.22);
     animation: zoomIn .3s 1 cubic-bezier(0.14, 0.87, 0.74, 1.22);
@@ -808,24 +808,23 @@ body .model__item {
 
 .checkmark {
     display:inline-block;
-    width: 3em;
-    height:3em;
-    -ms-transform: rotate(45deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-    transform: rotate(45deg);
+    width: 5em;
+    height:5em;
 }
 
 .checkmark_circle {
-    position: absolute;
-  width: 3em;
-  height: 3em;
-    background-color: #00a3ad;
-    border-radius:50%;
-    left:0;
-    top:0;
+position: absolute;
+  width: 1em;
+  background-color: #00a3ad;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  line-height: 1em;
+  font-size: 5em;
+  color: white;
 }
 
-.checkmark_stem {
+/*.checkmark_stem {
   position: absolute;
   width: 3px;
   height: 18px;
@@ -841,7 +840,7 @@ body .model__item {
   background-color: #fff;
   left: 17px;
   top: 27px;
-}
+}*/
 
 .view button .ico {
     font-size: 1em;

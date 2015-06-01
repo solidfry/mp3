@@ -1,7 +1,7 @@
 $(document).ready(function(){
     // Update device information in the home panel. This adds a validation notification.
     var updateDevice = $('.home .model__config-panel .button');
-    var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle"></div><div class="checkmark_stem"></div><div class="checkmark_kick"></div></span></span></div>';
+    var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle ico ico-tick"></div></span></span></div>';
     updateDevice.click(function() {
         $this.parent().find(".model__config-panel").prepend(updateAnim).delay(3000).slideUp('.model__config-panel');
 

@@ -819,7 +819,7 @@ body .model__item {
     position: absolute;
   width: 3em;
   height: 3em;
-    background-color: green;
+    background-color: #00a3ad;
     border-radius:50%;
     left:0;
     top:0;

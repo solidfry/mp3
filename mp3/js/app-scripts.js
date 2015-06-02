@@ -1,8 +1,14 @@
 $(document).ready(function () {
 
+
+
+
     // Update device information in the home panel. This adds a validation notification.
+	
     var updateDevice = $('.update');
+	
     var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle ico ico-tick"></div></span></span></div>';
+	
     updateDevice.click(function () {
         $this.parent().find(".model__config-panel").prepend(updateAnim).delay(3000).slideUp();
 
@@ -10,14 +16,10 @@ $(document).ready(function () {
             $('.updated').remove();
         }, 3000);
     });
+	
 
-    $('.viewport').css('width', $(window).width());
 
-    /*$('.home .model__item').each(function() {
-        $(this).prepend("<span class='model__count'>" + ($(this).index() +1) + "</span>");
-    });*/
-
-    // Model Config reveal
+    // Generic show/hide toggle function (e.g. Model Config)
 
     $('.tap').click(function (e) {
 
@@ -53,9 +55,9 @@ $(document).ready(function () {
         }
 
     });
-
-
-
+	
+	
+	// Switch active capacity when selection changes
 
     $('.capacityButton').click(function (e) {
 
@@ -68,17 +70,17 @@ $(document).ready(function () {
     });
 
 
-
     // Position Summary Panel
 
     var windowPosition;
     var summary = $('.summary');
+	
+	// Show summary function is run when device is selected
 
     function showSummary(element) {
 
-        console.log('We\'re running showSummary...');
-
         // Display the summary below the window
+		
         summary.css({
             'display': 'block',
             'position': 'fixed',
@@ -87,9 +89,11 @@ $(document).ready(function () {
         });
 
         // Once displayed off screen, get combined summary top bar height
+		
         var summaryHeight = summary.outerHeight();
 
         // Animate the window height - the summary top bar height
+		
         summary.animate({
             bottom: '0px'
         }, 500, 'easeOutQuint', function () {
@@ -115,7 +119,6 @@ $(document).ready(function () {
     }
 
 
-
     // Setup cycle iterations
 
     var cycleCount = 0;
@@ -125,14 +128,16 @@ $(document).ready(function () {
 
     console.log('The current view is ' + cycleSteps[0]);
 
-    // Cycle between views
+    // Set the first .view div as .visible on page load
 
     var views = $('.view');
     $(views[0]).addClass('visible');
 
-    //
+    // When an element with a data-step attribute is clicked, 
 
     $('[data-step]').on('click', function (e) {
+	
+		// To manage clickable child elements (should perhaps be managed with stopPropagation())
 
         if (e.target != this) {
 
@@ -147,28 +152,28 @@ $(document).ready(function () {
         e.preventDefault();
 
     });
-
-
+	
+	// The brain. This function determines the next/previous views and positions and shows them accordingly.
+	
     function switchView(element) {
-
+		
+		// Get the element that was passed from the click function
+		
         $this = element;
+		
+		// Determine the next view that needs to be shown
 
         var nextStep = $this.attr('data-step');
-
-        //	var appHeight = $('.view.' + nextStep).position().top + $('.view.' + nextStep).outerHeight() + $('.summary__title').outerHeight() + $('.summary__info').outerHeight() + 50;
-
-        //	 console.log(appHeight);
-
-        //	 $('body').css('min-height', appHeight);
+		
+		// If we're in the first cycle we need to show the summary when a device is selected
 
         if (cycleCount == 0 && nextStep == 'plans') {
-
-            console.log('It\'s true!');
 
             showSummary($this);
 
         }
-
+		
+						
 
         if (currentCycle == 0 && currentStep == 0) {
 

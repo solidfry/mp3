@@ -222,7 +222,7 @@ body {
 .view {
     display: none;
     background: white;
-    margin: 0 0 9.5em;
+    margin: 1em 1em 9.5em;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
     max-width: 1170px;
 	top: 0;
@@ -1936,7 +1936,7 @@ Carousel Widget alterations
 .zipInRight {
 
 -webkit-animation: zipInRight 0.5s ease normal forwards;
-animation: zipInRight 0.5s ease normal forwards;
+animation: zipInRight 0.5s ease-out normal forwards;
 
 
 }
@@ -1944,21 +1944,21 @@ animation: zipInRight 0.5s ease normal forwards;
 .zipOutLeft {
 
 -webkit-animation: zipOutLeft 0.5s ease normal forwards;
-animation: zipOutLeft 0.5s ease normal forwards;
+animation: zipOutLeft 0.5s ease-out normal forwards;
 
 }
 
 .zipOutRight {
 
 -webkit-animation: zipOutRight 0.5s ease normal forwards;
-animation: zipOutRight 0.5s ease normal forwards;
+animation: zipOutRight 0.5s ease-out normal forwards;
 
 }
 
 .zipInLeft {
 
 -webkit-animation: zipInLeft 0.5s ease normal forwards;
-animation: zipInLeft 0.5s ease normal forwards;
+animation: zipInLeft 0.5s ease-out normal forwards;
 
 }
 

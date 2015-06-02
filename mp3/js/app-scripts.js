@@ -226,8 +226,8 @@ $(document).ready(function () {
                 left: '-50px'
             }, 500, 'easeInOutExpo');
 
-            $('.model__config-panel').removeClass('on').hide();
-            $('.planSummaryItem.active').removeClass('active').hide();
+            $('.model__config-panel, .planBody ').removeClass('on').hide();
+            $('.planSummaryItem.active').removeClass('active');
             currentCycle += 1;
             cycleCount += 1;
 

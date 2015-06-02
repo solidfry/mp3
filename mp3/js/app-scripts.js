@@ -221,7 +221,9 @@ $(document).ready(function () {
 			
 			$('.zipOutLeft').removeClass('visible zipOutLeft');
 		});
-  
+        $("html, body").animate({
+            scrollTop: 0
+        }, "fast");
 		$('.zipInRight').one(transitionEvent,   
 		function(event) {
 		

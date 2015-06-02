@@ -801,7 +801,7 @@ body .model__item {
   }
 }
 
-@keyframes zoomOutW {
+@keyframes zoomOut {
   0% {
     opacity: 1;
   }
@@ -1967,30 +1967,30 @@ Carousel Widget alterations
 
 .zipInRight {
 
--webkit-animation: zipInRight 0.3s ease-out normal forwards;
-animation: zipInRight 0.3s ease-out normal forwards;
+-webkit-animation: zipInRight .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
+animation: zipInRight .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 
 
 }
 
 .zipOutLeft {
 
--webkit-animation: zipOutLeft 0.3s ease-out normal forwards;
-animation: zipOutLeft 0.3s ease-out normal forwards;
+-webkit-animation: zipOutLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
+animation: zipOutLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 
 }
 
 .zipOutRight {
 
--webkit-animation: zipOutRight 0.3s ease-out normal forwards;
-animation: zipOutRight 0.3s ease-out normal forwards;
+-webkit-animation: zipOutRight .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
+animation: zipOutRight .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 
 }
 
 .zipInLeft {
 
--webkit-animation: zipInLeft 0.3s ease normal forwards;
-animation: zipInLeft 0.3s ease-out normal forwards;
+-webkit-animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
+animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 
 }
 

@@ -801,7 +801,7 @@ body .model__item {
   }
 }
 
-@keyframes zoomOutW {
+@keyframes zoomOut {
   0% {
     opacity: 1;
   }

@@ -126,8 +126,6 @@ $(document).ready(function () {
     var currentStep = 0;
     var cycleSteps = ['home'];
 
-    console.log('The current view is ' + cycleSteps[0]);
-
     // Set the first .view div as .visible on page load
 
     var views = $('.view');
@@ -140,10 +138,14 @@ $(document).ready(function () {
 		// To manage clickable child elements (should perhaps be managed with stopPropagation())
 
         if (e.target != this) {
+		
+			console.log('Not the element we want so grabber the parent');
 
             switchView($(this).closest('[data-step]'));
 
         } else {
+		
+			console.log('The element we want');
 
             switchView($(e.target));
 
@@ -173,55 +175,43 @@ $(document).ready(function () {
 
         }
 		
-						
+		// Remove animation classes from home view (we only want them to run on page load)
 
         if (currentCycle == 0 && currentStep == 0) {
 
             $('.view.home').removeClass('animated fadeInUp');
 
         }
+		
+		// CSS Animations
+		
+		$this.closest('.view').addClass('slideOutLeft');
+		
+		$('.' + nextStep).addClass('visible slideInRight');
+		
+		
+		$('.slideOutLeft').one('webkitAnimationEnd',   
+		function(e) {
+		
+			// After animation ends, remove the classes
 
-        var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
+			$('.slideOutLeft').removeClass('visible slideOutLeft');
+		
+		});
+		
+		
+		$('.slideInRight').one('webkitAnimationEnd',   
+		function(e) {
+		
+			// After animation ends, remove the classes
 
-        $('.view.' + cycleSteps[currentStep]).css({
-            position: 'absolute',
-            width: currentViewWidth
-        }).animate({
-
-            left: '-100%',
-            opacity: 0
-
-        }, 500, 'easeInOutExpo', function () {
-
-            $(this).removeClass('visible').css({
-                position: 'relative',
-                width: 'inherit',
-                left: '0'
-            });
-
-        });
-
-        $('.view.' + nextStep).css({
-            position: 'absolute',
-            width: currentViewWidth,
-            left: $(window).outerWidth()
-        });
-
-        $('.view.' + nextStep).addClass('visible')
-
-        .animate({
-
-            left: 0,
-            opacity: 100
-
-        }, 500, 'easeInOutExpo', function () {
-
-            $(this).css('position', 'relative');
-
-        });
-        $("html, body").animate({
-            scrollTop: 0
-        }, "fast");
+			$('.slideInRight').removeClass('slideInRight');
+		
+		});
+				
+				
+				
+		
         currentStep += 1;
 
 
@@ -267,62 +257,40 @@ $(document).ready(function () {
 
         cycleSteps[currentStep] = $this.attr('data-step');
 
-        console.log('The current view is ' + '[' + currentStep + '] ' + cycleSteps[currentStep]);
-        console.log('The previous view is ' + cycleSteps[currentStep - 1]);
-
-        // console.log('The cycleCount is ' + cycleCount);
-
 
     }
 
     // When Back button is clicked, cycle back to the previous view
 
     $('.back-button').on('click', function () {
-        $('.home').removeClass('animated');
+	
         var prevStep = $('.view.' + cycleSteps[(currentStep - 1)]);
-        var currentViewWidth = $('.view.' + cycleSteps[currentStep]).outerWidth();
+		
+		console.log(prevStep);
+		
+		
+		$('.visible').addClass('slideOutRight');
+				
+		prevStep.addClass('visible slideInLeft');
+		
+		$('.slideOutRight').one('webkitAnimationEnd',   
+		function(e) {
+		
+			// After animation ends, remove the classes
 
-        $('.view.' + cycleSteps[currentStep]).css({
-            position: 'absolute',
-            width: currentViewWidth
-        }).animate({
+			$('.slideOutRight').removeClass('visible slideOutRight');
+		
+		});
+		
+		$('.slideInLeft').one('webkitAnimationEnd',
+		function(e) {
+		
+			// After animation ends, remove the classes
 
-            left: '100%',
-            opacity: 0
-
-        }, 500, 'easeInOutExpo', function () {
-
-            console.log('Animating ' + cycleSteps[currentStep])
-
-            $('.view.' + cycleSteps[currentStep]).css({
-                position: 'relative',
-                width: 'inherit',
-                left: '0'
-            }).removeClass('visible');
-
-            currentStep -= 1;
-            cycleSteps.splice(-1, 1);
-
-        });
-
-        $(prevStep).css({
-            position: 'absolute',
-            width: currentViewWidth,
-            left: '-' + $(window).outerWidth() + 'px'
-        });
-
-        $(prevStep).addClass('visible').animate({
-
-            left: 0,
-            opacity: 100
-
-        }, 500, 'easeInOutExpo');
-
-        console.log('The current view is ' + cycleSteps[currentStep]);
-        console.log('The previous view is ' + cycleSteps[(currentStep - 1)]);
-        console.log('We have removed ' + cycleSteps[cycleSteps.length - 1]);
-
-
+			$('.slideInLeft').removeClass('slideInLeft');
+		
+		});
+		
         if (currentStep == '1') {
 
             $(this).removeClass('animated fadeInHalfLeft').animate({
@@ -330,6 +298,9 @@ $(document).ready(function () {
             }, 500, 'easeInOutExpo');
 
         }
+		
+		currentStep -= 1;
+		cycleSteps.splice(-1,1);
 
     });
 

@@ -33,14 +33,11 @@ html,
 body {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC);
     background-color: #e5e5e5;
-    /* height: 100%;
-    position: relative;
-    width: 375px;
-    overflow-x: hidden; */
 }
 
 body {
     padding-top: 1em;
+	overflow-x: hidden;
 }
 
 .loading {
@@ -228,9 +225,16 @@ body {
     margin: 0 1em 9.5em;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
     max-width: 1170px;
+	top: 0;
+	position: absolute;
+	min-height: 100%;
+	margin-left:5%;
+	display:none;
 }
 
 .view.visible {
+
+	left:0;
     display: block;
 }
 
@@ -1926,4 +1930,183 @@ Carousel Widget alterations
     .planSelectorWidget .carousel.is-smart-section .carousel-item {
         width: 1.78571%;
     }
+}
+
+
+
+
+
+
+
+
+.slideInRight {
+
+-webkit-animation: slideInRight 0.5s ease;
+animation: slideInRight 0.5s ease;
+-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+animation-fill-mode: forwards;
+
+}
+
+.slideOutLeft {
+
+-webkit-animation: slideOutLeft 0.5s ease;
+animation: slideOutLeft 0.5s ease;
+-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+animation-fill-mode: forwards;
+
+}
+
+.slideOutRight {
+
+-webkit-animation: slideOutRight 0.5s ease;
+animation: slideOutRight 0.5s ease;
+-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+animation-fill-mode: forwards;
+
+}
+
+.slideInLeft {
+
+-webkit-animation: slideInLeft 0.5s ease;
+animation: slideInLeft 0.5s ease;
+-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+animation-fill-mode: forwards;
+
+}
+
+
+/* Chrome, Safari, Opera */ 
+@-webkit-keyframes slideInRight {
+
+    0% {
+	-ms-transform: translate(100%, 0); /* IE 9 */
+	-webkit-transform: translate(100%, 0); /* Safari */
+	transform: translate(100%, 0);
+	}
+	
+    100% {
+	-ms-transform: translate(0,0); /* IE 9 */
+	-webkit-transform: translate(0,0); /* Safari */
+	transform: translate(0,0);
+	}
+} 
+
+/* Standard syntax */ 
+@keyframes slideInRight {
+
+    0% {
+	-ms-transform: translate(0,110%); /* IE 9 */
+	-webkit-transform: translate(0,110%); /* Safari */
+	transform: translate(0, 110%);
+	}
+	
+    100% {
+	-ms-transform: translate(0,0); /* IE 9 */
+	-webkit-transform: translate(0,0); /* Safari */
+	transform: translate(0,0);
+	}
+	
+}
+
+/* Chrome, Safari, Opera */ 
+@-webkit-keyframes slideOutLeft {
+
+    0% {
+	-ms-transform: translate(0,0); /* IE 9 */
+	-webkit-transform: translate(0,0); /* Safari */
+	transform: translate(0,0);
+	}
+	
+    100% {
+	-ms-transform: translate(-110%, 0); /* IE 9 */
+	-webkit-transform: translate(-110%, 0); /* Safari */
+	transform: translate(-110%, 0);
+	}
+	
+} 
+
+/* Standard syntax */ 
+@keyframes slideOutLeft {
+
+    0% {
+	-ms-transform: translate(0,0); /* IE 9 */
+	-webkit-transform: translate(0,0); /* Safari */
+	transform: translate(0,0);
+	}
+	
+    100% {
+	-ms-transform: translate(-110%, 0); /* IE 9 */
+	-webkit-transform: translate(-110%, 0); /* Safari */
+	transform: translate(-110%, 0);
+	}
+	
+}
+
+
+/* Chrome, Safari, Opera */ 
+@-webkit-keyframes slideOutRight {
+
+    0% {
+	-ms-transform: translate(0, 0); /* IE 9 */
+	-webkit-transform: translate(0, 0); /* Safari */
+	transform: translate(0, 0);
+	}
+	
+    100% {
+	-ms-transform: translate(110%, 0); /* IE 9 */
+	-webkit-transform: translate(110%, 0); /* Safari */
+	transform: translate(110%, 0);
+	}
+} 
+
+/* Standard syntax */ 
+@keyframes slideOutRight {
+
+    0% {
+	-ms-transform: translate(0, 0); /* IE 9 */
+	-webkit-transform: translate(0, 0); /* Safari */
+	transform: translate(0, 0);
+	}
+	
+    100% {
+	-ms-transform: translate(110%, 0); /* IE 9 */
+	-webkit-transform: translate(110%, 0); /* Safari */
+	transform: translate(110%, 0);
+	}
+	
+}
+
+/* Chrome, Safari, Opera */ 
+@-webkit-keyframes slideInLeft {
+
+     0% {
+	-ms-transform: translate(-110%,0); /* IE 9 */
+	-webkit-transform: translate(-110%,0); /* Safari */
+	transform: translate(-110%,0);
+	}
+	
+    100% {
+	-ms-transform: translate(0, 0); /* IE 9 */
+	-webkit-transform: translate(0, 0); /* Safari */
+	transform: translate(0, 0);
+	}
+	
+} 
+
+/* Standard syntax */ 
+@keyframes slideInLeft {
+
+    0% {
+	-ms-transform: translate(-110%,0); /* IE 9 */
+	-webkit-transform: translate(-110%,0); /* Safari */
+	transform: translate(-110%,0);
+	}
+	
+    100% {
+	-ms-transform: translate(0, 0); /* IE 9 */
+	-webkit-transform: translate(0, 0); /* Safari */
+	transform: translate(0, 0);
+	}
+	
 }

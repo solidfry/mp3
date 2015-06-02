@@ -139,8 +139,6 @@ $(document).ready(function () {
 
         if (e.target != this) {
 		
-			console.log('Not the element we want so grabber the parent');
-
             switchView($(this).closest('[data-step]'));
 
         } else {
@@ -155,9 +153,34 @@ $(document).ready(function () {
 
     });
 	
+
+	// Function from David Walsh: http://davidwalsh.name/css-animation-callback
+	// To detect the end of a CSS animation
+	
+	function whichTransitionEvent(){
+	  var t,
+		  el = document.createElement("fakeelement");
+
+	  var transitions = {
+		"animation"      : "animationend",
+		"OAnimation"     : "oAnimationEnd",
+		"MozAnimation"   : "animationend",
+		"WebkitAnimation": "webkitAnimationEnd"
+	  }
+
+	  for (t in transitions){
+		if (el.style[t] !== undefined){
+		  return transitions[t];
+		}
+	  }
+	}
+	
+	var transitionEvent = whichTransitionEvent();
+		
+		
 	// The brain. This function determines the next/previous views and positions and shows them accordingly.
 	
-    function switchView(element) {
+	function switchView(element) {
 		
 		// Get the element that was passed from the click function
 		
@@ -183,32 +206,6 @@ $(document).ready(function () {
 
         }
 		
-		
-		
-		// Function from David Walsh: http://davidwalsh.name/css-animation-callback
-		// To detect the end of a CSS animation
-		function whichTransitionEvent(){
-		  var t,
-			  el = document.createElement("fakeelement");
-
-		  var transitions = {
-			"transition"      : "transitionend",
-			"OTransition"     : "oTransitionEnd",
-			"MozTransition"   : "transitionend",
-			"WebkitTransition": "webkitTransitionEnd"
-		  }
-
-		  for (t in transitions){
-			if (el.style[t] !== undefined){
-			  return transitions[t];
-			}
-		  }
-		}
-		
-		var transitionEvent = whichTransitionEvent();
-
-
-		
 		// CSS Animations
 		
 		$this.closest('.view').addClass('zipOutLeft');
@@ -220,11 +217,11 @@ $(document).ready(function () {
 			
 			// After animation ends, remove the classes
 			
+			console.log('We\'re in!');
+			
 			$('.zipOutLeft').removeClass('visible zipOutLeft');
 		});
   
-		
-		
 		$('.zipInRight').one(transitionEvent,   
 		function(event) {
 		
@@ -276,12 +273,9 @@ $(document).ready(function () {
 
         }
 
-
-
         // Keep track of where we are by adding data-step to the global
 
         cycleSteps[currentStep] = $this.attr('data-step');
-
 
     }
 
@@ -289,20 +283,23 @@ $(document).ready(function () {
 
     $('.back-button').on('click', function () {
 	
+		// Grab the preview view from the Array
+	
         var prevStep = $('.view.' + cycleSteps[(currentStep - 1)]);
 		
-		console.log(prevStep);
-		
+		// Tell the visible view to animate out
 		
 		$('.visible').addClass('zipOutRight');
+		
+		// Tell the previous step to animate in
 				
 		prevStep.addClass('visible zipInLeft');
+		
+		// Once animations are done, remove the classes
 		
 		$('.zipOutRight').one('webkitAnimationEnd',   
 		function(e) {
 		
-			// After animation ends, remove the classes
-
 			$('.zipOutRight').removeClass('visible zipOutRight');
 		
 		});
@@ -310,11 +307,11 @@ $(document).ready(function () {
 		$('.zipInLeft').one('webkitAnimationEnd',
 		function(e) {
 		
-			// After animation ends, remove the classes
-
 			$('.zipInLeft').removeClass('zipInLeft');
 		
 		});
+		
+		// If we get back to the first view, hide the back button
 		
         if (currentStep == '1') {
 
@@ -323,6 +320,8 @@ $(document).ready(function () {
             }, 500, 'easeInOutExpo');
 
         }
+		
+		// As we've navigated back, remove an increment from currentStep and remove the last item from cycleSteps
 		
 		currentStep -= 1;
 		cycleSteps.splice(-1,1);
@@ -383,6 +382,7 @@ $(document).ready(function () {
 
 
         // If we have navigated back a step (edit) we need to remove the value of the previously selected device/plan
+		
         if (currentCycle < cycleCount) {
 
             // remove value
@@ -390,9 +390,8 @@ $(document).ready(function () {
         }
 
         // If we've selected a handset...
+		
         if (value[0] == 'handset' || value[0] == 'sim') {
-
-            console.log('we selected a ' + value[0]);
 
             //	var selectedHandset = $('.phoneSelectButton.selected');
             //

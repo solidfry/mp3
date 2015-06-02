@@ -183,29 +183,54 @@ $(document).ready(function () {
 
         }
 		
+		
+		
+		// Function from David Walsh: http://davidwalsh.name/css-animation-callback
+		// To detect the end of a CSS animation
+		function whichTransitionEvent(){
+		  var t,
+			  el = document.createElement("fakeelement");
+
+		  var transitions = {
+			"transition"      : "transitionend",
+			"OTransition"     : "oTransitionEnd",
+			"MozTransition"   : "transitionend",
+			"WebkitTransition": "webkitTransitionEnd"
+		  }
+
+		  for (t in transitions){
+			if (el.style[t] !== undefined){
+			  return transitions[t];
+			}
+		  }
+		}
+		
+		var transitionEvent = whichTransitionEvent();
+
+
+		
 		// CSS Animations
 		
-		$this.closest('.view').addClass('slideOutLeft');
+		$this.closest('.view').addClass('zipOutLeft');
 		
-		$('.' + nextStep).addClass('visible slideInRight');
+		$('.' + nextStep).addClass('visible zipInRight');
 		
-		
-		$('.slideOutLeft').one('webkitAnimationEnd',   
-		function(e) {
-		
+		$('.zipOutLeft').one(transitionEvent,
+			function(event) {
+			
 			// After animation ends, remove the classes
-
-			$('.slideOutLeft').removeClass('visible slideOutLeft');
-		
+			
+			$('.zipOutLeft').removeClass('visible zipOutLeft');
 		});
+  
 		
 		
-		$('.slideInRight').one('webkitAnimationEnd',   
-		function(e) {
+		$('.zipInRight').one(transitionEvent,   
+		function(event) {
 		
 			// After animation ends, remove the classes
 
-			$('.slideInRight').removeClass('slideInRight');
+			$('.zipInRight').removeClass('zipInRight');
 		
 		});
 				
@@ -269,25 +294,25 @@ $(document).ready(function () {
 		console.log(prevStep);
 		
 		
-		$('.visible').addClass('slideOutRight');
+		$('.visible').addClass('zipOutRight');
 				
-		prevStep.addClass('visible slideInLeft');
+		prevStep.addClass('visible zipInLeft');
 		
-		$('.slideOutRight').one('webkitAnimationEnd',   
+		$('.zipOutRight').one('webkitAnimationEnd',   
 		function(e) {
 		
 			// After animation ends, remove the classes
 
-			$('.slideOutRight').removeClass('visible slideOutRight');
+			$('.zipOutRight').removeClass('visible zipOutRight');
 		
 		});
 		
-		$('.slideInLeft').one('webkitAnimationEnd',
+		$('.zipInLeft').one('webkitAnimationEnd',
 		function(e) {
 		
 			// After animation ends, remove the classes
 
-			$('.slideInLeft').removeClass('slideInLeft');
+			$('.zipInLeft').removeClass('zipInLeft');
 		
 		});
 		

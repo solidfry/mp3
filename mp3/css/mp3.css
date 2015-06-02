@@ -222,14 +222,13 @@ body {
 .view {
     display: none;
     background: white;
-    margin: 0 1em 9.5em;
+    margin: 0 0 9.5em;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
     max-width: 1170px;
 	top: 0;
 	position: absolute;
-	min-height: 100%;
-	margin-left:5%;
 	display:none;
+
 }
 
 .view.visible {
@@ -569,10 +568,10 @@ Safari, Chrome and Opera > 12.1
 ----- */
 
 @-webkit-keyframes fadein {
-    from {
+    0% {
         opacity: 0;
     }
-    to {
+100% {
         opacity: 1;
     }
 }
@@ -1934,42 +1933,37 @@ Carousel Widget alterations
 
 
 
+.zipInRight {
 
-
-
-
-
-.slideInRight {
-
--webkit-animation: slideInRight 0.5s ease;
-animation: slideInRight 0.5s ease;
+-webkit-animation: zipInRight 0.5s ease;
+animation: zipInRight 0.5s ease;
 -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
 animation-fill-mode: forwards;
 
 }
 
-.slideOutLeft {
+.zipOutLeft {
 
--webkit-animation: slideOutLeft 0.5s ease;
-animation: slideOutLeft 0.5s ease;
+-webkit-animation: zipOutLeft 0.5s ease;
+animation: zipOutLeft 0.5s ease;
 -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
 animation-fill-mode: forwards;
 
 }
 
-.slideOutRight {
+.zipOutRight {
 
--webkit-animation: slideOutRight 0.5s ease;
-animation: slideOutRight 0.5s ease;
+-webkit-animation: zipOutRight 0.5s ease;
+animation: zipOutRight 0.5s ease;
 -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
 animation-fill-mode: forwards;
 
 }
 
-.slideInLeft {
+.zipInLeft {
 
--webkit-animation: slideInLeft 0.5s ease;
-animation: slideInLeft 0.5s ease;
+-webkit-animation: zipInLeft 0.5s ease;
+animation: zipInLeft 0.5s ease;
 -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
 animation-fill-mode: forwards;
 
@@ -1977,7 +1971,7 @@ animation-fill-mode: forwards;
 
 
 /* Chrome, Safari, Opera */ 
-@-webkit-keyframes slideInRight {
+@-webkit-keyframes zipInRight {
 
     0% {
 	-ms-transform: translate3d(100%, 0, 0); /* IE 9 */
@@ -1985,7 +1979,7 @@ animation-fill-mode: forwards;
 	transform: translate3d(100%, 0, 0);
 	}
 	
-    100% {
+	100% {
 	-ms-transform: translate3d(0,0,0); /* IE 9 */
 	-webkit-transform: translate3d(0,0,0); /* Safari */
 	transform: translate3d(0,0,0);
@@ -1993,16 +1987,14 @@ animation-fill-mode: forwards;
 } 
 
 /* Standard syntax */ 
-@keyframes slideInRight {
+@keyframes zipInRight {
 
     0% {
-	-ms-transform: translate3d(0,110%,0); /* IE 9 */
 	-webkit-transform: translate3d(0,110%,0); /* Safari */
 	transform: translate3d(0,110%,0);
 	}
 	
-    100% {
-	-ms-transform: translate3d(0,0,0); /* IE 9 */
+	100% {
 	-webkit-transform: translate3d(0,0,0); /* Safari */
 	transform: translate3d(0,0,0);
 	}
@@ -2010,16 +2002,14 @@ animation-fill-mode: forwards;
 }
 
 /* Chrome, Safari, Opera */ 
-@-webkit-keyframes slideOutLeft {
+@-webkit-keyframes zipOutLeft {
 
     0% {
-	-ms-transform: translate3d(0,0,0); /* IE 9 */
 	-webkit-transform: translate3d(0,0,0); /* Safari */
 	transform: translate3d(0,0,0);
 	}
 	
-    100% {
-	-ms-transform: translate3d(-110%, 0,0); /* IE 9 */
+	100% {
 	-webkit-transform: translate3d(-110%, 0,0); /* Safari */
 	transform: translate3d(-110%, 0,0);
 	}
@@ -2027,16 +2017,14 @@ animation-fill-mode: forwards;
 } 
 
 /* Standard syntax */ 
-@keyframes slideOutLeft {
+@keyframes zipOutLeft {
 
     0% {
-	-ms-transform: translate3d(0,0,0); /* IE 9 */
 	-webkit-transform: translate3d(0,0,0); /* Safari */
 	transform: translate3d(0,0,0);
 	}
 	
-    100% {
-	-ms-transform: translate3d(-110%, 0,0); /* IE 9 */
+	100% {
 	-webkit-transform: translate3d(-110%, 0,0); /* Safari */
 	transform: translate3d(-110%, 0,0);
 	}
@@ -2045,32 +2033,28 @@ animation-fill-mode: forwards;
 
 
 /* Chrome, Safari, Opera */ 
-@-webkit-keyframes slideOutRight {
+@-webkit-keyframes zipOutRight {
 
     0% {
-	-ms-transform: translate3d(0, 0,0); /* IE 9 */
 	-webkit-transform: translate3d(0, 0,0); /* Safari */
 	transform: translate3d(0, 0,0);
 	}
 	
-    100% {
-	-ms-transform: translate3d(110%, 0,0); /* IE 9 */
+	100% {
 	-webkit-transform: translate3d(110%, 0,0); /* Safari */
 	transform: translate3d(110%, 0,0);
 	}
 } 
 
 /* Standard syntax */ 
-@keyframes slideOutRight {
+@keyframes zipOutRight {
 
     0% {
-	-ms-transform: translate3d(0, 0, 0); /* IE 9 */
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
 	}
 	
-    100% {
-	-ms-transform: translate3d(110%, 0, 0); /* IE 9 */
+	100% {
 	-webkit-transform: translate3d(110%, 0, 0); /* Safari */
 	transform: translate3d(110%, 0, 0);
 	}
@@ -2078,15 +2062,14 @@ animation-fill-mode: forwards;
 }
 
 /* Chrome, Safari, Opera */ 
-@-webkit-keyframes slideInLeft {
+@-webkit-keyframes zipInLeft {
 
-     0% {
-	-ms-transform: translate3d(-110%, 0, 0); /* IE 9 */
+    0% {
 	-webkit-transform: translate3d(-110%, 0, 0); /* Safari */
 	transform: translate3d(-110%, 0, 0);
 	}
 	
-    100% {
+	100% {
 	-ms-transform: translate3d(0, 0, 0); /* IE 9 */
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
@@ -2095,16 +2078,14 @@ animation-fill-mode: forwards;
 } 
 
 /* Standard syntax */ 
-@keyframes slideInLeft {
+@keyframes zipInLeft {
 
     0% {
-	-ms-transform: translate3d(-110%,0, 0); /* IE 9 */
 	-webkit-transform: translate3d(-110%,0, 0); /* Safari */
 	transform: translate3d(-110%,0, 0);
 	}
 	
-    100% {
-	-ms-transform: translate3d(0, 0, 0); /* IE 9 */
+	100% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
 	}

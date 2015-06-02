@@ -1967,30 +1967,30 @@ Carousel Widget alterations
 
 .zipInRight {
 
--webkit-animation: zipInRight 1s cubic-bezier(0, 1.16, 0.21, 0.99) normal forwards;
-animation: zipInRight 1s cubic-bezier(0, 1.16, 0.21, 0.99) normal forwards;
+-webkit-animation: zipInRight .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
+animation: zipInRight .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 
 
 }
 
 .zipOutLeft {
 
--webkit-animation: zipOutLeft 1s cubic-bezier(0, 1.16, 0.21, 0.99) normal forwards;
-animation: zipOutLeft 1s cubic-bezier(0, 1.16, 0.21, 0.99) normal forwards;
+-webkit-animation: zipOutLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
+animation: zipOutLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 
 }
 
 .zipOutRight {
 
--webkit-animation: zipOutRight 1s cubic-bezier(0, 1.16, 0.21, 0.99) normal forwards;
-animation: zipOutRight 1s cubic-bezier(0, 1.16, 0.21, 0.99) normal forwards;
+-webkit-animation: zipOutRight .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
+animation: zipOutRight .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 
 }
 
 .zipInLeft {
 
--webkit-animation: zipInLeft 1s cubic-bezier(0, 1.16, 0.21, 0.99) normal forwards;
-animation: zipInLeft 1s cubic-bezier(0, 1.16, 0.21, 0.99) normal forwards;
+-webkit-animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
+animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 
 }
 

@@ -698,7 +698,7 @@ body .model__item {
     border: 2px solid #e5e5e5;
     cursor: auto;
     margin: 1em 0;
-    z-index: 9500;
+    z-index: 98;
     /*
     position: absolute;
     left:0;

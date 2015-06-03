@@ -222,9 +222,10 @@ body {
 .view {
     display: none;
     background: white;
-    margin: 1em 1em 9.5em;
+    margin: 0 0 9.5em;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
-    max-width: 1170px;
+    max-width: 1200px;
+    width: 100%;
 	top: 0;
 	position: absolute;
 	display:none;
@@ -273,9 +274,9 @@ body {
     padding: .25em 0 0;
     border-bottom: 4px solid #e5e5e5;
     background: #178093;
-    border-radius: 6px;
+    /*border-radius: 6px;
     border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;*/
     color: white;
 }
 

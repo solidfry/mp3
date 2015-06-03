@@ -147,7 +147,7 @@ body {
 .back-button {
     position: absolute;
     left: .25em;
-    top: .25em;
+    top: .1em;
 }
 
 @-webkit-keyframes fadeInHalfLeft {
@@ -222,9 +222,10 @@ body {
 .view {
     display: none;
     background: white;
-    margin: 1em 1em 9.5em;
+    margin: 0 0 9.5em;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
-    max-width: 1170px;
+    max-width: 1200px;
+    width: 100%;
 	top: 0;
 	position: absolute;
 	display:none;
@@ -273,9 +274,9 @@ body {
     padding: .25em 0 0;
     border-bottom: 4px solid #e5e5e5;
     background: #178093;
-    border-radius: 6px;
+    /*border-radius: 6px;
     border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;*/
     color: white;
 }
 
@@ -285,6 +286,7 @@ body {
 
     .step__title .ico {
         font-size:.85em;
+        line-height:1em;
     }
 
 .product-select {
@@ -1453,12 +1455,12 @@ Carousel Widget alterations
 
 /* TAP active state for plan */
 
-.planSelectorWidget .active {
+.planSelectorWidget .expanded {
      border-color:#006685 ;
     border-width: 2px;
 }
 
-.planSelectorWidget .active .planHeading, .planSelectorWidget .planSummaryItem:hover .planHeading {
+.planSelectorWidget .expanded .planHeading, .planSelectorWidget .planSummaryItem:hover .planHeading {
      background-color:#006685;
 }
 
@@ -2043,8 +2045,8 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 @keyframes zipInRight {
 
     0% {
-	-webkit-transform: translate3d(110vw, 0, 0); /* Safari */
-	transform: translate3d(110vw, 0, 0);
+	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
+	transform: translate3d(100vw, 0, 0);
 	opacity: 0;
 	}
 	
@@ -2066,8 +2068,8 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	}
 	
 	100% {
-	-webkit-transform: translate3d(-110vw, 0, 0); /* Safari */
-	transform: translate3d(-110vw, 0, 0);
+	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
+	transform: translate3d(-100vw, 0, 0);
 	opacity: 1;
 	}
 	
@@ -2083,8 +2085,8 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	}
 	
 	100% {
-	-webkit-transform: translate3d(-110vw, 0, 0); /* Safari */
-	transform: translate3d(-110vw, 0, 0);
+	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
+	transform: translate3d(-100vw, 0, 0);
 	opacity: 1;
 	}
 	
@@ -2100,8 +2102,8 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	}
 	
 	100% {
-	-webkit-transform: translate3d(-110vw, 0, 0); /* Safari */
-	transform: translate3d(-110vw, 0, 0);
+	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
+	transform: translate3d(-100vw, 0, 0);
 	opacity: 0;
 	}
 	
@@ -2118,8 +2120,8 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	}
 	
 	100% {
-	-webkit-transform: translate3d(110vw, 0, 0); /* Safari */
-	transform: translate3d(110vw, 0, 0);
+	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
+	transform: translate3d(100vw, 0, 0);
 	opacity: 0;
 	}
 }
@@ -2133,8 +2135,8 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	}
 	
 	100% {
-	-webkit-transform: translate3d(110vw, 0, 0); /* Safari */
-	transform: translate3d(110vw, 0, 0);
+	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
+	transform: translate3d(100vw, 0, 0);
 	opacity: 0;
 	}
 }
@@ -2149,8 +2151,8 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	}
 	
 	100% {
-	-webkit-transform: translate3d(110vw, 0, 0); /* Safari */
-	transform: translate3d(110vw, 0, 0);
+	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
+	transform: translate3d(100vw, 0, 0);
 	opacity: 0;
 	}
 	
@@ -2160,8 +2162,8 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 @-webkit-keyframes zipInLeft {
 
     0% {
-	-webkit-transform: translate3d(-110vw, 0, 0); /* Safari */
-	transform: translate3d(-110vw, 0, 0);
+	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
+	transform: translate3d(-100vw, 0, 0);
 	opacity: 0;
 	}
 	
@@ -2176,8 +2178,8 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 @-moz-keyframes zipInLeft {
 
     0% {
-	-webkit-transform: translate3d(-110vw, 0, 0); /* Safari */
-	transform: translate3d(-110vw, 0, 0);
+	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
+	transform: translate3d(-100vw, 0, 0);
 	opacity: 0;
 	}
 	
@@ -2193,8 +2195,8 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 @keyframes zipInLeft {
 
     0% {
-	-webkit-transform: translate3d(-110vw,0, 0); /* Safari */
-	transform: translate3d(-110vw,0, 0);
+	-webkit-transform: translate3d(-100vw,0, 0); /* Safari */
+	transform: translate3d(-100vw,0, 0);
 	opacity: 0;
 	}
 	

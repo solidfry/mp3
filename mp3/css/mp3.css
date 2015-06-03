@@ -413,7 +413,7 @@ Summary bar
 
 .summary {
     background: #022a37;
-    width: 100%;
+    width: 100vw;
     font-size: .80em;
     z-index: 9999;
     display: none;

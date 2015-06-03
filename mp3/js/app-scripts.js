@@ -12,7 +12,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.updated').remove();
         }, 3000);
-        $('.active').removeClass('active');
+        $('.expanded').removeClass('expanded');
         $('.on').removeClass('on');
     });
 	
@@ -28,11 +28,11 @@ $(document).ready(function () {
 
             $this.parent().find(".model__config-panel, .planBody ").slideToggle().removeClass('on');
             $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
-            $this.parent().removeClass('active');
+            $this.parent().removeClass('expanded');
         } else {
 
             $(".model__config-panel.on, .planBody.on ").slideToggle(300).removeClass('on');
-            $(".planSummaryItem").removeClass('active');
+            $(".planSummaryItem").removeClass('expanded');
             $this
                 .parent()
                 .find(".model__config-panel, .planBody ")
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
                 })
                 .addClass('on');
-                $this.parent().addClass('active');
+                $this.parent().addClass('expanded');
 
             $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 
@@ -245,7 +245,7 @@ $(document).ready(function () {
             }, 500, 'easeInOutExpo');
 
             $('.model__config-panel, .planBody ').removeClass('on').hide();
-            $('.planSummaryItem.active').removeClass('active');
+            $('.planSummaryItem.expanded').removeClass('expanded');
             currentCycle += 1;
             cycleCount += 1;
 

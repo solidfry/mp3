@@ -1453,12 +1453,12 @@ Carousel Widget alterations
 
 /* TAP active state for plan */
 
-.planSelectorWidget .active {
+.planSelectorWidget .expanded {
      border-color:#006685 ;
     border-width: 2px;
 }
 
-.planSelectorWidget .active .planHeading, .planSelectorWidget .planSummaryItem:hover .planHeading {
+.planSelectorWidget .expanded .planHeading, .planSelectorWidget .planSummaryItem:hover .planHeading {
      background-color:#006685;
 }
 

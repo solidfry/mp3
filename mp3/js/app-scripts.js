@@ -71,7 +71,6 @@ $(document).ready(function () {
 
     // Position Summary Panel
 
-    var windowPosition;
     var summary = $('.summary');
 	
 	// Show summary function is run when device is selected
@@ -98,8 +97,6 @@ $(document).ready(function () {
         }, 500, 'easeOutQuint', function () {
 
             if (element.attr('data-group') === "handset") {
-
-                console.log('Summary shown, updating device...');
 
                 var handsetValue = ['handset'];
 
@@ -142,8 +139,6 @@ $(document).ready(function () {
 
         } else {
 		
-			console.log('The element we want');
-
             switchView($(e.target));
 
         }
@@ -195,7 +190,25 @@ $(document).ready(function () {
 
             showSummary($this);
 
-        }
+        } else if (cycleCount > 0 && nextStep == 'plans') {
+		
+		
+			if ($this.attr('data-group') === "handset") {
+
+                var handsetValue = ['handset'];
+
+                updateSummary(handsetValue);
+
+            } else if ($this.attr('data-group') === "sim") {
+
+                var simValue = ['sim'];
+
+                updateSummary(simValue);
+
+            }
+			
+		
+		}
 		
 		// Remove animation classes from home view (we only want them to run on page load)
 
@@ -215,8 +228,6 @@ $(document).ready(function () {
 			function(event) {
 			
 			// After animation ends, remove the classes
-			
-			console.log('We\'re in!');
 			
 			$('.zipOutLeft').removeClass('visible zipOutLeft');
 		});
@@ -344,18 +355,6 @@ $(document).ready(function () {
 
             $this.addClass('selected');
 
-        }
-
-        // If handset is selected, pass an array to update the summary cmp and device
-
-        if (!$this.hasClass('selected') && $this.attr('data-group') == "handset") {
-
-            var handsetValue = ['handset', parseInt($this.attr('data-val'))];
-
-            updateSummary(handsetValue);
-
-            $this.addClass('selected');
-
         } else if (!$this.hasClass('selected') && $this.attr('data-group') == "plan") {
 
             var planValue = ['plan', $this.attr('data-val')];
@@ -404,7 +403,7 @@ $(document).ready(function () {
             //
             //	} else {
 			
-			console.log(cycleCount);
+			console.log('Updating handset in summary');
 
 
             deviceTotal = cycleCount + 1;

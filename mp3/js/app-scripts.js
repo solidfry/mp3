@@ -15,6 +15,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.updated').remove();
         }, 3000);
+        $('.active').removeClass('active');
     });
 	
 

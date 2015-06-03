@@ -413,7 +413,7 @@ Summary bar
 
 .summary {
     background: #022a37;
-    width: 100%;
+    width: 100vw;
     font-size: .80em;
     z-index: 9999;
     display: none;
@@ -679,11 +679,13 @@ body .model__item {
 }
 
 .model__config {
-    display: block;
-    margin: 0 auto;
-    clear: both;
-    text-transform: uppercase;
-    line-height:2em;
+  display: block;
+  margin: 1em auto 0;
+  clear: both;
+  text-transform: uppercase;
+  line-height: 2em;
+  background:#e5e5e5;
+  border-radius:6px;
 }
 
 .model__config-panel {
@@ -693,7 +695,7 @@ body .model__item {
 
     border: 2px solid #e5e5e5;
     cursor: auto;
-    margin-top: 1em;
+    margin: 1em 0;
     z-index: 9500;
     /*
     position: absolute;
@@ -1442,6 +1444,13 @@ Carousel Widget alterations
   padding: 2em 1em 1em;
   border-radius:6px;
 }
+
+.planSelectorWidget .planSummaryItem .planHeading h4 {
+    font-family:inherit;
+    text-transform: none;
+    font-size:1em;
+}
+
 /* TAP active state for plan */
 
 .planSelectorWidget .active {

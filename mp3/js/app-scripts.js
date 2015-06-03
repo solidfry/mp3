@@ -1,8 +1,5 @@
 $(document).ready(function () {
 
-
-
-
     // Update device information in the home panel. This adds a validation notification.
 	
     var updateDevice = $('.update');

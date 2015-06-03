@@ -403,6 +403,8 @@ $(document).ready(function () {
             //		selectedHandset.removeClass('selected');
             //
             //	} else {
+			
+			console.log(cycleCount);
 
 
             deviceTotal = cycleCount + 1;

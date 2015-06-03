@@ -31,8 +31,8 @@
 
 html,
 body {
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC);
-    background-color: #e5e5e5;
+    /*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIUlEQVQIW2NkQAL///83ZoTxwRxGxrNgARgHxGZE5oAEAOz3DzVasxQ9AAAAAElFTkSuQmCC);
+    background-color: #e5e5e5;*/
 }
 
 body {
@@ -223,7 +223,7 @@ body {
     display: none;
     background: white;
     margin: 0 0 9.5em;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
+    /*box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);*/
     max-width: 1200px;
     width: 100%;
 	top: 0;

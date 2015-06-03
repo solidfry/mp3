@@ -1460,7 +1460,7 @@ Carousel Widget alterations
     border-width: 2px;
 }
 
-.planSelectorWidget .active .planHeading {
+.planSelectorWidget .active .planHeading, .planSelectorWidget .planSummaryItem:hover .planHeading {
      background-color:#006685;
 }
 

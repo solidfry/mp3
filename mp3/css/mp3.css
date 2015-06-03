@@ -1444,6 +1444,13 @@ Carousel Widget alterations
   padding: 2em 1em 1em;
   border-radius:6px;
 }
+
+.planSelectorWidget .planSummaryItem .planHeading h4 {
+    font-family:inherit;
+    text-transform: none;
+    font-size:1em;
+}
+
 /* TAP active state for plan */
 
 .planSelectorWidget .active {

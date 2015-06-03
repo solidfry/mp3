@@ -16,6 +16,7 @@ $(document).ready(function () {
             $('.updated').remove();
         }, 3000);
         $('.active').removeClass('active');
+        $('.on').removeClass('on');
     });
 	
 

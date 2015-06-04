@@ -374,10 +374,14 @@ $(document).ready(function () {
         // Get the current totals
         // Split the dollar value and setup the summary values
 
-        var tempTotal = $('#cpm-total').text();
-        tempTotal = tempTotal.split('$');
-        tempTotal = tempTotal[1];
-        var cpmTotal = parseInt(tempTotal);
+        var cpmTotal = $('#cpm-total').text();
+        cpmTotal = cpmTotal.split('$');
+        cpmTotal = parseInt(cpmTotal[1]);
+		
+		var gbTotal = parseFloat($('#gb-total').text().slice(0, -2));
+		
+		console.log('Was ' + gbTotal);
+		
         var deviceTotal = parseInt($('#device-total').text());
 
 
@@ -403,9 +407,6 @@ $(document).ready(function () {
             //
             //	} else {
 			
-			console.log('Updating handset in summary');
-
-
             deviceTotal = cycleCount + 1;
 
             $('#device-total').html(deviceTotal)
@@ -434,7 +435,11 @@ $(document).ready(function () {
 
             var planValue = value[1].split('-');
 			
-            $('#gb-total').html(planValue[0])
+			gbTotal += parseFloat(planValue[0].slice(0, -2));
+			
+			console.log('Now ' + gbTotal);
+			
+            $('#gb-total').html(gbTotal + 'GB')
                 .addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 
                     $(this).removeClass('animated flipInX');

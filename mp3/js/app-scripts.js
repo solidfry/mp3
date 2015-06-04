@@ -377,7 +377,7 @@ $(document).ready(function () {
         var tempTotal = $('#cpm-total').text();
         tempTotal = tempTotal.split('$');
         tempTotal = tempTotal[1];
-        var cmpTotal = parseInt(tempTotal);
+        var cpmTotal = parseInt(tempTotal);
         var deviceTotal = parseInt($('#device-total').text());
 
 
@@ -433,15 +433,17 @@ $(document).ready(function () {
         else if (value[0] == 'plan') {
 
             var planValue = value[1].split('-');
-
+			
             $('#gb-total').html(planValue[0])
                 .addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 
                     $(this).removeClass('animated flipInX');
 
                 });
+				
+			cpmTotal += parseInt(planValue[1]);
 
-            $('#cpm-total').html('$' + planValue[1]).addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $('#cpm-total').html('$' + cpmTotal).addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 
                 $(this).removeClass('animated flipInX');
 

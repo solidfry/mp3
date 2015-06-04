@@ -2013,14 +2013,12 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	-ms-transform: translate3d(100vw, 0, 0); /* IE 9 */
 	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
 	transform: translate3d(100vw, 0, 0);
-	opacity: 0;
 	}
 	
 	100% {
 	-ms-transform: translate3d(0, 0, 0); /* IE 9 */
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 }
 
@@ -2030,14 +2028,12 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	-ms-transform: translate3d(100vw, 0, 0); /* IE 9 */
 	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
 	transform: translate3d(100%, 0, 0);
-	opacity: 0;
 	}
 	
 	100% {
 	-ms-transform: translate3d(0, 0, 0); /* IE 9 */
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 } 
 
@@ -2047,13 +2043,11 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
     0% {
 	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
 	transform: translate3d(100vw, 0, 0);
-	opacity: 0;
 	}
 	
 	100% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 	
 }
@@ -2064,13 +2058,11 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
     0% {
 	-webkit-transform: translate3d(0, 0, 0 ); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 	
 	100% {
 	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
 	transform: translate3d(-100vw, 0, 0);
-	opacity: 1;
 	}
 	
 }
@@ -2081,13 +2073,11 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
     0% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 	
 	100% {
 	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
 	transform: translate3d(-100vw, 0, 0);
-	opacity: 1;
 	}
 	
 } 
@@ -2098,13 +2088,11 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
     0% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 	
 	100% {
 	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
 	transform: translate3d(-100vw, 0, 0);
-	opacity: 0;
 	}
 	
 }
@@ -2116,13 +2104,11 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
     0% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 	
 	100% {
 	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
 	transform: translate3d(100vw, 0, 0);
-	opacity: 0;
 	}
 }
 
@@ -2131,13 +2117,11 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
     0% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 	
 	100% {
 	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
 	transform: translate3d(100vw, 0, 0);
-	opacity: 0;
 	}
 }
 
@@ -2147,13 +2131,11 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
     0% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 	
 	100% {
 	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
 	transform: translate3d(100vw, 0, 0);
-	opacity: 0;
 	}
 	
 }
@@ -2164,13 +2146,11 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
     0% {
 	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
 	transform: translate3d(-100vw, 0, 0);
-	opacity: 0;
 	}
 	
 	100% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 	
 }
@@ -2180,13 +2160,11 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
     0% {
 	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
 	transform: translate3d(-100vw, 0, 0);
-	opacity: 0;
 	}
 	
 	100% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 	
 } 
@@ -2197,13 +2175,11 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
     0% {
 	-webkit-transform: translate3d(-100vw,0, 0); /* Safari */
 	transform: translate3d(-100vw,0, 0);
-	opacity: 0;
 	}
 	
 	100% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
 	transform: translate3d(0, 0, 0);
-	opacity: 1;
 	}
 	
 }

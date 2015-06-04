@@ -250,13 +250,22 @@ $(document).ready(function () {
 
 
         if (cycleSteps[cycleSteps.length - 1] == 'plans') {
+		
+			// Once we've completed a cycle, hide the back button...
 
             $('.back-button').removeClass('animated fadeInHalfLeft').animate({
                 left: '-50px'
             }, 500, 'easeInOutExpo');
-
+			
+			// Remove any .selected classes from the first cycle and hide expanded sections
+			
+            $('.planSelectButton').removeClass('selected');
+			
             $('.model__config-panel, .planBody ').removeClass('on').hide();
+			
             $('.planSummaryItem.expanded').removeClass('expanded');
+			
+			
             currentCycle += 1;
             cycleCount += 1;
 
@@ -431,9 +440,12 @@ $(document).ready(function () {
         }
 
         // If we've selected a plan
+		
         else if (value[0] == 'plan') {
-
+		
             var planValue = value[1].split('-');
+			
+			console.log('We\'re trying to add ' + planValue[0].slice(0, -2));
 			
 			gbTotal += parseFloat(planValue[0].slice(0, -2));
 			

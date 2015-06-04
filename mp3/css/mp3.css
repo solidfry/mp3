@@ -224,7 +224,6 @@ body {
     background: white;
     margin: 0 0 9.5em;
     /*box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);*/
-    max-width: 1200px;
     width: 100%;
 	top: 0;
 	position: absolute;
@@ -591,10 +590,6 @@ Mobile Listing Widget alterations
     padding-top:0.1em;
 }
 
-body .model__list {
-    margin: 0;
-}
-
 body .model__item {
     border-bottom: 1px solid #e5e5e5;
     padding: 2em 1em 2em 1em;
@@ -604,7 +599,7 @@ body .model__item {
     body .model__list .model__item {
         border: 0;
         padding: 1.5em;
-        height: 14em;
+        height: 26vh;
     }
 }
 

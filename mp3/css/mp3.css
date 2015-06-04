@@ -2022,21 +2022,6 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	}
 }
 
-@-moz-keyframes zipInRight {
-
-    0% {
-	-ms-transform: translate3d(100vw, 0, 0); /* IE 9 */
-	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
-	transform: translate3d(100%, 0, 0);
-	}
-	
-	100% {
-	-ms-transform: translate3d(0, 0, 0); /* IE 9 */
-	-webkit-transform: translate3d(0, 0, 0); /* Safari */
-	transform: translate3d(0, 0, 0);
-	}
-} 
-
 /* Standard syntax */ 
 @keyframes zipInRight {
 
@@ -2067,21 +2052,6 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	
 }
 
-/* Chrome, Safari, Opera */ 
-@-moz-keyframes zipOutLeft {
-
-    0% {
-	-webkit-transform: translate3d(0, 0, 0); /* Safari */
-	transform: translate3d(0, 0, 0);
-	}
-	
-	100% {
-	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
-	transform: translate3d(-100vw, 0, 0);
-	}
-	
-} 
-
 /* Standard syntax */ 
 @keyframes zipOutLeft {
 
@@ -2100,19 +2070,6 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 
 /* Chrome, Safari, Opera */ 
 @-webkit-keyframes zipOutRight {
-
-    0% {
-	-webkit-transform: translate3d(0, 0, 0); /* Safari */
-	transform: translate3d(0, 0, 0);
-	}
-	
-	100% {
-	-webkit-transform: translate3d(100vw, 0, 0); /* Safari */
-	transform: translate3d(100vw, 0, 0);
-	}
-}
-
-@-moz-keyframes zipOutRight {
 
     0% {
 	-webkit-transform: translate3d(0, 0, 0); /* Safari */
@@ -2154,20 +2111,6 @@ animation: zipInLeft .5s cubic-bezier(0.51, 0.78, 0.01, 1.04) normal forwards;
 	}
 	
 }
-
-@-moz-keyframes zipInLeft {
-
-    0% {
-	-webkit-transform: translate3d(-100vw, 0, 0); /* Safari */
-	transform: translate3d(-100vw, 0, 0);
-	}
-	
-	100% {
-	-webkit-transform: translate3d(0, 0, 0); /* Safari */
-	transform: translate3d(0, 0, 0);
-	}
-	
-} 
 
 /* Standard syntax */ 
 @keyframes zipInLeft {

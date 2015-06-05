@@ -178,9 +178,9 @@ $(document).ready(function () {
 		
 		// Make sure the body height matches that of the view, plus some room for the summary
 		
-		var appHeight = $('.view.' + nextStep).position().top + $('.view.' + nextStep).outerHeight() + $('.summary__title').outerHeight() + $('.summary__info').outerHeight() + 50;
-		 
-		$('body').css('min-height', appHeight);
+		// var appHeight = $('.view.' + nextStep).position().top + $('.view.' + nextStep).outerHeight() + $('.summary__title').outerHeight() + $('.summary__info').outerHeight() + 50;
+	    //
+	    // $('body').css('min-height', appHeight);
 		
 		// If we're in the first cycle we need to show the summary when a device is selected
 
@@ -226,7 +226,7 @@ $(document).ready(function () {
 			
 			// After animation ends, remove the classes
 			
-			$('.zipOutLeft').removeClass('visible zipOutLeft');
+			$('.zipOutLeft').removeClass('visible zipOutLeft').css('position', 'absolute');
 		});
         $("html, body").animate({
             scrollTop: 0
@@ -236,7 +236,7 @@ $(document).ready(function () {
 		
 			// After animation ends, remove the classes
 
-			$('.zipInRight').removeClass('zipInRight');
+			$('.zipInRight').removeClass('zipInRight').css('position', 'relative');
 		
 		});
 		
@@ -310,14 +310,14 @@ $(document).ready(function () {
 		$('.zipOutRight').one('webkitAnimationEnd',   
 		function(e) {
 		
-			$('.zipOutRight').removeClass('visible zipOutRight');
+			$('.zipOutRight').removeClass('visible zipOutRight').css('position', 'absolute');
 		
 		});
 		
 		$('.zipInLeft').one('webkitAnimationEnd',
 		function(e) {
 		
-			$('.zipInLeft').removeClass('zipInLeft');
+			$('.zipInLeft').removeClass('zipInLeft').css('position', 'relative');
 		
 		});
 		

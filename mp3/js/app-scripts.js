@@ -16,8 +16,6 @@ $(document).ready(function () {
         $('.on').removeClass('on');
     });
 	
-
-
     // Generic show/hide toggle function (e.g. Model Config)
 
     $('.tap').click(function (e) {
@@ -55,7 +53,6 @@ $(document).ready(function () {
 
     });
 	
-	
 	// Switch active capacity when selection changes
 
     $('.capacityButton').click(function (e) {
@@ -65,9 +62,7 @@ $(document).ready(function () {
 
         e.preventDefault();
 
-
     });
-
 
     // Position Summary Panel
 
@@ -114,7 +109,6 @@ $(document).ready(function () {
 
     }
 
-
     // Setup cycle iterations
 
     var cycleCount = 0;
@@ -147,7 +141,6 @@ $(document).ready(function () {
 
     });
 	
-
 	// Function from David Walsh: http://davidwalsh.name/css-animation-callback
 	// To detect the end of a CSS animation
 	
@@ -171,7 +164,6 @@ $(document).ready(function () {
 	
 	var transitionEvent = whichTransitionEvent();
 		
-		
 	// The brain. This function determines the next/previous views and positions and shows them accordingly.
 	
 	function switchView(element) {
@@ -183,6 +175,12 @@ $(document).ready(function () {
 		// Determine the next view that needs to be shown
 
         var nextStep = $this.attr('data-step');
+		
+		// Make sure the body height matches that of the view, plus some room for the summary
+		
+		var appHeight = $('.view.' + nextStep).position().top + $('.view.' + nextStep).outerHeight() + $('.summary__title').outerHeight() + $('.summary__info').outerHeight() + 50;
+		 
+		$('body').css('min-height', appHeight);
 		
 		// If we're in the first cycle we need to show the summary when a device is selected
 
@@ -260,7 +258,6 @@ $(document).ready(function () {
 			
             $('.planSummaryItem.expanded').removeClass('expanded');
 			
-			
             currentCycle += 1;
             cycleCount += 1;
 
@@ -290,10 +287,6 @@ $(document).ready(function () {
 
         cycleSteps[currentStep] = $this.attr('data-step');
 		
-		// Make sure the body height matches that of the view, plus some room for the summary
-		
-		$('body').css('height', ($('.view.visible').next('.view').outerHeight() + 100));
-
     }
 
     // When Back button is clicked, cycle back to the previous view

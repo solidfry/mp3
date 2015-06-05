@@ -41,7 +41,7 @@ $(document).ready(function () {
 
                     $('body, html').animate({
 
-                        scrollTop: $this.parent().offset().top - 15
+                        scrollTop: $this.parent().offset().top
 
                     }, 500, 'easeOutQuint');
 

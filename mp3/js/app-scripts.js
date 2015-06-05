@@ -207,7 +207,6 @@ $(document).ready(function () {
 
             }
 			
-		
 		}
 		
 		// Remove animation classes from home view (we only want them to run on page load)
@@ -242,12 +241,8 @@ $(document).ready(function () {
 			$('.zipInRight').removeClass('zipInRight');
 		
 		});
-				
-				
-				
 		
         currentStep += 1;
-
 
         if (cycleSteps[cycleSteps.length - 1] == 'plans') {
 		
@@ -277,14 +272,11 @@ $(document).ready(function () {
 
                 if (i < currentCycle) {
 
-
                     $(el).css('display', 'block');
 
                 }
 
             });
-
-
 
         } else {
 
@@ -297,6 +289,10 @@ $(document).ready(function () {
         // Keep track of where we are by adding data-step to the global
 
         cycleSteps[currentStep] = $this.attr('data-step');
+		
+		// Make sure the body height matches that of the view, plus some room for the summary
+		
+		$('body').css('height', ($('.view.visible').next('.view').outerHeight() + 100));
 
     }
 
@@ -349,7 +345,6 @@ $(document).ready(function () {
 
     });
 
-
     $('.value').on('click', function (e) {
 
         var $this = $(this);
@@ -389,10 +384,7 @@ $(document).ready(function () {
 		
 		var gbTotal = parseFloat($('#gb-total').text().slice(0, -2));
 		
-		console.log('Was ' + gbTotal);
-		
         var deviceTotal = parseInt($('#device-total').text());
-
 
         // If we have navigated back a step (edit) we need to remove the value of the previously selected device/plan
 		
@@ -405,16 +397,6 @@ $(document).ready(function () {
         // If we've selected a handset...
 		
         if (value[0] == 'handset' || value[0] == 'sim') {
-
-            //	var selectedHandset = $('.phoneSelectButton.selected');
-            //
-            //	if (selectedHandset.length !== 0){
-            //
-            //		cmpTotal = cmpTotal - parseInt(selectedHandset.attr('data-val'));
-            //
-            //		selectedHandset.removeClass('selected');
-            //
-            //	} else {
 			
             deviceTotal = cycleCount + 1;
 
@@ -425,18 +407,6 @@ $(document).ready(function () {
 
                 });
 
-            //	}
-
-            //	cmpTotal = cmpTotal + value[1];
-            //
-            //	$('#cpm-total').html('$' + cmpTotal)
-            //		.addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-            //
-            //			$(this).removeClass('flipInX');
-            //
-            //	});
-
-
         }
 
         // If we've selected a plan
@@ -445,11 +415,7 @@ $(document).ready(function () {
 		
             var planValue = value[1].split('-');
 			
-			console.log('We\'re trying to add ' + planValue[0].slice(0, -2));
-			
 			gbTotal += parseFloat(planValue[0].slice(0, -2));
-			
-			console.log('Now ' + gbTotal);
 			
             $('#gb-total').html(gbTotal + 'GB')
                 .addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
@@ -466,12 +432,8 @@ $(document).ready(function () {
 
             });
 
-
         }
 
-
-
     }
-
 
 });

@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<title>The Shunk Example</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script type="text/javascript" src="jquery-2.1.3.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+
+			var cycleCount = 0;
+			var currentCycle = 0;
+			var currentStep = 0;
+			var cycleSteps = ['home'];
+
+			$('button').on('click', function(e) {
+
+				console.dir(cycleSteps);
+
+				var nextStep = $(this).attr('data-next');
+
+				currentStep += 1;
+
+				cycleSteps[currentStep] = $(this).attr('data-next');
+
+				$(this).parent('.panel').addClass('slideOutLeft');
+
+				$('#' + nextStep).addClass('active slideInRight');
+
+
+				$('.slideOutLeft').one('webkitAnimationEnd',
+				function(e) {
+
+				// code to execute after animation ends
+
+				$('.slideOutLeft').removeClass('active slideOutLeft');
+
+				});
+
+
+				$('.slideInRight').one('webkitAnimationEnd',
+				function(e) {
+
+				// code to execute after animation ends
+
+				$('.slideInRight').removeClass('slideInRight');
+
+				});
+
+
+			});
+
+			$('.back').on('click', function(){
+
+				console.dir(cycleSteps);
+
+				currentStep -= 1;
+				cycleSteps.splice(-1,1);
+
+				$('.active').addClass('slideOutRight');
+
+				console.log(cycleSteps[cycleSteps.length-1]);
+
+				$('#' + cycleSteps[cycleSteps.length-1]).addClass('active slideInLeft');
+
+
+				$('.slideOutRight').one('webkitAnimationEnd',
+				function(e) {
+
+				// code to execute after animation ends
+
+				$('.slideOutRight').removeClass('active slideOutRight');
+
+				});
+
+				$('.slideInLeft').one('webkitAnimationEnd',
+				function(e) {
+
+				// code to execute after animation ends
+
+				$('.slideInLeft').removeClass('slideInLeft');
+
+				});
+
+
+			});
+
+
+
+		});
+		</script>
+	</head>
+	<body>
+
+		<div id="home" class="panel active">
+			<h1>Click me to slide panel</h1>
+			<button data-next="phones">phones</button>
+			<button data-next="plans">plans</button>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non sollicitudin diam. Praesent ullamcorper, neque vel ornare malesuada, risus arcu viverra ante, non condimentum ligula nibh ut sem. Suspendisse at massa porttitor, tempus dui ut, porta sapien. Donec sapien tortor, laoreet sit amet porttitor eget, pulvinar at dui. Pellentesque gravida dolor eu ullamcorper faucibus. Morbi lobortis ut leo nec suscipit. Duis vehicula risus odio. Mauris id feugiat magna, vel elementum urna. Nulla mattis pretium dolor, id pretium elit sodales a. Praesent vel erat vel lectus fringilla efficitur.</p>
+
+			<p>Duis ullamcorper, metus a laoreet accumsan, risus massa rhoncus sem, quis elementum risus ante at mi. Mauris porta dignissim leo eu euismod. Nam accumsan lorem ut molestie tempus. Quisque leo est, convallis et auctor sit amet, feugiat consequat nisi. Etiam mollis lectus elit, ac dignissim sem mattis id. Etiam vehicula lobortis mattis. Duis et dui porta, commodo felis ut, porta mi. Aenean nec est facilisis nisl ultricies pretium. In eget sapien metus. Sed elit tellus, finibus a facilisis a, fermentum non augue. Duis fringilla convallis felis, eu pharetra velit euismod in. Nulla facilisi.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non sollicitudin diam. Praesent ullamcorper, neque vel ornare malesuada, risus arcu viverra ante, non condimentum ligula nibh ut sem. Suspendisse at massa porttitor, tempus dui ut, porta sapien. Donec sapien tortor, laoreet sit amet porttitor eget, pulvinar at dui. Pellentesque gravida dolor eu ullamcorper faucibus. Morbi lobortis ut leo nec suscipit. Duis vehicula risus odio. Mauris id feugiat magna, vel elementum urna. Nulla mattis pretium dolor, id pretium elit sodales a. Praesent vel erat vel lectus fringilla efficitur.</p>
+
+			<p>Duis ullamcorper, metus a laoreet accumsan, risus massa rhoncus sem, quis elementum risus ante at mi. Mauris porta dignissim leo eu euismod. Nam accumsan lorem ut molestie tempus. Quisque leo est, convallis et auctor sit amet, feugiat consequat nisi. Etiam mollis lectus elit, ac dignissim sem mattis id. Etiam vehicula lobortis mattis. Duis et dui porta, commodo felis ut, porta mi. Aenean nec est facilisis nisl ultricies pretium. In eget sapien metus. Sed elit tellus, finibus a facilisis a, fermentum non augue. Duis fringilla convallis felis, eu pharetra velit euismod in. Nulla facilisi.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non sollicitudin diam. Praesent ullamcorper, neque vel ornare malesuada, risus arcu viverra ante, non condimentum ligula nibh ut sem. Suspendisse at massa porttitor, tempus dui ut, porta sapien. Donec sapien tortor, laoreet sit amet porttitor eget, pulvinar at dui. Pellentesque gravida dolor eu ullamcorper faucibus. Morbi lobortis ut leo nec suscipit. Duis vehicula risus odio. Mauris id feugiat magna, vel elementum urna. Nulla mattis pretium dolor, id pretium elit sodales a. Praesent vel erat vel lectus fringilla efficitur.</p>
+
+			<p>Duis ullamcorper, metus a laoreet accumsan, risus massa rhoncus sem, quis elementum risus ante at mi. Mauris porta dignissim leo eu euismod. Nam accumsan lorem ut molestie tempus. Quisque leo est, convallis et auctor sit amet, feugiat consequat nisi. Etiam mollis lectus elit, ac dignissim sem mattis id. Etiam vehicula lobortis mattis. Duis et dui porta, commodo felis ut, porta mi. Aenean nec est facilisis nisl ultricies pretium. In eget sapien metus. Sed elit tellus, finibus a facilisis a, fermentum non augue. Duis fringilla convallis felis, eu pharetra velit euismod in. Nulla facilisi.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non sollicitudin diam. Praesent ullamcorper, neque vel ornare malesuada, risus arcu viverra ante, non condimentum ligula nibh ut sem. Suspendisse at massa porttitor, tempus dui ut, porta sapien. Donec sapien tortor, laoreet sit amet porttitor eget, pulvinar at dui. Pellentesque gravida dolor eu ullamcorper faucibus. Morbi lobortis ut leo nec suscipit. Duis vehicula risus odio. Mauris id feugiat magna, vel elementum urna. Nulla mattis pretium dolor, id pretium elit sodales a. Praesent vel erat vel lectus fringilla efficitur.</p>
+
+			<p>Duis ullamcorper, metus a laoreet accumsan, risus massa rhoncus sem, quis elementum risus ante at mi. Mauris porta dignissim leo eu euismod. Nam accumsan lorem ut molestie tempus. Quisque leo est, convallis et auctor sit amet, feugiat consequat nisi. Etiam mollis lectus elit, ac dignissim sem mattis id. Etiam vehicula lobortis mattis. Duis et dui porta, commodo felis ut, porta mi. Aenean nec est facilisis nisl ultricies pretium. In eget sapien metus. Sed elit tellus, finibus a facilisis a, fermentum non augue. Duis fringilla convallis felis, eu pharetra velit euismod in. Nulla facilisi.</p>
+
+		</div>
+
+		<div id="phones" class="panel">
+			<a href="#" class="back">Back</a>
+			<h1>Phones</h1>
+			<button data-next="plans">plans</button>
+		</div>
+
+		<div id="plans" class="panel">
+			<a href="#" class="back">Back</a>
+			<h1>Plans</h1>
+			<button data-next="home">home</button>
+		</div>
+
+	</body>
+</html>

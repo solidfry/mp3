@@ -479,10 +479,56 @@
                 <h2 class="step__title">Pick your model</h2>
             </div>
         </div>
+        <div id="modelConfig" data-reveal aria-hidden="true" role="dialog" class="model__config-panel columns hide radius small-12 medium-12 large-12 reveal-modal small">
+            <h4 class="model__config--title center">Select a colour</h4>
+
+            <form action="" id="custom" class="custom">
+                <div class="large-12 small-12 columns itemCoulorArea">
+                    <select class="medium hidden-field" name="colourSelectLarge" data-id="1431991188328-cY5c5">
+                        <option value="Grey">Grey</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Silver">Silver</option>
+                    </select>
+                    <div class="custom dropdown medium" data-id="1431991188328-cY5c5"><a href="#" class="current">Grey</a>
+                        <a href="#" class="selector"></a>
+                        <ul>
+                            <li class=" selected ">Grey</li>
+                            <li class="">Gold</li>
+                            <li class="">Silver</li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+
+            <h4 class="model__config--title center">Select device storage size</h4>
+            <ul class="model__size-list small-block-grid-3 medium-block-grid-3 large-block-grid-3 center">
+                <li class="model__size-item">
+                    <button class=" radius small capacityButton active ">16GB</button>
+                </li>
+                <li class="model__size-item">
+                    <button class=" radius small capacityButton">32GB</button>
+                </li>
+                <li class="model__size-item">
+                    <button class=" radius small capacityButton">120GB</button>
+                </li>
+            </ul>
+            <div class="small-12 columns">
+
+                <div class="stockConfigBanner">
+                    <div class="row">
+                        <div class="large-12 small-12 columns">16GB Grey - In Stock</div>
+                    </div>
+                </div>
+            </div>
+            <div class="small-12 columns model__device-select">
+                <button class="button radius small yellow small-12" data-step="plans" data-group="handset"  aria-label="Close">Select Model</button>
+            </div>
+            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        </div>
         <div class="row model__list" data-equalizer data-equalizer-mq="large-up">
             <div class="model__item  small-12 medium-12 large-4 column" data-equalizer-watch>
 
-                <div class="tap cf">
+                <div class="cf">
                     <img src="img/handsets/GS6_blk_HAPS_LRG_v1.png" alt="" class="model__img columns small-2 medium-2 large-2">
                     <div class="columns small-8 medium-8 large-8">
                         <h3 class="model__title">Samsung Galaxy S6</h3>
@@ -548,7 +594,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="model__config center tap small-8">
+                <a class="model__config center small-8" data-reveal-id="modelConfig">
 					Select Colour &amp; Size <span class="ico ico-arrow-down"></span>
 				</a>
             </div>

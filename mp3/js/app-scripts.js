@@ -17,19 +17,19 @@ $(document).ready(function () {
 
     // Update device information in the home panel. This adds a validation notification.
 
-    var updateDevice = $('.update');
+    (function ($) {
+        var updateDevice = $('.update');
 
-    var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle ico ico-tick"></div></span></span></div>';
+        var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle ico ico-tick"></div></span></span></div>';
 
-    updateDevice.click(function () {
-        $this.parent().find(".model__config-panel").prepend(updateAnim).delay(3000).slideUp();
+        updateDevice.click(function () {
+            $(this).parent().parent().prepend(updateAnim);
 
-        setTimeout(function () {
-            $('.updated').remove();
-        }, 3000);
-        $('.expanded').removeClass('expanded');
-        $('.on').removeClass('on');
-    });
+            setTimeout(function () {
+                $('.updated').remove();
+            }, 3000);
+        });
+    })(jQuery);
 
     // Generic show/hide toggle function (e.g. Model Config)
 	
@@ -69,6 +69,7 @@ $(document).ready(function () {
 		}
 
 	});
+
 
     // Switch active capacity when selection changes
 

@@ -722,7 +722,7 @@ body .model__item {
 }
 }
 
-.model__config-panel.reveal-modal {
+.reveal-modal {
      position:fixed;
 }
 
@@ -1557,7 +1557,7 @@ Carousel Widget alterations
     font-size: 2.5em;
     position: absolute;
     bottom: -1em;
-    z-index: 9999;
+    z-index: 90;
     left: 50%;
     margin-left: -.75em;
 }

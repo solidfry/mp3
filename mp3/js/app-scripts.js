@@ -29,7 +29,7 @@ $(document).ready(function () {
     })(jQuery);
 
     // Generic show/hide toggle function (e.g. Model Config)
-    if ($('html').hasClass('mobile')) {
+
         $('.tap').click(function (e) {
 
             $this = $(this);
@@ -64,7 +64,7 @@ $(document).ready(function () {
             }
 
         });
-    }
+
     // Switch active capacity when selection changes
 
     $('.capacityButton').click(function (e) {

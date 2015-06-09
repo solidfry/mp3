@@ -124,14 +124,19 @@ $(document).ready(function () {
 	
 	//  Close the handset config modal
 	
-	function closeModal(e){
+	function closeModal(modalId){
 	
-		$('#modelConfig').foundation('reveal', 'close');
+		console.log(modalId);
+	
+		$(modalId).foundation('reveal', 'close');
 		
-		$(document).on('closed.fndtn.reveal', '#modelConfig', function () {
+		$(document).on('closed.fndtn.reveal', modalId, function () {
 
 			var modal = $(this);
-			switchView(e);
+			
+			var buttonClicked = $(modalId).find('[data-step]');
+			
+			switchView(buttonClicked);
   
 		});
 	
@@ -146,11 +151,12 @@ $(document).ready(function () {
 		// First (unfortunately) we have to close the handset modal
 		
 		if ($(this).attr('data-step') === 'plans'){
-		
-			closeModal($(this));
+			
+			var modalId = '#' + $(this).closest('.model__config-panel').attr('id');
+			
+			closeModal(modalId);
 			
 		} else {
-		
 		
 			// To manage clickable child elements (should perhaps be managed with stopPropagation())
 

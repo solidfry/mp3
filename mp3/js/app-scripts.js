@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     (function ($) {
         var $window = $(window),
             $html = $('html');
@@ -9,8 +10,10 @@ $(document).ready(function () {
             }
 
             $html.removeClass('mobile');
+			
         }).trigger('resize');
     })(jQuery);
+	
 
     // Update device information in the home panel. This adds a validation notification.
 
@@ -29,42 +32,44 @@ $(document).ready(function () {
     });
 
     // Generic show/hide toggle function (e.g. Model Config)
-    if ($('html').hasClass('.mobile')) {
-        $('.tap').click(function (e) {
+	
+	// We only want this click event to fire on mobile
+	
+	$('.tap').click(function (e) {
+	
+		$this = $(this);
 
-            $this = $(this);
+		if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {
 
-            if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {
+			$this.parent().find(".model__config-panel, .planBody ").slideToggle().removeClass('on');
+			$this.parent().find('.model__config span').toggleClass('ico-arrow-up');
+			$this.parent().removeClass('expanded');
+		} else {
 
-                $this.parent().find(".model__config-panel, .planBody ").slideToggle().removeClass('on');
-                $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
-                $this.parent().removeClass('expanded');
-            } else {
+			$(".model__config-panel.on, .planBody.on ").slideToggle(300).removeClass('on');
+			$(".planSummaryItem").removeClass('expanded');
+			$this
+				.parent()
+				.find(".model__config-panel, .planBody ")
+				.stop(true, true)
+				.slideToggle(300, function () {
 
-                $(".model__config-panel.on, .planBody.on ").slideToggle(300).removeClass('on');
-                $(".planSummaryItem").removeClass('expanded');
-                $this
-                    .parent()
-                    .find(".model__config-panel, .planBody ")
-                    .stop(true, true)
-                    .slideToggle(300, function () {
+					$('body, html').animate({
 
-                        $('body, html').animate({
+						scrollTop: $this.parent().offset().top
 
-                            scrollTop: $this.parent().offset().top
+					}, 500, 'easeOutQuint');
 
-                        }, 500, 'easeOutQuint');
+				})
+				.addClass('on');
+			$this.parent().addClass('expanded');
 
-                    })
-                    .addClass('on');
-                $this.parent().addClass('expanded');
+			$this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 
-                $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
+		}
 
-            }
+	});
 
-        });
-    }
     // Switch active capacity when selection changes
 
     $('.capacityButton').click(function (e) {
@@ -100,7 +105,9 @@ $(document).ready(function () {
         // Animate the window height - the summary top bar height
 
         summary.animate({
+		
             bottom: '0px'
+			
         }, 500, 'easeOutQuint', function () {
 
             if (element.attr('data-group') === "handset") {
@@ -154,8 +161,6 @@ $(document).ready(function () {
 
     }
 
-
-
     // When an element with a data-step attribute is clicked, 
 
     $('[data-step]').on('click', function (e) {
@@ -184,9 +189,7 @@ $(document).ready(function () {
 
             e.preventDefault();
 
-
         }
-
 
     });
 
@@ -225,12 +228,6 @@ $(document).ready(function () {
 
         var nextStep = $this.attr('data-step');
 
-        // Make sure the body height matches that of the view, plus some room for the summary
-
-        // var appHeight = $('.view.' + nextStep).position().top + $('.view.' + nextStep).outerHeight() + $('.summary__title').outerHeight() + $('.summary__info').outerHeight() + 50;
-        //
-        // $('body').css('min-height', appHeight);
-
         // If we're in the first cycle we need to show the summary when a device is selected
 
         if (cycleCount == 0 && nextStep == 'plans') {
@@ -243,13 +240,11 @@ $(document).ready(function () {
             if ($this.attr('data-group') === "handset") {
 
                 var handsetValue = ['handset'];
-
                 updateSummary(handsetValue);
 
             } else if ($this.attr('data-group') === "sim") {
 
                 var simValue = ['sim'];
-
                 updateSummary(simValue);
 
             }

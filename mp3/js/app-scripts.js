@@ -1,4 +1,16 @@
 $(document).ready(function () {
+    (function ($) {
+        var $window = $(window),
+            $html = $('html');
+
+        $window.resize(function resize() {
+            if ($window.width() < 860) {
+                return $html.addClass('mobile');
+            }
+
+            $html.removeClass('mobile');
+        }).trigger('resize');
+    })(jQuery);
 
     // Update device information in the home panel. This adds a validation notification.
 	
@@ -17,7 +29,7 @@ $(document).ready(function () {
     });
 	
     // Generic show/hide toggle function (e.g. Model Config)
-
+    if ($('html').hasClass('.mobile')) {
     $('.tap').click(function (e) {
 
         $this = $(this);
@@ -52,7 +64,7 @@ $(document).ready(function () {
         }
 
     });
-	
+    }
 	// Switch active capacity when selection changes
 
     $('.capacityButton').click(function (e) {
@@ -150,7 +162,7 @@ $(document).ready(function () {
 	
 		// First (unfortunately) we have to close the handset modal
 		
-		if ($(this).attr('data-step') === 'plans'){
+		if ($(this).attr('data-group') === 'handset'){
 			
 			var modalId = '#' + $(this).closest('.model__config-panel').attr('id');
 			

@@ -1533,6 +1533,12 @@ Carousel Widget alterations
     margin: 0 0 .15em;
 }
 
+@media only screen and (min-width: 860px) {
+    .planSelectorWidget .planSummaryItem .planBody {
+        display:block;
+    }
+}
+
 .planBorder h4 {
     text-transform: none;
 }

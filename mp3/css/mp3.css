@@ -720,6 +720,10 @@ body .model__item {
 }
 }
 
+.model__config-panel.reveal-modal {
+     position:fixed;
+}
+
 .model__size-list {
     margin: 0;
     padding: .3em .3em 1em;

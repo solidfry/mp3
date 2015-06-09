@@ -722,7 +722,7 @@ body .model__item {
 }
 }
 
-.model__config-panel.reveal-modal {
+.reveal-modal {
      position:fixed;
 }
 

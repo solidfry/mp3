@@ -143,14 +143,13 @@ $(document).ready(function () {
 	}
 	
 	
-
     // When an element with a data-step attribute is clicked, 
 
     $('[data-step]').on('click', function (e) {
 	
 		// First (unfortunately) we have to close the handset modal
 		
-		if ($(this).attr('data-step') === 'plans'){
+		if ($(this).attr('data-group') === 'handset'){
 			
 			var modalId = '#' + $(this).closest('.model__config-panel').attr('id');
 			

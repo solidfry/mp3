@@ -120,25 +120,56 @@ $(document).ready(function () {
 
     var views = $('.view');
     $(views[0]).addClass('visible');
+	
+	
+	//  Close the handset config modal
+	
+	function closeModal(e){
+	
+		$('#modelConfig').foundation('reveal', 'close');
+		
+		$(document).on('closed.fndtn.reveal', '#modelConfig', function () {
+
+			var modal = $(this);
+			switchView(e);
+  
+		});
+	
+	}
+	
+	
 
     // When an element with a data-step attribute is clicked, 
 
     $('[data-step]').on('click', function (e) {
 	
-		// To manage clickable child elements (should perhaps be managed with stopPropagation())
-
-        if (e.target != this) {
+		// First (unfortunately) we have to close the handset modal
 		
-            switchView($(this).closest('[data-step]'));
-
-        } else {
+		if ($(this).attr('data-step') === 'plans'){
 		
-            switchView($(e.target));
+			closeModal($(this));
+			
+		} else {
+		
+		
+			// To manage clickable child elements (should perhaps be managed with stopPropagation())
 
-        }
+			if (e.target != this) {
+			
+				switchView($(this).closest('[data-step]'));
 
-        e.preventDefault();
+			} else {
+			
+				switchView($(e.target));
 
+			}
+
+			e.preventDefault();
+		
+		
+		}
+		
+		
     });
 	
 	// Function from David Walsh: http://davidwalsh.name/css-animation-callback
@@ -192,7 +223,7 @@ $(document).ready(function () {
 		
 		
 			if ($this.attr('data-group') === "handset") {
-
+			
                 var handsetValue = ['handset'];
 
                 updateSummary(handsetValue);

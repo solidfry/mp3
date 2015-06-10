@@ -116,7 +116,7 @@ $(document).ready(function () {
         var summaryHeight = summary.outerHeight();
 
         // Animate the window height - the summary top bar height
-
+        $('body').addClass('summaryShown');
         summary.animate({
 		
             bottom: '0px'

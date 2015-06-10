@@ -1,28 +1,31 @@
 $(document).ready(function () {
 
     (function ($) {
+	
         var $window = $(window),
             $html = $('html');
 
         $window.resize(function resize() {
+		
             if ($window.width() < 860) {
+			
 				$('.planSummaryItem').removeClass('expanded');
 				$('.planBody').hide();
                 return $html.addClass('mobile');
-            } else {
+            }
 
             $html.removeClass('mobile');
 			$('.planBody').show();
 			
-			}
-			
         }).trigger('resize');
+		
     })(jQuery);
 	
 
     // Update device information in the home panel. This adds a validation notification.
 
     (function ($) {
+	
         var updateDevice = $('.update');
 
         var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle ico ico-tick"></div></span></span></div>';
@@ -34,6 +37,7 @@ $(document).ready(function () {
                 $('.updated').remove();
             }, 3000);
         });
+		
     })(jQuery);
 
     // Generic show/hide toggle function (e.g. Model Config)
@@ -46,7 +50,6 @@ $(document).ready(function () {
             e.preventDefault();
             return false;
         }
-		
 		
 		$this = $(this);
 
@@ -81,14 +84,12 @@ $(document).ready(function () {
 
 	});
 
-
     // Switch active capacity when selection changes
 
     $('.capacityButton').click(function (e) {
 
         $('.capacityButton.active').removeClass('active');
         $(this).toggleClass('active');
-
         e.preventDefault();
 
     });
@@ -151,7 +152,6 @@ $(document).ready(function () {
 
     var views = $('.view');
     $(views[0]).addClass('visible');
-
 
     //  Close the handset config modal
 
@@ -309,10 +309,13 @@ $(document).ready(function () {
             // Remove any .selected classes from the first cycle and hide expanded sections
 
             $('.planSelectButton').removeClass('selected');
-
-            $('.model__config-panel, .planBody ').removeClass('on').hide();
-
-            $('.planSummaryItem.expanded').removeClass('expanded');
+			
+			if ($(html).hasClass('mobile')) {
+			
+				$('.model__config-panel, .planBody ').removeClass('on').hide();
+				$('.planSummaryItem.expanded').removeClass('expanded');
+			
+			}
 
             currentCycle += 1;
             cycleCount += 1;

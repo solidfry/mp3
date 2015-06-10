@@ -261,6 +261,10 @@ body {
 
 @media only screen and (min-width: 860px) {
     .view {
+        width:100%;
+    }
+
+    .summaryShown .view {
         width:80%;
     }
 

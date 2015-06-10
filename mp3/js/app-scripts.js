@@ -6,10 +6,15 @@ $(document).ready(function () {
 
         $window.resize(function resize() {
             if ($window.width() < 860) {
+				$('.planSummaryItem').removeClass('expanded');
+				$('.planBody').hide();
                 return $html.addClass('mobile');
-            }
+            } else {
 
             $html.removeClass('mobile');
+			$('.planBody').show();
+			
+			}
 			
         }).trigger('resize');
     })(jQuery);
@@ -36,11 +41,13 @@ $(document).ready(function () {
 	// We only want this click event to fire on mobile
 	
 	$('.tap').click(function (e) {
+	
         if(!$('html').hasClass('mobile')) {
             e.preventDefault();
             return false;
-            $('.planBody').show();
         }
+		
+		
 		$this = $(this);
 
 		if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {

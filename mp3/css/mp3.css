@@ -628,7 +628,7 @@ body .model__item {
     body .model__list .model__item {
         border: 0;
         padding: 1.5em;
-        height: 21em;
+        /*height: 21em;*/
     }
 }
 
@@ -711,8 +711,7 @@ body .model__item {
 }
 
 .model__config {
-  display: block;
-  margin: 0 auto 0;
+  display: inline-block;
   clear: both;
   text-transform: uppercase;
   background:#e5e5e5;

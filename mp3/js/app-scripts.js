@@ -36,7 +36,11 @@ $(document).ready(function () {
 	// We only want this click event to fire on mobile
 	
 	$('.tap').click(function (e) {
-	
+        if(!$('html').hasClass('mobile')) {
+            e.preventDefault();
+            return false;
+            $('.planBody').show();
+        }
 		$this = $(this);
 
 		if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {

@@ -37,6 +37,7 @@ body {
 
 body {
 	overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 .loading {
@@ -266,7 +267,7 @@ body {
 
 @media only screen and (min-width: 860px) {
     .view {
-        width:70%;
+        width:80%;
     }
 
 }
@@ -426,7 +427,7 @@ Summary bar
 @media only screen and (min-width: 860px) {
     .summary {
         font-size: 1em;
-        width:30%;
+        width:20%;
         height:100%;
     }
 }
@@ -434,7 +435,7 @@ Summary bar
 .summary.expand {}
 
 .summary__info {
-    padding: 1em 0;
+    padding:0;
 }
 
 .summary__title {
@@ -486,7 +487,7 @@ Summary bar
 }
 
 .summary__element {
-  margin: 0 0 0 0.5em;
+  margin:.5em 0 0 0.5em;
   color: #fff;
   background: #006685;
   border-radius: .3em;
@@ -629,7 +630,7 @@ body .model__item {
     body .model__list .model__item {
         border: 0;
         padding: 1.5em;
-        height: 18em;
+        height: 21em;
     }
 }
 

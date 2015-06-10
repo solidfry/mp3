@@ -1575,7 +1575,7 @@ Carousel Widget alterations
     text-transform: none;
 }
 
-.planBorder:after {
+/*.planBorder:after {
     font-family: "optus-icons";
     content: "\e613";
     display: block;
@@ -1592,7 +1592,7 @@ Carousel Widget alterations
     z-index: 90;
     left: 50%;
     margin-left: -.75em;
-}
+}*/
 
 .selectWrap {
     padding: 2em 1em 0em;

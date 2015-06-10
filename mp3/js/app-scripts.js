@@ -297,6 +297,8 @@ $(document).ready(function () {
             });
 
         currentStep += 1;
+		
+		console.log('We\'re here... ' + cycleSteps[cycleSteps.length - 1]);
 
         if (cycleSteps[cycleSteps.length - 1] == 'plans') {
 
@@ -310,7 +312,7 @@ $(document).ready(function () {
 
             $('.planSelectButton').removeClass('selected');
 			
-			if ($(html).hasClass('mobile')) {
+			if ($('html').hasClass('mobile')) {
 			
 				$('.model__config-panel, .planBody ').removeClass('on').hide();
 				$('.planSummaryItem.expanded').removeClass('expanded');

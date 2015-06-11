@@ -1,14 +1,14 @@
 $(document).ready(function () {
 
     (function ($) {
-	
+
         var $window = $(window),
             $html = $('html');
 
         $window.resize(function resize() {
-		
+
             if ($window.width() < 860) {
-			
+
 				$('.planSummaryItem').removeClass('expanded');
 				$('.planBody').hide();
                 return $html.addClass('mobile');
@@ -16,16 +16,16 @@ $(document).ready(function () {
 
             $html.removeClass('mobile');
 			$('.planBody').show();
-			
+
         }).trigger('resize');
-		
+
     })(jQuery);
-	
+
 
     // Update device information in the home panel. This adds a validation notification.
 
     (function ($) {
-	
+
         var updateDevice = $('.update');
 
         var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle ico ico-tick"></div></span></span></div>';
@@ -37,20 +37,24 @@ $(document).ready(function () {
                 $('.updated').remove();
             }, 3000);
         });
-		
+
     })(jQuery);
 
     // Generic show/hide toggle function (e.g. Model Config)
-	
+
 	// We only want this click event to fire on mobile
-	
-	$('.tap').click(function (e) {
-	
+	$('.tap').on('click ontouchstart', function (e) {
+
+        if (!$('html').hasClass('mobile')) {
+            e.preventDefault();
+            return false;
+        }
+
         if(!$('html').hasClass('mobile')) {
             e.preventDefault();
             return false;
         }
-		
+
 		$this = $(this);
 
 		if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {
@@ -118,9 +122,9 @@ $(document).ready(function () {
         // Animate the window height - the summary top bar height
         $('body').addClass('summaryShown');
         summary.animate({
-		
+
             bottom: '0px'
-			
+
         }, 500, 'easeOutQuint', function () {
 
             if (element.attr('data-group') === "handset") {
@@ -141,12 +145,7 @@ $(document).ready(function () {
 
     }
 
-    // Setup cycle iterations
 
-    var cycleCount = 0;
-    var currentCycle = 0;
-    var currentStep = 0;
-    var cycleSteps = ['home'];
 
     // Set the first .view div as .visible on page load
 
@@ -173,7 +172,7 @@ $(document).ready(function () {
 
     }
 
-    // When an element with a data-step attribute is clicked, 
+    // When an element with a data-step attribute is clicked,
 
     $('[data-step]').on('click', function (e) {
 
@@ -230,15 +229,37 @@ $(document).ready(function () {
 
     // The brain. This function determines the next/previous views and positions and shows them accordingly.
 
+    // Setup cycle iterations
+
+    var cycleCount = 0;
+    var currentCycle = 0;
+    var currentStep = 1;
+    var currentStepString = 'home';
+    var cycleSteps = [currentStepString];
+
+
     function switchView(element) {
 
         // Get the element that was passed from the click function
 
         $this = element;
 
-        // Determine the next view that needs to be shown
+        if (currentStepString == 'home') {
+            $('.view.home').removeClass('animated fadeInUp');
+        }
 
+        // Determine the next view that needs to be shown
         var nextStep = $this.attr('data-step');
+
+        if (cycleSteps.indexOf(nextStep) !== -1) {
+          currentStep = 0;
+          cycleSteps = [];
+        }
+
+        cycleSteps[currentStep] = nextStep;
+        currentStep += 1;
+
+        currentStepString = cycleSteps[cycleSteps.length - 1];
 
         // If we're in the first cycle we need to show the summary when a device is selected
 
@@ -265,17 +286,16 @@ $(document).ready(function () {
 
         // Remove animation classes from home view (we only want them to run on page load)
 
-        if (currentCycle == 0 && currentStep == 0) {
 
-            $('.view.home').removeClass('animated fadeInUp');
-
-        }
 
         // CSS Animations
 
         $this.closest('.view').addClass('zipOutLeft');
 
-        $('.' + nextStep).addClass('visible zipInRight');
+
+          $('.' + nextStep).addClass('visible zipInRight');
+
+
 
         $('.zipOutLeft').one(transitionEvent,
             function (event) {
@@ -296,11 +316,12 @@ $(document).ready(function () {
 
             });
 
-        currentStep += 1;
-		
-		console.log('We\'re here... ' + cycleSteps[cycleSteps.length - 1]);
 
-        if (cycleSteps[cycleSteps.length - 1] == 'plans') {
+
+
+
+
+        if (currentStepString == 'home') {
 
             // Once we've completed a cycle, hide the back button...
 
@@ -311,12 +332,12 @@ $(document).ready(function () {
             // Remove any .selected classes from the first cycle and hide expanded sections
 
             $('.planSelectButton').removeClass('selected');
-			
+
 			if ($('html').hasClass('mobile')) {
-			
+
 				$('.model__config-panel, .planBody ').removeClass('on').hide();
 				$('.planSummaryItem.expanded').removeClass('expanded');
-			
+
 			}
 
             currentCycle += 1;
@@ -346,7 +367,7 @@ $(document).ready(function () {
 
         // Keep track of where we are by adding data-step to the global
 
-        cycleSteps[currentStep] = $this.attr('data-step');
+
 
     }
 
@@ -355,8 +376,9 @@ $(document).ready(function () {
     $('.back-button').on('click', function () {
 
         // Grab the preview view from the Array
+        var targetStep = cycleSteps[cycleSteps.length -  2];
 
-        var prevStep = $('.view.' + cycleSteps[(currentStep - 1)]);
+        var prevStep = $('.view.' + targetStep);
 
         // Tell the visible view to animate out
 
@@ -383,8 +405,7 @@ $(document).ready(function () {
             });
 
         // If we get back to the first view, hide the back button
-
-        if (currentStep == '1') {
+        if (targetStep === 'home') {
 
             $(this).removeClass('animated fadeInHalfLeft').animate({
                 left: '-50px'

@@ -73,7 +73,7 @@
                     <div class="small-12">
 
                         <div id="modelConfigHome-1" data-reveal aria-hidden="true" role="dialog" class="model__config-panel columns hide radius small-12 medium-12 large-12 reveal-modal small">
-                           <h4 class="model__config--title center">Change the plan</h4>
+                            <h4 class="model__config--title center">Change the plan</h4>
 
                             <form action="" id="custom" class="custom">
                                 <div class="large-12 small-12 columns itemCoulorArea">
@@ -88,7 +88,8 @@
                                         <ul>
                                             <li class=" selected ">500MB - $40 per month</li>
                                             <li class="">3GB - $60 per month</li>
-                                            <li class="">6GB - $80 per month</li>                                                 <li class="">10GB - $100 per month</li>
+                                            <li class="">6GB - $80 per month</li>
+                                            <li class="">10GB - $100 per month</li>
 
                                         </ul>
                                     </div>
@@ -139,6 +140,9 @@
                             <div class="small-12 columns model__device-select">
                                 <button class="button radius small yellow small-12 update">I'm done</button>
                             </div>
+                            <div class="small-12 columns center">
+                                <a href="#" class="model__config-delete"><span class="ico ico-cross"></span>Delete</a>
+                            </div>
                             <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 
                         </div>
@@ -171,7 +175,7 @@
 
                         <div id="modelConfigHome-2" data-reveal aria-hidden="true" role="dialog" class="model__config-panel columns hide radius small-12 medium-12 large-12 reveal-modal small">
 
-                           <h4 class="model__config--title center">Change the plan</h4>
+                            <h4 class="model__config--title center">Change the plan</h4>
 
                             <form action="" id="custom" class="custom">
                                 <div class="large-12 small-12 columns itemCoulorArea">
@@ -186,7 +190,8 @@
                                         <ul>
                                             <li class=" selected ">500MB - $40 per month</li>
                                             <li class="">3GB - $60 per month</li>
-                                            <li class="">6GB - $80 per month</li>                                                 <li class="">10GB - $100 per month</li>
+                                            <li class="">6GB - $80 per month</li>
+                                            <li class="">10GB - $100 per month</li>
 
                                         </ul>
                                     </div>
@@ -269,7 +274,7 @@
 
                         <div id="modelConfigHome-3" data-reveal aria-hidden="true" role="dialog" class="model__config-panel columns hide radius small-12 medium-12 large-12 reveal-modal small">
 
-                           <h4 class="model__config--title center">Change the plan</h4>
+                            <h4 class="model__config--title center">Change the plan</h4>
 
                             <form action="" id="custom" class="custom">
                                 <div class="large-12 small-12 columns itemCoulorArea">
@@ -284,8 +289,8 @@
                                         <ul>
                                             <li class=" selected ">500MB - $40 per month</li>
                                             <li class="">3GB - $60 per month</li>
-                                            <li class="">6GB - $80 per month</li>                                                 
-											<li class="">10GB - $100 per month</li>
+                                            <li class="">6GB - $80 per month</li>
+                                            <li class="">10GB - $100 per month</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -380,8 +385,8 @@
                                         <ul>
                                             <li class=" selected ">500MB - $40 per month</li>
                                             <li class="">3GB - $60 per month</li>
-                                            <li class="">6GB - $80 per month</li>              
-											<li class="">10GB - $100 per month</li>
+                                            <li class="">6GB - $80 per month</li>
+                                            <li class="">10GB - $100 per month</li>
 
                                         </ul>
                                     </div>
@@ -561,7 +566,7 @@
                 <h2 class="step__title">Pick your model</h2>
             </div>
         </div>
-		
+
         <div class="row model__list" data-equalizer data-equalizer-mq="large-up">
             <div class="model__item small-12 medium-12 large-6 column" data-equalizer-watch>
 
@@ -1439,7 +1444,9 @@
 
     <script>
         $(document).foundation();
-        $(document).foundation('reveal', {animation: 'fade'})
+        $(document).foundation('reveal', {
+            animation: 'fade'
+        })
     </script>
 
     <script>

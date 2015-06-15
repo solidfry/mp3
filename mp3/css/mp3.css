@@ -759,13 +759,13 @@ body .model__item {
 */
 
 .model__config-delete {
-    color:#da3a00;
+    color:#999;
     padding-top:1em;
     display:block;
 }
 
 .model__config-delete .ico:before {
-  background: #da3a00;
+  background: #999;
   color: white;
   border-radius: 50%;
   font-size: 1em;
@@ -781,8 +781,18 @@ body .model__item {
     }
 }
 
+/*
+
+Modal Styles
+
+*/
+
 .reveal-modal {
     position: fixed;
+}
+
+.close-reveal-modal {
+     text-decoration: none;
 }
 
 .model__size-list {

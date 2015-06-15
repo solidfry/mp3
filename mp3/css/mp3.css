@@ -758,6 +758,22 @@ body .model__item {
     }
 */
 
+.model__config-delete {
+    color:#999;
+    padding-top:1em;
+    display:block;
+}
+
+.model__config-delete .ico:before {
+  background: #999;
+  color: white;
+  border-radius: 50%;
+  font-size: 1em;
+  padding: .25em;
+  line-height: 1em;
+  margin-right:.25em;
+}
+
 @media only screen and (min-width: 500px) {
     .model__config-panel.reveal-modal {
         margin-left: -12em;
@@ -765,8 +781,18 @@ body .model__item {
     }
 }
 
+/*
+
+Modal Styles
+
+*/
+
 .reveal-modal {
     position: fixed;
+}
+
+.close-reveal-modal {
+     text-decoration: none;
 }
 
 .model__size-list {

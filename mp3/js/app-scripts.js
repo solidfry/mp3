@@ -35,7 +35,9 @@ $(document).ready(function () {
 
             setTimeout(function () {
                 $('.updated').remove();
+                $('.model__config-panel').foundation('reveal', 'close');
             }, 3000);
+
         });
 
     })(jQuery);

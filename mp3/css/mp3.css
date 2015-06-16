@@ -520,6 +520,8 @@ Summary bar
     margin: 0 auto;
     line-height: 1em;
     padding-top: 0.1em;
+    display:block;
+    width:70%;
 }
 
 .summary__label {
@@ -1610,7 +1612,7 @@ Carousel Widget alterations
     border-bottom: 0;
     background: #f5f5f5;
     padding: 2.25em 0 1em;
-    margin-bottom: 1em;
+    margin-bottom: .3em;
 }
 /*}*/
 

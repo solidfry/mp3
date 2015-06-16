@@ -32,10 +32,10 @@ $(document).ready(function () {
 
         updateDevice.click(function () {
             $(this).parent().parent().prepend(updateAnim);
-
+            var modalVal = $(this).parent().parent().attr('id')
             setTimeout(function () {
                 $('.updated').remove();
-                $('.model__config-panel').foundation('reveal', 'close');
+                $('#' + modalVal).foundation('reveal', 'close');
             }, 3000);
 
         });

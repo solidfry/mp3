@@ -50,11 +50,6 @@ $(document).ready(function () {
             return false;
         }
 
-        if(!$('html').hasClass('mobile')) {
-            e.preventDefault();
-            return false;
-        }
-
 		$this = $(this);
 
 		if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {
@@ -101,31 +96,52 @@ $(document).ready(function () {
     // Position Summary Panel
 
     var summary = $('.summary');
+	var summaryWidth;
+	var summaryAnim;
 
     // Show summary function is run when device is selected
 
     function showSummary(element) {
+	
+		// First we need to know if we need to animate from the bottom or side (mobile or desktop)
+		
+		if (!$('html').hasClass('mobile')) {
+           
+		   summaryWidth = summary.outerWidth();
+		   
+		   var summaryAnim = { right : '0px' };
+		   
+		   // Display the summary to the side of the window
 
-        // Display the summary below the window
+			summary.css({
+				'display': 'block',
+				'position': 'fixed',
+				'right': '-330px',
+				'top': '0px'
+			});
+		   
+        } else {
+		
+		   var summaryAnim = { bottom : '0px' };
+		   
+		   // Display the summary below the window
 
-        summary.css({
-            'display': 'block',
-            'position': 'fixed',
-            'bottom': '-300px',
-            'right': '0px'
-        });
-
+			summary.css({
+				'display': 'block',
+				'position': 'fixed',
+				'bottom': '-300px'
+			});
+		
+		}
+		
         // Once displayed off screen, get combined summary top bar height
 
         var summaryHeight = summary.outerHeight();
 
         // Animate the window height - the summary top bar height
         $('body').addClass('summaryShown');
-        summary.delay( 800 ).animate({
-
-            bottom: '0px'
-
-        }, 800, 'easeInOutElastic', function () {
+		
+        summary.delay(800).animate(summaryAnim, 800, 'easeInOutElastic', function(){
 
             if (element.attr('data-group') === "handset") {
 

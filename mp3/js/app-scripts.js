@@ -476,9 +476,9 @@ $(document).ready(function () {
             deviceTotal = cycleCount + 1;
 
             $('#device-total').html(deviceTotal)
-                .addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                .addClass('animated swing').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 
-                    $(this).html(deviceTotal).removeClass('animated flipInX');
+                    $(this).html(deviceTotal).removeClass('animated swing');
 
                 });
 
@@ -492,17 +492,17 @@ $(document).ready(function () {
             gbTotal += parseFloat(planValue[0].slice(0, -2));
 
             $('#gb-total').html(gbTotal + 'GB')
-                .addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                .addClass('animated swing').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 
-                    $(this).removeClass('animated flipInX');
+                    $(this).removeClass('animated swing');
 
                 });
 
             cpmTotal += parseInt(planValue[1]);
 
-            $('#cpm-total').html('$' + cpmTotal).addClass('animated flipInX').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $('#cpm-total').html('$' + cpmTotal).addClass('animated swing').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 
-                $(this).removeClass('animated flipInX');
+                $(this).removeClass('animated swing');
 
             });
 

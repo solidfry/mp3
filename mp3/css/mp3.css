@@ -520,6 +520,8 @@ Summary bar
     margin: 0 auto;
     line-height: 1em;
     padding-top: 0.1em;
+    display:block;
+    width:70%;
 }
 
 .summary__label {

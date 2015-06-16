@@ -774,6 +774,14 @@ body .model__item {
   margin-right:.25em;
 }
 
+.model__config-delete:hover {
+     color:#da3a00;
+}
+
+.model__config-delete:hover .ico:before {
+    background:#da3a00;
+}
+
 @media only screen and (min-width: 500px) {
     .model__config-panel.reveal-modal {
         margin-left: -12em;

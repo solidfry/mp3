@@ -121,11 +121,11 @@ $(document).ready(function () {
 
         // Animate the window height - the summary top bar height
         $('body').addClass('summaryShown');
-        summary.animate({
+        summary.delay( 800 ).animate({
 
             bottom: '0px'
 
-        }, 500, 'easeOutQuint', function () {
+        }, 800, 'easeInOutElastic', function () {
 
             if (element.attr('data-group') === "handset") {
 

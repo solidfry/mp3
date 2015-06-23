@@ -426,6 +426,7 @@ Summary bar
     font-size: .80em;
     z-index: 97;
     display: none;
+    right:0;
 }
 
 @media only screen and (min-width: 860px) {

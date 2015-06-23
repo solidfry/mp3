@@ -1,5 +1,42 @@
 $(document).ready(function () {
 
+
+  // Model dropdown filter
+
+  $('#customDropdown1').on('change', function(e){
+
+    var selectedFilter = $(this).val();
+
+    if (selectedFilter == "Show All") {
+
+      $('.model__item').show();
+
+    } else {
+
+    $.each($('.model__item'), function(i, obj){
+
+      if ($(this).find('.model__title').text().indexOf(selectedFilter) >= 0) {
+
+        $(this).show();
+
+      } else {
+
+        $(this).hide();
+
+      }
+
+
+    });
+
+  }
+
+  e.preventDefault();
+
+  });
+
+
+
+  // Window resize callback for fudging desktop summary
     (function ($) {
 
         var $window = $(window),
@@ -104,15 +141,15 @@ $(document).ready(function () {
     // Show summary function is run when device is selected
 
     function showSummary(element) {
-	
+
 		// First we need to know if we need to animate from the bottom or side (mobile or desktop)
-		
+
 		if (!$('html').hasClass('mobile')) {
-           
+
 		   summaryWidth = summary.outerWidth();
-		   
+
 		   var summaryAnim = { right : '0px' };
-		   
+
 		   // Display the summary to the side of the window
 
 			summary.css({
@@ -121,11 +158,11 @@ $(document).ready(function () {
 				'right': '-330px',
 				'top': '0px'
 			});
-		   
+
         } else {
-		
+
 		   var summaryAnim = { bottom : '0px' };
-		   
+
 		   // Display the summary below the window
 
 			summary.css({
@@ -133,16 +170,16 @@ $(document).ready(function () {
 				'position': 'fixed',
 				'bottom': '-300px'
 			});
-		
+
 		}
-		
+
         // Once displayed off screen, get combined summary top bar height
 
         var summaryHeight = summary.outerHeight();
 
         // Animate the window height - the summary top bar height
         $('body').addClass('summaryShown');
-		
+
         summary.delay(800).animate(summaryAnim, 800, 'easeInOutElastic', function(){
 
             if (element.attr('data-group') === "handset") {

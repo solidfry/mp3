@@ -290,6 +290,10 @@ body {
     color: white;
 }
 
+.view.phones .step__title {
+  margin-bottom:0;  
+}
+
 .home .step__title {
     background: #033241;
 }

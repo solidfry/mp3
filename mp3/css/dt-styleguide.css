@@ -4347,8 +4347,8 @@ ul.list-article, .article-feature .feature-container > .feature-body ul {
 /* line 15, ../../source/assets/css/modules/_footer.scss */
 .footer-links-bg {
   background-color: white;
-  /*@media only screen and (min-width:860px) { 
-  	background-color: $white; 
+  /*@media only screen and (min-width:860px) {
+  	background-color: $white;
   }*/ }
 
 /**
@@ -6336,7 +6336,7 @@ ul.list-article, .article-feature .feature-container > .feature-body ul {
     * Desktop View
     */
     /*
-    * This is a mandatory wrapper class to give table behaviour to the list 
+    * This is a mandatory wrapper class to give table behaviour to the list
     */ }
     /* line 181, ../../source/assets/css/modules/_nav-list.scss */
     .nav-list.segmentation-list:after, .segmentation-list.lower-level-navlist:after {
@@ -8443,7 +8443,7 @@ table {
 
 /* Foundation v2.1.4 http://foundation.zurb.com */
 /* Artfully masterminded by ZURB  */
-/* -------------------------------------------------- 
+/* --------------------------------------------------
    Table of Contents
 -----------------------------------------------------
 :: Shared Styles
@@ -8973,7 +8973,7 @@ div.table-wrapper {
     .device-condition-details {
       border: 0; } }
 
-/* 
+/*
  * credit payment offer (shared by step-1 & step-2)
  */
 /* line 26, ../../source/assets/css/modules/_device-condition.scss */
@@ -9060,8 +9060,8 @@ div.table-wrapper {
     .device-credit-payment-info .spacial-note strong {
       color: #323232; }
 
-/* 
- * LHC main module 
+/*
+ * LHC main module
  */
 /* line 119, ../../source/assets/css/modules/_device-condition.scss */
 #deviceConditionSelectorForm .section-container.accordion .title a {
@@ -10110,8 +10110,8 @@ div.table-wrapper {
     display: none; }
 
 /***
-*	PeterM WIP: 
-*	Make the above accordion code more modularalised 
+*	PeterM WIP:
+*	Make the above accordion code more modularalised
 ***/
 /* line 441, ../../source/assets/css/modules/_accordion.scss */
 .accordion .ico-arrow-up {
@@ -11071,7 +11071,7 @@ td {
     float: none; }
 
   /* ==
-     2.3 Font alterations for print 
+     2.3 Font alterations for print
      - font family
      - font sizes
      - font-colours

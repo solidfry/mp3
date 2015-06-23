@@ -503,15 +503,26 @@ Summary bar
     float: left;
     font-size: 1.2em;
     width: 30.75%;
+    height:4.5em;
 }
+
+.summary__element.yellow {
+    background:#ffc300;
+    color:#323232;
+}
+
+    .summary__element.yellow .summary__label {
+        color:#323232;
+    }
 
 @media only screen and (min-width: 860px) {
     .summary__element {
         display: block;
         width: auto;
         float: none;
-        font-size: 2em;
+        font-size: 1.5em;
         margin: 0.5em;
+        height:auto;
     }
 }
 

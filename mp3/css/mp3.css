@@ -347,8 +347,8 @@ body {
 }
 
 .product-select__link--add .ico:before {
-    background: #00a3ad;
-    color: white;
+    background: #ffd100 ;
+    color: #323232;
     border-radius: 50%;
 }
 
@@ -728,9 +728,9 @@ body .model__item {
 }
 
 @media only screen and (min-width: 860px) {
-    .model__config {
+    /*.model__config {
         margin-left: 25%;
-    }
+    }*/
 }
 
 .model__config-panel {
@@ -785,7 +785,7 @@ body .model__item {
 }
 
 @media only screen and (min-width: 500px) {
-    .model__config-panel.reveal-modal {
+    .model__config-panel.reveal-modal, .delete_modal.reveal-modal {
         margin-left: -12em;
         width: 24em;
     }

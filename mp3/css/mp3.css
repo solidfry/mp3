@@ -685,7 +685,7 @@ body .model__item {
 .model__specs {
     padding: 0 0 0 1em;
     margin: 0;
-    font-size: .8em;
+    font-size: 1em;
     list-style: disc;
 }
 

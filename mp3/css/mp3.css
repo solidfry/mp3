@@ -291,7 +291,7 @@ body {
 }
 
 .view.phones .step__title {
-  margin-bottom:0;  
+    margin-bottom: 0;
 }
 
 .home .step__title {
@@ -351,7 +351,7 @@ body {
 }
 
 .product-select__link--add .ico:before {
-    background: #ffd100 ;
+    background: #ffd100;
     color: #323232;
     border-radius: 50%;
 }
@@ -430,7 +430,7 @@ Summary bar
     font-size: .80em;
     z-index: 97;
     display: none;
-    right:0;
+    right: 0;
 }
 
 @media only screen and (min-width: 860px) {
@@ -509,17 +509,17 @@ Summary bar
     float: left;
     font-size: 1.2em;
     width: 30.75%;
-    height:4.5em;
+    height: 4.5em;
 }
 
 .summary__element.yellow {
-    background:#ffc300;
-    color:#323232;
+    background: #ffc300;
+    color: #323232;
 }
 
-    .summary__element.yellow .summary__label {
-        color:#323232;
-    }
+.summary__element.yellow .summary__label {
+    color: #323232;
+}
 
 @media only screen and (min-width: 860px) {
     .summary__element {
@@ -528,7 +528,7 @@ Summary bar
         float: none;
         font-size: 1.5em;
         margin: 0.5em;
-        height:auto;
+        height: auto;
     }
 }
 
@@ -537,8 +537,8 @@ Summary bar
     margin: 0 auto;
     line-height: 1em;
     padding-top: 0.1em;
-    display:block;
-    width:70%;
+    display: block;
+    width: 70%;
 }
 
 .summary__label {
@@ -577,7 +577,6 @@ Summary bar
     margin: 0;
     line-height: 1em;
     text-align: center;
-
 }
 
 @media only screen and (min-width: 860px) {
@@ -780,36 +779,36 @@ body .model__item {
 */
 
 .model__config-delete {
-    color:#999;
-    padding-top:1em;
-    display:block;
+    color: #999;
+    padding-top: 1em;
+    display: block;
 }
 
 .model__config-delete .ico:before {
-  background: #999;
-  color: white;
-  border-radius: 50%;
-  font-size: 1em;
-  padding: .25em;
-  line-height: 1em;
-  margin-right:.25em;
+    background: #999;
+    color: white;
+    border-radius: 50%;
+    font-size: 1em;
+    padding: .25em;
+    line-height: 1em;
+    margin-right: .25em;
 }
 
 .model__config-delete:hover {
-     color:#da3a00;
+    color: #da3a00;
 }
 
 .model__config-delete:hover .ico:before {
-    background:#da3a00;
+    background: #da3a00;
 }
 
 @media only screen and (min-width: 500px) {
-    .model__config-panel.reveal-modal, .delete_modal.reveal-modal {
+    .model__config-panel.reveal-modal,
+    .delete_modal.reveal-modal {
         margin-left: -12em;
         width: 24em;
     }
 }
-
 /*
 
 Modal Styles
@@ -818,10 +817,11 @@ Modal Styles
 
 .reveal-modal {
     position: fixed;
+    overflow: hidden;
 }
 
 .close-reveal-modal {
-     text-decoration: none;
+    text-decoration: none;
 }
 
 .model__size-list {
@@ -860,7 +860,8 @@ Modal Styles
     height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.85);
-    border-radius: 6px;
+    /*border-radius: 6px;*/
+
     z-index: 9999;
     -webkit-animation: updateFadeOut .6s 1 ease-out;
     animation: updateFadeOut .6s 1 ease-out;

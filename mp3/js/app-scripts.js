@@ -79,6 +79,11 @@ $(document).ready(function () {
 
     })(jQuery);
 
+    // Real quick and dirty close of delete confirmation modal
+    $('#deleteModal .button').click(function () {
+        $(this).foundation('reveal', 'close');
+    });
+
     // Generic show/hide toggle function (e.g. Model Config)
 
 	// We only want this click event to fire on mobile

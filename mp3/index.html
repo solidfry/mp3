@@ -140,16 +140,21 @@
                             <div class="small-12 columns model__device-select">
                                 <button class="button radius small yellow small-12 update">I'm done</button>
                             </div>
-                            <div class="small-12 columns center">
-                                <a href="#" class="model__config-delete"><span class="ico ico-cross"></span>Delete</a>
-                            </div>
+
                             <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+
 
                         </div>
                     </div>
-                    <a class="model__config center small-12 medium-12 large-6 button small grey" data-reveal-id="modelConfigHome-1">
-					Make changes to this device <span class="ico ico-arrow-down"></span>
-				</a>
+                    <div class="columns small-6">
+                        <a class="model__config center button small grey small-12" data-reveal-id="modelConfigHome-1">
+					Edit <span class="ico ico-arrow-down"></span>
+				        </a>
+                    </div>
+                    <div class="columns small-6">
+                        <a href="#" class="model__config-delete button small grey radius small-12" data-reveal-id="deleteModal"><span class="ico ico-cross"></span>Delete</a>
+                    </div>
+
                 </div>
 
                 <div class="model__item small-12 medium-12 large-6 column hide">
@@ -242,16 +247,18 @@
                             <div class="small-12 columns model__device-select">
                                 <button class="button radius small yellow small-12 update">I'm done</button>
                             </div>
-                            <div class="small-12 columns center">
-                                <a href="#" class="model__config-delete"><span class="ico ico-cross"></span>Delete</a>
-                            </div>
                             <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 
                         </div>
                     </div>
-                    <a class="model__config center small-12 medium-12 large-6 button small grey" data-reveal-id="modelConfigHome-2">
-					Make changes to this device <span class="ico ico-arrow-down"></span>
-				</a>
+                    <div class="columns small-6">
+                        <a class="model__config center button small grey small-12" data-reveal-id="modelConfigHome-2">
+					Edit <span class="ico ico-arrow-down"></span>
+				        </a>
+                    </div>
+                    <div class="columns small-6">
+                        <a href="#" class="model__config-delete button small grey radius small-12" data-reveal-id="deleteModal"><span class="ico ico-cross"></span>Delete</a>
+                    </div>
                 </div>
 
                 <div class="model__item  small-12 medium-12 large-6 column hide">
@@ -343,15 +350,17 @@
                             <div class="small-12 columns model__device-select">
                                 <button class="button radius small yellow small-12 update">I'm done</button>
                             </div>
-                            <div class="small-12 columns center">
-                                <a href="#" class="model__config-delete"><span class="ico ico-cross"></span>Delete</a>
-                            </div>
                             <a class="close-reveal-modal" aria-label="Close">&#215;</a>
                         </div>
                     </div>
-                    <a class="model__config center small-12 medium-12 large-6 button small grey" data-reveal-id="modelConfigHome-3">
-					Make changes to this device <span class="ico ico-arrow-down"></span>
-				</a>
+                    <div class="columns small-6">
+                        <a class="model__config center button small grey small-12" data-reveal-id="modelConfigHome-3">
+					Edit <span class="ico ico-arrow-down"></span>
+				        </a>
+                    </div>
+                    <div class="columns small-6">
+                        <a href="#" class="model__config-delete button small grey radius small-12" data-reveal-id="deleteModal"><span class="ico ico-cross"></span>Delete</a>
+                    </div>
                 </div>
                 <div class="model__item  small-12 medium-12 large-6 column hide">
 
@@ -402,20 +411,27 @@
                             <div class="small-12 columns model__device-select">
                                 <button class="button radius small yellow small-12 update">I'm done</button>
                             </div>
-                            <div class="small-12 columns center">
-                                <a href="#" class="model__config-delete"><span class="ico ico-cross"></span>Delete</a>
-                            </div>
                             <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 
                         </div>
                     </div>
-                    <a class="model__config center small-12 medium-12 large-6 button small grey" data-reveal-id="modelConfigHome-4">
-					Change this plan <span class="ico ico-arrow-down"></span>
-				</a>
+                    <div class="columns small-6">
+                        <a class="model__config center button small grey small-12" data-reveal-id="modelConfigHome-4">
+					Edit <span class="ico ico-arrow-down"></span>
+				        </a>
+                    </div>
+                    <div class="columns small-6">
+                        <a href="#" class="model__config-delete button small grey radius small-12" data-reveal-id="deleteModal"><span class="ico ico-cross"></span>Delete</a>
+                    </div>
                 </div>
 
             </div>
-
+            <div id="deleteModal" class="reveal-modal delete_modal" data-reveal aria-labelledby="deleteTitle" aria-hidden="true" role="dialog">
+                <h2 id="deleteTitle">Are you sure you want to delete this?</h2>
+                <button class="columns button radius small yellow">Yes, Delete this from my package</button>
+                <button class="columns button radius small grey">Cancel</button>
+                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+            </div>
         </div>
 
         <div class="row checkout hide">
@@ -1450,10 +1466,29 @@
 
         <div class="summary__info cf">
 
-            <h3 class="summary__element"><span class="summary__data" id="device-total">0</span><span class="summary__label">Service</span></h3>
-            <h3 class="summary__element"><span class="summary__data" id="gb-total">0GB</span><span class="summary__label">Data to share</span></h3>
-            <h3 class="summary__element"><span class="summary__data" id="cpm-total">&#36;0</span><span class="summary__label">Per month</span></h3>
-            <p class="summary__mtc">Min total cost over 24 months is $xxxx</p>
+            <h3 class="summary__element yellow">
+                <span class="summary__data" id="cpm-total">&#36;0</span>
+                <span class="summary__label">Per month</span>
+            </h3>
+
+            <h3 class="summary__element">
+                <span class="summary__data" id="device-total">0</span>
+                <span class="summary__label">Service</span>
+            </h3>
+
+            <h3 class="summary__element">
+                <span class="summary__data" id="gb-total">0GB</span>
+                <span class="summary__label">Data to share</span>
+            </h3>
+
+            <h3 class="summary__element show-for-medium-up">
+                <span class="summary__data" id="int-total">300</span>
+                <span class="summary__label">International Minutes</span>
+            </h3>
+
+            <h3 class="summary__element show-for-medium-up">Unlimited National Calls</h3>
+            <h3 class="summary__element show-for-medium-up">Unlimited SMS/MMS</h3>
+            <p class="summary__mtc">Min total cost over 24 months is $1234</p>
         </div>
 
 

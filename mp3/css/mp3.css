@@ -351,8 +351,8 @@ body {
 }
 
 .product-select__link--add .ico:before {
-    background: #00a3ad;
-    color: white;
+    background: #ffd100 ;
+    color: #323232;
     border-radius: 50%;
 }
 
@@ -430,6 +430,7 @@ Summary bar
     font-size: .80em;
     z-index: 97;
     display: none;
+    right:0;
 }
 
 @media only screen and (min-width: 860px) {
@@ -453,6 +454,7 @@ Summary bar
     margin: 0;
     vertical-align: middle;
     font-size: 1.34em;
+    text-align: center;
 }
 
 @media only screen and (min-width: 860px) {
@@ -507,15 +509,26 @@ Summary bar
     float: left;
     font-size: 1.2em;
     width: 30.75%;
+    height:4.5em;
 }
+
+.summary__element.yellow {
+    background:#ffc300;
+    color:#323232;
+}
+
+    .summary__element.yellow .summary__label {
+        color:#323232;
+    }
 
 @media only screen and (min-width: 860px) {
     .summary__element {
         display: block;
         width: auto;
         float: none;
-        font-size: 2em;
+        font-size: 1.5em;
         margin: 0.5em;
+        height:auto;
     }
 }
 
@@ -557,12 +570,14 @@ Summary bar
 
 .summary__mtc {
     clear: both;
-    font-size: 11px;
+    font-size: 0.875em;
     color: white;
     font-weight: bold;
-    padding: .5em 0 0em 1em;
+    padding: .5em 0 .5em 1em;
     margin: 0;
     line-height: 1em;
+    text-align: center;
+
 }
 
 @media only screen and (min-width: 860px) {
@@ -732,9 +747,9 @@ body .model__item {
 }
 
 @media only screen and (min-width: 860px) {
-    .model__config {
+    /*.model__config {
         margin-left: 25%;
-    }
+    }*/
 }
 
 .model__config-panel {
@@ -789,7 +804,7 @@ body .model__item {
 }
 
 @media only screen and (min-width: 500px) {
-    .model__config-panel.reveal-modal {
+    .model__config-panel.reveal-modal, .delete_modal.reveal-modal {
         margin-left: -12em;
         width: 24em;
     }

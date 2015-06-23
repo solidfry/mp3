@@ -1,42 +1,42 @@
 $(document).ready(function () {
 
 
-  // Model dropdown filter
+    // Model dropdown filter
 
-  $('#customDropdown1').on('change', function(e){
+    $('#customDropdown1').on('change', function (e) {
 
-    var selectedFilter = $(this).val();
+        var selectedFilter = $(this).val();
 
-    if (selectedFilter == "Show All") {
+        if (selectedFilter == "Show All") {
 
-      $('.model__item').show();
+            $('.model__item').show();
 
-    } else {
+        } else {
 
-    $.each($('.model__item'), function(i, obj){
+            $.each($('.model__item'), function (i, obj) {
 
-      if ($(this).find('.model__title').text().indexOf(selectedFilter) >= 0) {
+                if ($(this).find('.model__title').text().indexOf(selectedFilter) >= 0) {
 
-        $(this).show();
+                    $(this).show();
 
-      } else {
+                } else {
 
-        $(this).hide();
+                    $(this).hide();
 
-      }
+                }
 
+
+            });
+
+        }
+
+        e.preventDefault();
 
     });
 
-  }
-
-  e.preventDefault();
-
-  });
 
 
-
-  // Window resize callback for fudging desktop summary
+    // Window resize callback for fudging desktop summary
     (function ($) {
 
         var $window = $(window),
@@ -46,13 +46,13 @@ $(document).ready(function () {
 
             if ($window.width() < 860) {
 
-				$('.planSummaryItem').removeClass('expanded');
-				$('.planBody').hide();
+                $('.planSummaryItem').removeClass('expanded');
+                $('.planBody').hide();
                 return $html.addClass('mobile');
             }
 
             $html.removeClass('mobile');
-			$('.planBody').show();
+            $('.planBody').show();
 
         }).trigger('resize');
 
@@ -86,46 +86,46 @@ $(document).ready(function () {
 
     // Generic show/hide toggle function (e.g. Model Config)
 
-	// We only want this click event to fire on mobile
-	$('.tap').on('click ontouchstart', function (e) {
+    // We only want this click event to fire on mobile
+    $('.tap').on('click ontouchstart', function (e) {
 
         if (!$('html').hasClass('mobile')) {
             e.preventDefault();
             return false;
         }
 
-		$this = $(this);
+        $this = $(this);
 
-		if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {
+        if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {
 
-			$this.parent().find(".model__config-panel, .planBody ").slideToggle().removeClass('on');
-			$this.parent().find('.model__config span').toggleClass('ico-arrow-up');
-			$this.parent().removeClass('expanded');
-		} else {
+            $this.parent().find(".model__config-panel, .planBody ").slideToggle().removeClass('on');
+            $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
+            $this.parent().removeClass('expanded');
+        } else {
 
-			$(".model__config-panel.on, .planBody.on ").slideToggle(300).removeClass('on');
-			$(".planSummaryItem").removeClass('expanded');
-			$this
-				.parent()
-				.find(".model__config-panel, .planBody ")
-				.stop(true, true)
-				.slideToggle(300, function () {
+            $(".model__config-panel.on, .planBody.on ").slideToggle(300).removeClass('on');
+            $(".planSummaryItem").removeClass('expanded');
+            $this
+                .parent()
+                .find(".model__config-panel, .planBody ")
+                .stop(true, true)
+                .slideToggle(300, function () {
 
-					$('body, html').animate({
+                    $('body, html').animate({
 
-						scrollTop: $this.parent().offset().top
+                        scrollTop: $this.parent().offset().top
 
-					}, 500, 'easeOutQuint');
+                    }, 500, 'easeOutQuint');
 
-				})
-				.addClass('on');
-			$this.parent().addClass('expanded');
+                })
+                .addClass('on');
+            $this.parent().addClass('expanded');
 
-			$this.parent().find('.model__config span').toggleClass('ico-arrow-up');
+            $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
 
-		}
+        }
 
-	});
+    });
 
     // Switch active capacity when selection changes
 
@@ -140,43 +140,47 @@ $(document).ready(function () {
     // Position Summary Panel
 
     var summary = $('.summary');
-	var summaryWidth;
-	var summaryAnim;
+    var summaryWidth;
+    var summaryAnim;
 
     // Show summary function is run when device is selected
 
     function showSummary(element) {
 
-		// First we need to know if we need to animate from the bottom or side (mobile or desktop)
+        // First we need to know if we need to animate from the bottom or side (mobile or desktop)
 
-		if (!$('html').hasClass('mobile')) {
+        if (!$('html').hasClass('mobile')) {
 
-		   summaryWidth = summary.outerWidth();
+            summaryWidth = summary.outerWidth();
 
-		   var summaryAnim = { right : '0px' };
+            var summaryAnim = {
+                right: '0px'
+            };
 
-		   // Display the summary to the side of the window
+            // Display the summary to the side of the window
 
-			summary.css({
-				'display': 'block',
-				'position': 'fixed',
-				'right': '-330px',
-				'top': '0px'
-			});
+            summary.css({
+                'display': 'block',
+                'position': 'fixed',
+                'right': '-330px',
+                'top': '0px'
+            });
 
         } else {
 
-		   var summaryAnim = { bottom : '0px' };
+            var summaryAnim = {
+                bottom: '0px'
+            };
 
-		   // Display the summary below the window
+            // Display the summary below the window
 
-			summary.css({
-				'display': 'block',
-				'position': 'fixed',
-				'bottom': '-300px'
-			});
+            summary.css({
+                'display': 'block',
+                'position': 'fixed',
+                'bottom': '-300px'
+            });
 
-		}
+        }
 
         // Once displayed off screen, get combined summary top bar height
 
@@ -185,7 +189,7 @@ $(document).ready(function () {
         // Animate the window height - the summary top bar height
         $('body').addClass('summaryShown');
 
-        summary.delay(800).animate(summaryAnim, 800, 'easeInOutElastic', function(){
+        summary.delay(800).animate(summaryAnim, 800, 'easeInOutElastic', function () {
 
             if (element.attr('data-group') === "handset") {
 
@@ -312,8 +316,8 @@ $(document).ready(function () {
         var nextStep = $this.attr('data-step');
 
         if (cycleSteps.indexOf(nextStep) !== -1) {
-          currentStep = 0;
-          cycleSteps = [];
+            currentStep = 0;
+            cycleSteps = [];
         }
 
         cycleSteps[currentStep] = nextStep;
@@ -353,7 +357,7 @@ $(document).ready(function () {
         $this.closest('.view').addClass('zipOutLeft');
 
 
-          $('.' + nextStep).addClass('visible zipInRight');
+        $('.' + nextStep).addClass('visible zipInRight');
 
 
 
@@ -377,10 +381,6 @@ $(document).ready(function () {
             });
 
 
-
-
-
-
         if (currentStepString == 'home') {
 
             // Once we've completed a cycle, hide the back button...
@@ -393,12 +393,12 @@ $(document).ready(function () {
 
             $('.planSelectButton').removeClass('selected');
 
-			if ($('html').hasClass('mobile')) {
+            if ($('html').hasClass('mobile')) {
 
-				$('.model__config-panel, .planBody ').removeClass('on').hide();
-				$('.planSummaryItem.expanded').removeClass('expanded');
+                $('.model__config-panel, .planBody ').removeClass('on').hide();
+                $('.planSummaryItem.expanded').removeClass('expanded');
 
-			}
+            }
 
             currentCycle += 1;
             cycleCount += 1;
@@ -436,7 +436,7 @@ $(document).ready(function () {
     $('.back-button').on('click', function () {
 
         // Grab the preview view from the Array
-        var targetStep = cycleSteps[cycleSteps.length -  2];
+        var targetStep = cycleSteps[cycleSteps.length - 2];
 
         var prevStep = $('.view.' + targetStep);
 

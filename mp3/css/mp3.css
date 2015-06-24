@@ -838,6 +838,7 @@ Modal Styles
 .reveal-modal {
     position: fixed;
     overflow: hidden;
+    border-radius: 0.375em;
 }
 
 .close-reveal-modal {

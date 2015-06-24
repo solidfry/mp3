@@ -17,11 +17,11 @@ $(document).ready(function () {
 
                 if ($(this).find('.model__title').text().indexOf(selectedFilter) >= 0) {
 
-                    $(this).show();
+                    $(this).slideDown();
 
                 } else {
 
-                    $(this).hide();
+                    $(this).slideUp();
 
                 }
 

@@ -786,6 +786,18 @@ body .model__item {
     }
 */
 
+.model__config--title:first-child {
+    clear: both;
+    padding: 0 0 .5em;
+    border-top: 0px solid #ffffff;
+}
+
+.model__config--title {
+    clear: both;
+    padding: .75em 0 .5em;
+    border-top: 3px solid #ffffff;
+}
+
 .model__config-delete {
     color: #999;
     padding-top: 1em;

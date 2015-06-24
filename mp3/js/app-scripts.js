@@ -17,11 +17,11 @@ $(document).ready(function () {
 
                 if ($(this).find('.model__title').text().indexOf(selectedFilter) >= 0) {
 
-                    $(this).slideDown();
+                    $(this).show();
 
                 } else {
 
-                    $(this).slideUp();
+                    $(this).hide();
 
                 }
 
@@ -68,7 +68,7 @@ $(document).ready(function () {
         var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle ico ico-tick"></div></span></span></div>';
 
         updateDevice.click(function () {
-            $(this).parent().parent().prepend(updateAnim);
+            $(this).parent().parent().append(updateAnim);
             var modalVal = $(this).parent().parent().attr('id')
             setTimeout(function () {
                 $('.updated').remove();

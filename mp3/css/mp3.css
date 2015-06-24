@@ -700,10 +700,10 @@ body .model__item {
     line-height: 1.5em;
 }
 
-.model__price {
+.model__data {
     display: block;
     margin: 0;
-    padding: .4em 0 0;
+    padding: .5em 0 0;
     text-align: center;
     position: relative;
     top: -.1em;
@@ -715,11 +715,17 @@ body .model__item {
     /*box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.2);*/
 }
 
-.phones .model__price {
+.model__data .super {
+    font-weight: normal;
+    font-size: .5em;
+    vertical-align: sub;
+}
+
+.phones .model__data {
     display: none;
 }
 
-.model__price-label {
+.model__data-label {
     text-transform: uppercase;
     font-size: .5em;
     line-height: 1.6em;
@@ -728,20 +734,17 @@ body .model__item {
     font-weight: bold;
 }
 
-.model__price-number {
+.model__data-number,
+.model__data--quota .model__data-number {
     font-size: 2em;
     display: block;
     text-indent: -.1em;
-    padding-bottom: .15em;
     color: #323232;
-    /*height: .9em;
-    line-height: 1.1em;*/
+    line-height: 1em;
 }
 
-.model__price-number::first-letter {
-    vertical-align: super;
-    font-size: .5em;
-    font-weight: normal;
+.model__data--quota {
+    margin-top: .5em;
 }
 
 .model__config {

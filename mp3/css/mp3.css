@@ -593,8 +593,6 @@ Summary bar
     }
 }
 
-.summary__full {}
-
 .expand .summary__full {
     display: block;
     overflow-x: scroll;

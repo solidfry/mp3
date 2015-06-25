@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     // Model dropdown filter
 
     $('#customDropdown1').on('change', function (e) {
@@ -16,15 +15,10 @@ $(document).ready(function () {
             $.each($('.model__item'), function (i, obj) {
 
                 if ($(this).find('.model__title').text().indexOf(selectedFilter) >= 0) {
-
                     $(this).show();
-
                 } else {
-
                     $(this).hide();
-
                 }
-
 
             });
 
@@ -33,8 +27,6 @@ $(document).ready(function () {
         e.preventDefault();
 
     });
-
-
 
     // Window resize callback for fudging desktop summary
     (function ($) {
@@ -57,7 +49,6 @@ $(document).ready(function () {
         }).trigger('resize');
 
     })(jQuery);
-
 
     // Update device information in the home panel. This adds a validation notification.
 
@@ -96,22 +87,23 @@ $(document).ready(function () {
 
         $this = $(this);
 
-        if ($this.parent().find(".model__config-panel, .planBody ").hasClass('on')) {
+        if ($this.parent().find(".model__config-panel, .planBody").hasClass('on')) {
 
-            $this.parent().find(".model__config-panel, .planBody ").slideToggle().removeClass('on');
+            $this.parent().find(".model__config-panel, .planBody").slideToggle().removeClass('on');
             $this.parent().find('.model__config span').toggleClass('ico-arrow-up');
             $this.parent().removeClass('expanded');
+
         } else {
 
-            $(".model__config-panel.on, .planBody.on ").slideToggle(300).removeClass('on');
+            $(".model__config-panel.on, .planBody.on").slideToggle(300).removeClass('on');
             $(".planSummaryItem").removeClass('expanded');
             $this
                 .parent()
-                .find(".model__config-panel, .planBody ")
+                .find(".model__config-panel, .planBody")
                 .stop(true, true)
-                .slideToggle(300, function () {
+                .slideToggle(300, function(){
 
-                    $('body, html').animate({
+                    $("body, html").animate({
 
                         scrollTop: $this.parent().offset().top
 
@@ -209,8 +201,6 @@ $(document).ready(function () {
 
     }
 
-
-
     // Set the first .view div as .visible on page load
 
     var views = $('.view');
@@ -219,8 +209,6 @@ $(document).ready(function () {
     //  Close the handset config modal
 
     function closeModal(modalId) {
-
-        console.log(modalId);
 
         $(modalId).foundation('reveal', 'close');
 
@@ -301,7 +289,6 @@ $(document).ready(function () {
     var currentStepString = 'home';
     var cycleSteps = [currentStepString];
 
-
     function switchView(element) {
 
         // Get the element that was passed from the click function
@@ -348,18 +335,11 @@ $(document).ready(function () {
 
         }
 
-        // Remove animation classes from home view (we only want them to run on page load)
-
-
-
         // CSS Animations
 
         $this.closest('.view').addClass('zipOutLeft');
 
-
         $('.' + nextStep).addClass('visible zipInRight');
-
-
 
         $('.zipOutLeft').one(transitionEvent,
             function (event) {
@@ -426,8 +406,6 @@ $(document).ready(function () {
         }
 
         // Keep track of where we are by adding data-step to the global
-
-
 
     }
 

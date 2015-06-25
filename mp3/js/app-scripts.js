@@ -59,7 +59,7 @@ $(document).ready(function () {
         var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle ico ico-tick"></div></span></span></div>';
 
         updateDevice.click(function () {
-            $(this).parent().parent().prepend(updateAnim);
+            $(this).parent().parent().append(updateAnim);
             var modalVal = $(this).parent().parent().attr('id')
             setTimeout(function () {
                 $('.updated').remove();

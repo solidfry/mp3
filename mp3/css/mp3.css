@@ -712,7 +712,6 @@ body .model__item {
     color: #178093;
     line-height: 1em;
     border: 1px solid #178093;
-    /*box-shadow: inset 0 -2px 0px rgba(0, 0, 0, 0.2);*/
 }
 
 .model__data .super {

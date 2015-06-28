@@ -101,7 +101,7 @@ $(document).ready(function () {
                 .parent()
                 .find(".model__config-panel, .planBody")
                 .stop(true, true)
-                .slideToggle(300, function(){
+                .slideToggle(300, function () {
 
                     $("body, html").animate({
 
@@ -385,7 +385,7 @@ $(document).ready(function () {
 
             $('.view.home .checkout').show();
 
-            $('.view.home .step__title').html('<span class="ico ico-home yellow"></span> Add more stuff!');
+            $('.view.home .step__title').html('<span class="ico ico-home yellow"></span> Add more plans!');
 
             $('.view.home .model__item').each(function (i, el) {
 

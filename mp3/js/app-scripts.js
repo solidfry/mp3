@@ -154,7 +154,7 @@ $(document).ready(function () {
             summary.css({
                 'display': 'block',
                 'position': 'fixed',
-                'right': '-330px',
+                'right': '-20%',
                 'top': '0px'
             });
 

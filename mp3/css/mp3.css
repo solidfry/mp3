@@ -525,6 +525,15 @@ Summary bar
     color: #323232;
 }
 
+.summary__data {
+    font-size: 2em;
+    margin: 0 auto;
+    line-height: 1em;
+    padding-top: 0.1em;
+    display: block;
+    width: 70%;
+}
+
 @media only screen and (min-width: 860px) {
     .summary__block {
         width: 100%;
@@ -534,19 +543,12 @@ Summary bar
     .summary__element {
         display: block;
         width: auto;
-        font-size: 1.5em;
         margin: 0.5em;
         height: auto;
     }
-}
-
-.summary__data {
-    font-size: 2em;
-    margin: 0 auto;
-    line-height: 1em;
-    padding-top: 0.1em;
-    display: block;
-    width: 70%;
+    .summary__data {
+        font-size: 3vw;
+    }
 }
 
 .summary__label {
@@ -653,7 +655,7 @@ Mobile Listing Widget alterations
 
 body .model__item {
     border-bottom: 1px solid #e5e5e5;
-    padding: 2em 1em 2em 1em;
+    padding: 2em 1em 1em 1em;
 }
 
 @media only screen and (min-width: 860px) {
@@ -678,6 +680,10 @@ body .model__item {
 }
 
 @media only screen and (min-width: 860px) {
+    .model__list {
+        margin: 3em 0;
+        overflow: hidden;
+    }
     .model__list .model__item:last-child {
         float: left;
     }

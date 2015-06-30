@@ -230,9 +230,33 @@ body {
     display: block;
 }
 
+.view.home .model__list {
+    background-color:#eee;
+    padding:4% 0;
+    display: none;
+}
+
+.view.home .model__list--title {
+  text-align:center;
+  margin-bottom:0;
+  color:#555;
+}
+
 .view.home .model__item {
     position: relative;
     display: none;
+    background-color:#fff;
+    border-radius:8px;
+    width:92%;
+    margin:4% 4% 0;
+}
+
+.view.home .model__item:first-child {
+  margin-top:0;
+}
+
+.view.home .model__item:last-child {
+  margin-bottom:0;
 }
 
 .view.home .model__count {
@@ -257,7 +281,6 @@ body {
     border-bottom-left-radius: 6px;
     padding-top: 1em;
     background-color: #f5f5f5;
-    border-top: 2px solid #e5e5e5;
     display: none;
 }
 
@@ -1566,7 +1589,7 @@ Carousel Widget alterations
 .planSelectorWidget .planSummaryItem .planHeading {
     height: auto;
     background: #00a3ad;
-    padding: 2em 1em 1em;
+    padding: 1.2em 1em 1em;
     border-radius: 6px;
     position: relative;
 }

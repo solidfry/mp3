@@ -314,7 +314,7 @@ $(document).ready(function () {
 
         // If we're in the first cycle we need to show the summary when a device is selected
 
-        if (cycleCount == 0 && nextStep == 'plans') {
+        if (cycleCount == 0 && nextStep == 'home') {
 
             showSummary($this);
 
@@ -384,8 +384,11 @@ $(document).ready(function () {
             cycleCount += 1;
 
             $('.view.home .checkout').show();
+            $('.view.home .model__list').show();
+            $('.view.home .home__intro').hide();
 
             $('.view.home .step__title').html('<span class="ico ico-home yellow"></span> Add more plans!');
+          //  $('h3.product-select__title').html('ADD ANOTHER SERVICE');
 
             $('.view.home .model__item').each(function (i, el) {
 

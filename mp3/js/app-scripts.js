@@ -321,17 +321,19 @@ $(document).ready(function () {
         } else if (cycleCount > 0 && nextStep == 'plans') {
 
 
-            if ($this.attr('data-group') === "handset") {
+            // if ($this.attr('data-group') === "handset") {
+            //
+            //     var handsetValue = ['handset'];
+            //     updateSummary(handsetValue);
+            //
+            // } else
 
-                var handsetValue = ['handset'];
-                updateSummary(handsetValue);
-
-            } else if ($this.attr('data-group') === "sim") {
-
-                var simValue = ['sim'];
-                updateSummary(simValue);
-
-            }
+            // if ($this.attr('data-group') === "sim") {
+            //
+            //     var simValue = ['sim'];
+            //     updateSummary(simValue);
+            //
+            // }
 
         }
 
@@ -388,7 +390,7 @@ $(document).ready(function () {
             $('.view.home .home__intro').hide();
 
             $('.view.home .step__title').html('<span class="ico ico-home yellow"></span> Add more plans!');
-          //  $('h3.product-select__title').html('ADD ANOTHER SERVICE');
+            $('.view.home h3.product-select__title').html('ADD ANOTHER SERVICE');
 
             $('.view.home .model__item').each(function (i, el) {
 
@@ -418,8 +420,7 @@ $(document).ready(function () {
 
         // Grab the preview view from the Array
         var targetStep = cycleSteps[cycleSteps.length - 2];
-
-        var prevStep = $('.view.' + targetStep);
+            prevStep = $('.view.' + targetStep);
 
         // Tell the visible view to animate out
 
@@ -467,15 +468,17 @@ $(document).ready(function () {
 
         // If handset is selected, pass an array to update the summary cmp and device
 
-        if (!$this.hasClass('selected') && $this.attr('data-group') == "handset") {
+        // if (!$this.hasClass('selected') && $this.attr('data-group') == "handset") {
+        //
+        //     var handsetValue = ['handset', parseInt($this.attr('data-val'))];
+        //
+        //     updateSummary(handsetValue);
+        //
+        //     $this.addClass('selected');
+        //
+        // } else
 
-            var handsetValue = ['handset', parseInt($this.attr('data-val'))];
-
-            updateSummary(handsetValue);
-
-            $this.addClass('selected');
-
-        } else if (!$this.hasClass('selected') && $this.attr('data-group') == "plan") {
+        if (!$this.hasClass('selected') && $this.attr('data-group') == "plan") {
 
             var planValue = ['plan', $this.attr('data-val')];
 
@@ -528,6 +531,8 @@ $(document).ready(function () {
         // If we've selected a plan
         else if (value[0] == 'plan') {
 
+          // Update Summary Plan Data
+
             var planValue = value[1].split('-');
 
             gbTotal += parseFloat(planValue[0].slice(0, -2));
@@ -546,6 +551,16 @@ $(document).ready(function () {
                 $(this).removeClass('animated swing');
 
             });
+
+            // Update Summary device cycleCount
+            deviceTotal = cycleCount;
+
+            $('#device-total').html(deviceTotal)
+                .addClass('animated swing').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+
+                $(this).html(deviceTotal).removeClass('animated swing');
+
+              });
 
         }
 

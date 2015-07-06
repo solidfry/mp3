@@ -1473,9 +1473,19 @@ Carousel Widget alterations
   position: absolute;
   top: 50%;
   z-index: 90;
-  right: 7%;
+  right: 0;
   margin-top: -.8em;
 }
+
+.planSelectorWidget .planSummaryItem .planHeading h2, .planSelectorWidget .planSummaryItem .planHeading h4{
+  width:45%;
+  display:inline-block;
+  float: left;
+}
+.planHeading h4 span {
+
+}
+
 @media only screen and (min-width: 860px) {
   .planSelectorWidget .planSummaryItem .planHeading:before {
     display: none;
@@ -1484,7 +1494,8 @@ Carousel Widget alterations
 .planSelectorWidget .planSummaryItem .planHeading h4 {
   font-family: inherit;
   text-transform: none;
-  font-size: 1em;
+  font-size: 0.8em;
+  line-height: 1.3em;
 }
 
 /* TAP active state for plan */
@@ -1496,8 +1507,11 @@ Carousel Widget alterations
 .planSelectorWidget .expanded .planHeading, .planSelectorWidget .planSummaryItem:hover .planHeading {
   background-color: #006685;
 }
-.planSelectorWidget .planSummaryItem .planHeading .heading-emphasis {
-  font-size: 2.375em;
+.planSelectorWidget .planSummaryItem .planHeading h2.heading-emphasis {
+  font-size: 4em;
+}
+.planSelectorWidget .planSummaryItem .planHeading h4.heading-emphasis {
+  font-size: 2.6em;
 }
 @media (min-width: 53.75em) {
   .planSelectorWidget .planSummaryItem .planHeading .heading-emphasis {

@@ -363,6 +363,7 @@ $(document).ready(function () {
             });
 
 
+
         if (currentStepString == 'home') {
 
             // Once we've completed a cycle, hide the back button...
@@ -402,6 +403,14 @@ $(document).ready(function () {
 
             });
 
+        } else if (currentStepString == 'terms') {
+
+          // Once we've completed a cycle, hide the back button...
+
+          $('.back-button').removeClass('animated fadeInHalfLeft').animate({
+              left: '-50px'
+          }, 500, 'easeInOutExpo');
+
         } else {
 
             $('.back-button').show().animate({
@@ -416,7 +425,7 @@ $(document).ready(function () {
 
     // When Back button is clicked, cycle back to the previous view
 
-    $('.back-button').on('click', function () {
+    $('.back-button, .backtrack-button').on('click', function () {
 
         // Grab the preview view from the Array
         var targetStep = cycleSteps[cycleSteps.length - 2];
@@ -452,6 +461,12 @@ $(document).ready(function () {
             $(this).removeClass('animated fadeInHalfLeft').animate({
                 left: '-50px'
             }, 500, 'easeInOutExpo');
+
+        } else if (targetStep === 'plans') {
+
+          $('.back-button').show().animate({
+              left: '0.25em'
+          }, 500, 'easeInOutExpo');
 
         }
 

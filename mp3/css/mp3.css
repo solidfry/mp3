@@ -398,6 +398,12 @@ body .view.home .model__item {
     outline: none;
 }
 
+@media only screen and (min-width: 860px) {
+    .product-select__link--add {
+        margin-top: 2em;
+    }
+}
+
 @-webkit-keyframes jiggle {
     5% {
         -webkit-transform: scale(1.1, 0.9);

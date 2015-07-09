@@ -59,7 +59,7 @@ $(document).ready(function () {
         var updateAnim = '<div class="updated"><span class="checkmarkWrap"><span class="checkmark"><div class="checkmark_circle ico ico-tick"></div></span></span></div>';
 
         updateDevice.click(function () {
-            $(this).parent().parent().append(updateAnim);
+            $('body').append(updateAnim);
             var modalVal = $(this).parent().parent().attr('id')
             setTimeout(function () {
                 $('.updated').remove();
@@ -405,11 +405,11 @@ $(document).ready(function () {
 
         } else if (currentStepString == 'terms') {
 
-          // Once we've completed a cycle, hide the back button...
+            // Once we've completed a cycle, hide the back button...
 
-          $('.back-button').removeClass('animated fadeInHalfLeft').animate({
-              left: '-50px'
-          }, 500, 'easeInOutExpo');
+            $('.back-button').removeClass('animated fadeInHalfLeft').animate({
+                left: '-50px'
+            }, 500, 'easeInOutExpo');
 
         } else {
 
@@ -429,7 +429,7 @@ $(document).ready(function () {
 
         // Grab the preview view from the Array
         var targetStep = cycleSteps[cycleSteps.length - 2];
-            prevStep = $('.view.' + targetStep);
+        prevStep = $('.view.' + targetStep);
 
         // Tell the visible view to animate out
 
@@ -464,9 +464,9 @@ $(document).ready(function () {
 
         } else if (targetStep === 'plans') {
 
-          $('.back-button').show().animate({
-              left: '0.25em'
-          }, 500, 'easeInOutExpo');
+            $('.back-button').show().animate({
+                left: '0.25em'
+            }, 500, 'easeInOutExpo');
 
         }
 
@@ -546,7 +546,7 @@ $(document).ready(function () {
         // If we've selected a plan
         else if (value[0] == 'plan') {
 
-          // Update Summary Plan Data
+            // Update Summary Plan Data
 
             var planValue = value[1].split('-');
 
@@ -573,9 +573,9 @@ $(document).ready(function () {
             $('#device-total').html(deviceTotal)
                 .addClass('animated swing').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 
-                $(this).html(deviceTotal).removeClass('animated swing');
+                    $(this).html(deviceTotal).removeClass('animated swing');
 
-              });
+                });
 
         }
 

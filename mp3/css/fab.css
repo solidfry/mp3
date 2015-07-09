@@ -74,7 +74,7 @@
     margin: .35em 0em;
 }
 
-.fab-container:nth-child(n+2)::after {
+.fab-container:nth-child(n+1)::after {
     content: attr(tooltip);
     position: absolute;
     top: 50%;
@@ -142,15 +142,19 @@
     -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
 }
 
-#root {
+.root {
     background: #006685;
 }
 
-#chat {
+.chat {
     background: #ffd100;
 }
 
-#root > span {
+.specials {
+    background: #80276c;
+}
+
+.root > span {
     /*background: url(http://edher.in/img/ic_add_48px.svg);
     background-size: 55%;
     background-repeat: no-repeat;
@@ -161,17 +165,17 @@
     transition: transform .4s cubic-bezier(0.51, 0.78, 0.01, 1.04);
 }
 
-.action-container:hover #root > span,
-#root:hover > span {
+.action-container:hover .root > span,
+.root:hover > span {
     transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
 
-#root > span:before,
-#root > span:after {
+.root > span:before,
+.root > span:after {
     font-family: "optus-icons";
-    content: "\e60c";
+    content: "\e6de";
     display: block;
     line-height: 2em;
     font-size: 1.75em;
@@ -186,7 +190,7 @@
     transition: all 0.1s;
 }
 
-#root > span:after {
+.root > span:after {
     opacity: 0;
     content: "\e610";
     position: absolute;
@@ -201,17 +205,17 @@
     -webkit-transform: rotate(320deg);
 }
 
-.action-container:hover #root > span:before,
-#root:hover > span:before {
+.action-container:hover .root > span:before,
+.root:hover > span:before {
     opacity: 0;
 }
 
-.action-container:hover #root > span:after,
-#root:hover > span:after {
+.action-container:hover .root > span:after,
+.root:hover > span:after {
     opacity: 1;
 }
 
-#feedback > span:before {
+.feedback > span:before {
     font-family: "optus-icons";
     content: "\e654";
     display: block;
@@ -223,9 +227,21 @@
     text-align: center;
 }
 
-#chat > span:before {
+.chat > span:before {
     font-family: "optus-icons";
     content: "\e68a";
+    display: block;
+    line-height: 2em;
+    font-size: 1.45em;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.specials > span:before {
+    font-family: "optus-icons";
+    content: "\e63f";
     display: block;
     line-height: 2em;
     font-size: 1.45em;

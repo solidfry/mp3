@@ -1645,6 +1645,10 @@ Carousel Widget alterations
 .planHeading h4 span {}
 
 @media only screen and (min-width: 860px) {
+    .planSelectorWidget .planSummaryItem .planHeading {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
     .planSelectorWidget .planSummaryItem .planHeading:before {
         display: none;
     }
@@ -1670,7 +1674,7 @@ Carousel Widget alterations
 }
 
 .planSelectorWidget .planSummaryItem .planHeading h2.heading-emphasis {
-    font-size: 4em;
+    font-size: 3em;
     background: rgba(0, 0, 0, 0.2);
     /*background-color: #008A92;*/
 
@@ -1679,11 +1683,25 @@ Carousel Widget alterations
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     text-align: center;
+    line-height: 1.25;
+    width: 50%;
+}
+
+@media only screen and (min-width: 860px) {
+    .planSelectorWidget .planSummaryItem .planHeading h2.heading-emphasis {
+        line-height: 2.5;
+    }
 }
 
 .planSelectorWidget .planSummaryItem .planHeading h4.heading-emphasis {
     font-size: 2.6em;
     padding: 13px 0 0 13px;
+}
+
+@media only screen and (min-width: 860px) {
+    .planSelectorWidget .planSummaryItem .planHeading h4 {
+        padding: 4em 0 0 1em;
+    }
 }
 
 @media (min-width: 53.75em) {

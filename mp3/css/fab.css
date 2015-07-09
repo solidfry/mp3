@@ -187,7 +187,7 @@
 
 #root > span:after {
     opacity: 0;
-    content: "\e613";
+    content: "\e610";
     position: absolute;
     top: 0;
     left: 0;
@@ -195,6 +195,9 @@
     height: 100%;
     width: 100%;
     line-height: 1.2em;
+    transform: rotate(320deg);
+    -ms-transform: rotate(320deg);
+    -webkit-transform: rotate(320deg);
 }
 
 #root:hover > span:before {
@@ -219,7 +222,7 @@
 
 #chat > span:before {
     font-family: "optus-icons";
-    content: "\e636";
+    content: "\e68a";
     display: block;
     line-height: 2em;
     font-size: 1.45em;

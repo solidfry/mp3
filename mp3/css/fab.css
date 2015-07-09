@@ -151,10 +151,11 @@
 }
 
 #root > span {
-    background: url(http://edher.in/img/ic_add_48px.svg);
+    /*background: url(http://edher.in/img/ic_add_48px.svg);
     background-size: 55%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center;*/
+
     -webkit-transition: -webkit-transform .4s cubic-bezier(0.51, 0.78, 0.01, 1.04);
     -ms-transition: -ms-transform .4s cubic-bezier(0.51, 0.78, 0.01, 1.04);
     transition: transform .4s cubic-bezier(0.51, 0.78, 0.01, 1.04);
@@ -164,6 +165,44 @@
     transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+
+#root > span:before,
+#root > span:after {
+    font-family: "optus-icons";
+    content: "\e60c";
+    display: block;
+    line-height: 2em;
+    font-size: 1.75em;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -ms-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
+}
+
+#root > span:after {
+    opacity: 0;
+    content: "\e613";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3em;
+    height: 100%;
+    width: 100%;
+    line-height: 1.2em;
+}
+
+#root:hover > span:before {
+    opacity: 0;
+}
+
+#root:hover > span:after {
+    opacity: 1;
 }
 
 #feedback > span {

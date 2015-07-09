@@ -1648,6 +1648,10 @@ Carousel Widget alterations
     .planSelectorWidget .planSummaryItem .planHeading {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+        box-shadow: 0 3px 0px rgba(0, 0, 0, 0.1);
+        /* overflow: visible; */
+
+        z-index: 9;
     }
     .planSelectorWidget .planSummaryItem .planHeading:before {
         display: none;

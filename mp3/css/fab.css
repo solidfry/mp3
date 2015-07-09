@@ -205,18 +205,28 @@
     opacity: 1;
 }
 
-#feedback > span {
-    background: url(http://edher.in/img/ic_place_48px.svg);
-    background-size: 55%;
-    background-repeat: no-repeat;
-    background-position: center;
+#feedback > span:before {
+    font-family: "optus-icons";
+    content: "\e654";
+    display: block;
+    line-height: 2em;
+    font-size: 1.45em;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
 }
 
-#chat > span {
-    background: url(http://edher.in/img/ic_crop_square_48px.svg);
-    background-size: 55%;
-    background-repeat: no-repeat;
-    background-position: center;
+#chat > span:before {
+    font-family: "optus-icons";
+    content: "\e636";
+    display: block;
+    line-height: 2em;
+    font-size: 1.45em;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
 }
 
 .ripple {

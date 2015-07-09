@@ -161,6 +161,7 @@
     transition: transform .4s cubic-bezier(0.51, 0.78, 0.01, 1.04);
 }
 
+.action-container:hover #root > span,
 #root:hover > span {
     transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -200,10 +201,12 @@
     -webkit-transform: rotate(320deg);
 }
 
+.action-container:hover #root > span:before,
 #root:hover > span:before {
     opacity: 0;
 }
 
+.action-container:hover #root > span:after,
 #root:hover > span:after {
     opacity: 1;
 }

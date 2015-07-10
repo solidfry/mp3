@@ -99,10 +99,15 @@
     color: #F5F5F5;
     font-weight: 300;
     font-size: .9em;
-    opacity: 0;
+    opacity: 1;
     z-index: 9;
 }
 
+.fab-container:nth-child(1)::after {
+    opacity: 0;
+}
+
+.action-container:hover .fab-container::after,
 .fab-container:hover::after {
     opacity: 1;
 }

@@ -127,7 +127,7 @@ body {
     }
 }
 
-.view.animated {
+.view.animated, .mfb-component--br.animated {
     -webkit-animation-delay: 3s;
     animation-delay: 3s;
     -webkit-animation-duration: .65s;
@@ -136,6 +136,11 @@ body {
     animation-fill-mode: both;
     -webkit-animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
     animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
+}
+
+.mfb-component--br.animated {
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
 }
 
 .back-button {

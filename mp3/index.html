@@ -1706,25 +1706,32 @@
 
     </div>
 
-    <div class="action-container">
-        <div class="fab-container" tooltip="Search">
-            <div class="fab root update" id="root"><span></span>
-            </div>
-        </div>
-        <div class="fab-container" tooltip="Feedback">
-            <div class="fab feedback update" id="feedback"><span></span>
-            </div>
-        </div>
-        <div class="fab-container" tooltip="Chat">
-            <div class="fab chat update" id="chat"><span></span>
-            </div>
-        </div>
-        <div class="fab-container" tooltip="Specials">
-            <div class="fab specials update" id="specials"><span></span>
-            </div>
-        </div>
+    <ul class="mfb-component--br mfb-slidein" data-mfb-toggle="hover">
+        <li class="mfb-component__wrap">
+            <a href="#" data-mfb-label="Search" class="mfb-component__button--main">
+                <span class="mfb-component__main-icon--resting ico ico-faq"></span>
+                <span class="mfb-component__main-icon--active ico ico-search"></span>
+            </a>
+            <ul class="mfb-component__list">
+                <li>
+                    <a href="#" data-mfb-label="Chat" class="mfb-component__button--child">
+                        <span class="mfb-component__child-icon ico ico-voice"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-mfb-label="Feedback" class="mfb-component__button--child">
+                        <span class="mfb-component__child-icon ico ico-happy-face"></span>
+                    </a>
+                </li>
 
-    </div>
+                <li>
+                    <a href="#" data-mfb-label="Specials" class="mfb-component__button--child">
+                        <span class="mfb-component__child-icon ico ico-cheap-value"></span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
 
     <script src="js/vendor/jquery.js"></script>

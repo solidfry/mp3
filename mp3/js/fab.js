@@ -1,36 +1,29 @@
-$(function () {
-    materialRipple();
-});
+! function (a, b) {
+    "use strict";
 
-function materialRipple() {
-    $(".fab:not(.disabled)").on("mousedown", function (e) {
-        recycler();
-        var offset = $(this).offset();
-        var XCoord = (e.pageX - offset.left);
-        var YCoord = (e.pageY - offset.top);
+    function c(a, b) {
+        for (var c = 0, d = a.length; d > c; c++) i = a[c].querySelector("." + r), i.addEventListener(b, f, !1)
+    }
 
-        if ($(this).outerWidth() < 199) {
-            $(this).children().append($("<div class='ripple ripple-active'></div>").css({
-                left: XCoord - 4.5,
-                top: YCoord - 2,
-                height: $(this).width() * .20,
-                width: $(this).width() * .20
-            })).on("mouseup", function () {
-                $(this).children('div').removeClass('ripple-active');
-            });
-        } else {
-            $(this).children().append($("<div class='ripple ripple-active'></div>").css({
-                left: XCoord - 4.5,
-                top: YCoord - 2,
-                height: $(this).width() * .05,
-                width: $(this).width() * .05
-            })).on("mouseup", function () {
-                $(this).children('div').removeClass('ripple-active');
-            });
-        }
-    });
-}
+    function d(a) {
+        for (var b = 0, c = a.length; c > b; b++) a[b].setAttribute(n, l), a[b].setAttribute(o, q)
+    }
 
-function recycler() {
-    $('html').find('.ripple:not(.active)').remove();
-}
+    function e(a) {
+        return b.querySelectorAll("[" + n + '="' + a + '"]')
+    }
+
+    function f(a) {
+        for (j = a.target; j && !j.getAttribute(n);)
+            if (j = j.parentNode, !j) return;
+        k = j.getAttribute(o) === p ? q : p, j.setAttribute(o, k)
+    }
+    var g, h, i, j, k, l = "click",
+        m = "hover",
+        n = "data-mfb-toggle",
+        o = "data-mfb-state",
+        p = "open",
+        q = "closed",
+        r = "mfb-component__button--main";
+    a.Modernizr && Modernizr.touch && (h = e(m), d(h)), g = e(l), c(g, "click")
+}(window, document);

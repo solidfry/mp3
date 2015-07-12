@@ -155,6 +155,22 @@
     -webkit-user-drag: none;
     color: #f1f1f1;
 }
+
+
+.mfb-component__button--main:visited,
+.mfb-component__button--child:visited,
+.mfb-component__button--main:hover,
+.mfb-component__button--child:hover {
+    color:white;
+}
+
+.mfb-component__button--main:active,
+.mfb-component__button--child:active {
+    background:#fb4300;
+}
+
+
+
 /**
  * This is the unordered list for the list items that contain
  * the child buttons.
@@ -821,7 +837,7 @@
     opacity: 0;
     transition: all 0.5s;
     background: rgba(0, 0, 0, 0.4);
-    padding: 4px 10px;
+    padding: 5px 10px 2px;
     border-radius: 3px;
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
@@ -832,6 +848,7 @@
     top: 50%;
     margin-top: -11px;
     transition: all 0.5s;
+    text-transform: uppercase;
 }
 
 [data-mfb-toggle="hover"] [data-mfb-label]:hover:after,

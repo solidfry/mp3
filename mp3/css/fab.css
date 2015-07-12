@@ -86,7 +86,7 @@
     margin: 25px;
     position: fixed;
     white-space: nowrap;
-    z-index: 30;
+    z-index: 97;
     padding-left: 0;
     list-style: none;
 }
@@ -135,7 +135,24 @@
 .mfb-component--br {
     right: 0;
     bottom: 0;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
 }
+
+.summaryShown .mfb-component--br {
+    bottom: 8em;
+}
+
+@media only screen and (min-width: 860px) {
+    .summaryShown .mfb-component--br {
+        bottom: 0;
+        right: 0;
+    }
+}
+
 /*------------------------------------*\
     #BUTTONS | Base
 \*------------------------------------*/

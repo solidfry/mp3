@@ -78,6 +78,11 @@
  * options chosen by the user or state of the button.
  */
 
+.mfb-component--br.animated {
+    -webkit-animation-delay: 4.5s;
+    animation-delay: 4.5s;
+}
+
 .mfb-component--tl,
 .mfb-component--tr,
 .mfb-component--bl,

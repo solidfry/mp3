@@ -707,6 +707,7 @@ body .model__item {
         border: 0;
         padding: 1.5em;
         /*height: 21em;*/
+        max-width: 29em;
     }
 }
 
@@ -769,7 +770,8 @@ body .model__item {
 }
 
 .phones .model__data {
-    
+    float:left;
+    width:4em;
 }
 
 .model__data-label {
@@ -801,6 +803,11 @@ body .model__item {
     background: #e5e5e5;
     border-radius: 6px;
     text-decoration: none;
+}
+
+.model__tc {
+    margin:1em 0 0;
+    list-style: 1.5;
 }
 
 @media only screen and (min-width: 860px) {

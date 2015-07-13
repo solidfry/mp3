@@ -183,10 +183,29 @@
 
 .mfb-component__button--main:active,
 .mfb-component__button--child:active {
-    background:#fb4300;
+    opacity:.8;
 }
 
 
+/**
+     Special Background Colours
+**/
+
+[data-mfb-label="Chat"] {
+    background-color:#ffc300;
+}
+
+[data-mfb-label="Feedback"] {
+    background-color:#008a92;
+}
+
+[data-mfb-label="Specials"] {
+    background-color:#5a1b4c;
+}
+
+[data-mfb-label="Search"] {
+    background-color:#da3a00;
+}
 
 /**
  * This is the unordered list for the list items that contain
@@ -270,6 +289,10 @@
 
 .mfb-component__main-icon--active {
     opacity: 0;
+}
+
+.mfb-component__main-icon--active.ico-cross {
+    font-size:1em;
 }
 
 [data-mfb-toggle="hover"]:hover .mfb-component__main-icon,

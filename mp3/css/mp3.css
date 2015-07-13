@@ -138,11 +138,6 @@ body {
     animation-timing-function: cubic-bezier(0, 1.07, 0.61, 1.07);
 }
 
-.mfb-component--br.animated {
-    -webkit-animation-delay: 3.5s;
-    animation-delay: 3.5s;
-}
-
 .back-button {
     position: absolute;
     left: .25em;

@@ -1776,6 +1776,12 @@ Carousel Widget alterations
     position: relative;
 }
 
+.planBorder a {
+     color:#006685;
+    text-decoration: underline;
+
+}
+
 .planBody .planBorder:last-of-type:after {
     content: "";
     display: none;

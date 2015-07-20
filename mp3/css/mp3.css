@@ -739,10 +739,10 @@ body .model__item {
 }
 
 .model__specs {
-    padding: 0 0 0 1em;
+    padding: 0 0 0 0;
     margin: 0;
     font-size: 1em;
-    list-style: disc;
+    list-style: none;
 }
 
 .model__specs-item {

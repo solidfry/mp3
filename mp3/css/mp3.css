@@ -445,6 +445,8 @@ Summary bar
   width: 33%;
   margin-left: 2%;
 }
+
+
 .summary__cost--upfront, .summary__cost--monthly, .summary__cost--plus {
   display: inline-block;
   text-align: center;
@@ -464,6 +466,17 @@ Summary bar
 @media only screen and (min-width: 860px) {
   .summary__title {
     text-align: center;
+  }
+  .summary__info .summary__block#summary__cost {
+    width: 100%;
+    margin-right: 0;
+  }
+  .summary__info .summary__block#summary__devices {
+    width: 100%;
+  }
+  .summary__info .summary__block#summary__data {
+    width: 100%;
+    margin-left: 0;
   }
 }
 .summary__title--link {

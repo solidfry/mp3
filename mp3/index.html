@@ -1344,6 +1344,7 @@
                 <h2 class="step__title">Select your SIM type</h2>
                 <p class="columns">We want your connection to Optus to go as smoothly as possible.</p>
                 <p class="columns">Please check your device and read the descriptions carefully to ensure you choose the right SIM-type for your phone.</p>
+                <p><a href="#" data-step="whichsim">Which SIM does my phone take?</a></p>
             </div>
         </div>
         <div class="row model__list" data-equalizer data-equalizer-mq="large-up">
@@ -1710,7 +1711,7 @@
 
     <!-- end step4 -->
 
-    <div class="view terms">
+    <div class="view terms view__info">
         <p><a href="#" class="backtrack-button button small radius">&lsaquo; BACK TO PLANS</a>
         </p>
         <h2>Terms & Conditions</h2>
@@ -1719,33 +1720,53 @@
         <p>This means the terms and conditions contained in the Standard Agreement documents apply to all customers who acquire that particular service. Your internet service provider may 'cache' (store) web pages, meaning the documents on this site may not be the most current version published by Optus. You should check you have the most current version before relying on these documents. You can do this by calling Optus Customer Service. Optus also recommends you make your own enquiries as to whether a particular service is fit for the purpose for which you intend to use it, and you should not rely only on these documents in doing so. </p>
     </div>
 
+    <div class="view whichsim view__info">
+      <p><a href="#" class="backtrack-button button small radius">&lsaquo; BACK TO SIMS</a>
+      </p>
+      <h2>Which SIM do I need?</h2>
+      <p>
+        Under the Telecommunications Act 1997, Optus may contract with its customers either on an individual basis, or by way of a standard form of agreement. Optus has elected to supply some of its services by way of a standard form of agreement (Standard Agreement).</p>
+
+      <p>
+        <input type="text" name="simtype" value="" placeholder="Search for your device...">
+      </p>
+
+    </div>
+
     <div class="summary cf">
 
-        <h2 class="summary__title cf">
-      Your Combined Services Include...
-    </h2>
+      <h2 class="summary__title cf">
+        Your Combined Services Include...
+      </h2>
 
-        <div class="summary__info cf">
-            <div class="summary__block">
-                <h3 class="summary__element yellow">
-                  <span class="summary__data" id="cpm-total">&#36;0</span>
-                  <span class="summary__label">Per month</span>
-                </h3>
-            </div>
-            <div class="summary__block">
-                <h3 class="summary__element">
-                  <span class="summary__data" id="device-total">0</span>
-                  <span class="summary__label">Service</span>
-                </h3>
-            </div>
-            <div class="summary__block">
-                <h3 class="summary__element">
-                  <span class="summary__data" id="gb-total">0GB</span>
-                  <span class="summary__label">Data to share</span>
-                </h3>
-            </div>
-            <p class="summary__mtc">Min total cost over 24 months is $1234</p>
+      <div class="summary__info cf">
+        <div class="summary__block" id="summary__cost">
+          <h3 class="summary__element yellow">
+            <span class="summary__cost--upfront">
+              <span class="summary__data" id="cpm-total"><sup>&#36;</sup>0</span>
+              <span class="summary__label">Upfront</span>
+            </span>
+            <span class="summary__cost--plus"><strong>+</strong></span>
+            <span class="summary__cost--monthly">
+              <span class="summary__data" id="cpy-total"><sup>&#36;</sup>0</span>
+              <span class="summary__label">Per month</span>
+            </span>
+          </h3>
         </div>
+        <div class="summary__block" id="summary__devices">
+          <h3 class="summary__element">
+            <span class="summary__data" id="device-total">0</span>
+            <span class="summary__label">Service</span>
+          </h3>
+        </div>
+        <div class="summary__block" id="summary__data">
+          <h3 class="summary__element">
+            <span class="summary__data" id="gb-total">0GB</span>
+            <span class="summary__label">Data to share</span>
+          </h3>
+        </div>
+        <p class="summary__mtc">Min total cost over 24 months is $1234</p>
+      </div>
 
 
     </div>

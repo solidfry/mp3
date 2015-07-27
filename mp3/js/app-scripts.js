@@ -301,6 +301,7 @@ $(document).ready(function() {
     $this = element;
 
     if (currentStepString == 'home') {
+      console.log('true');
       $('.view.home').removeClass('animated fadeInUp');
     }
 
@@ -468,6 +469,8 @@ $(document).ready(function() {
     cycleSteps.splice(-1, 1);
 
     console.log('now: ' + cycleSteps);
+
+
 
   });
 
